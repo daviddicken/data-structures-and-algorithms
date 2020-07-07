@@ -83,7 +83,28 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+
+  let fizzyArray = [];
+  arr.forEach((value) =>
+  {
+    if(value % 3 === 0 && value % 5 === 0 )
+    {
+      fizzyArray.push('Fizz Buzz');
+    }
+    else if(value % 3 === 0)
+    {
+      fizzyArray.push('Fizz');
+    }
+    else if(value % 5 === 0)
+    {
+      fizzyArray.push('Buzz');
+    }
+    else
+    {
+      fizzyArray.push(value);
+    }
+  })
+  return fizzyArray; 
 };
 
 /* ------------------------------------------------------------------------------------------------
