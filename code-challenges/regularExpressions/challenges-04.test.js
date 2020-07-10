@@ -22,10 +22,12 @@ let $ = createSnippetWithJQuery(`
 </section>
 `);
 
-const generateSubmitButton = () => {
-  // Solution code here...
-}
+const generateSubmitButton = () =>
+{
+  const $newButton = $(`<button>submit</button>`);
+  $('form').append($newButton);
 
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -39,7 +41,10 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+   const regex = /\d/;
+
+  return regex.test(input);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +56,10 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const regex = /[A-Z]\w*/g;
+  let newStr = str.match(regex)
+  
+  return newStr || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,10 +69,29 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const regex = /^[A-J]\w*/g;
+  let newArr = [];
+  // arr.forEach(testCities);
+
+  // function testCities(city)
+  for(var i in arr)
+  {
+    // if(city.match(regex))
+    if(arr[i].match(regex))
+    {
+      newArr.push(arr[i]);
+      // test = city.match(regex);
+      // console.log('test==============', test);
+      // newArr = `${newArr},  '${test}'`;
+      // newArr.push(test).toString;
+      // newArr.push(city.match(regex));
+    }
+  //newArr = arr.match(regex);
+  }
+  return newArr || [];
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
 You have created a game application and begin by asking users an easy question: In which month is Halloween?
