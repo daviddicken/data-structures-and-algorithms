@@ -73,7 +73,15 @@ const templatingWithMustache = () => {
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/* 
+describe('Testing challenge 1', () => {
+  test('It should return html markup with the character', () => {
+    const filledTemplates = templatingWithMustache();
+    const $ = cheerio.load(filledTemplates[0]);
+    expect($('h2').text()).toStrictEqual('Eddard');
+  });
+});
+------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
