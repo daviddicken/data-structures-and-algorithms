@@ -71,8 +71,27 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templatingWithMustache =() => {
-  // let template = $('template').html();
-
+  let template = $('template').html();
+  let test = Object.values(characters);
+  const returnArr = [ ];
+   
+  //for(let i in test)
+  test.forEach(obj => {
+    
+    new Character(obj);
+    returnArr.push(Mustache.render(template, this));
+   })
+  
+    
+  
+    Mustache.render(template, this);
+    
+    function Character(obj){
+    this.name = obj.name;
+    this.spouse = obj.spouse;
+    this.childen =obj.children;
+    this.house = obj.house;
+    }
   // //console.log(Object.entries(luke));
   // characters.forEach(obj => {
     
@@ -89,7 +108,7 @@ const templatingWithMustache =() => {
   //  }
   
 
-
+return returnArr || [];
 };
 
 /* 
@@ -158,7 +177,6 @@ const hasChildrenValues = (arr, character) => {
     {
       return true
     }
-  // return test[i].name === character ? test[i].children !== [ ] ? true : false;
   }
   return false;
 };
