@@ -142,7 +142,7 @@ const listFoods = (recipe) => {
   for(var i in recipe.ingredients)
   {
     let string = recipe.ingredients[i];
-    let index = string.indexOf(' ', string.indexOf(' '));
+    let index = string.indexOf(' ', string.indexOf(' ') + 1);
     result.push(string.slice(index + 1));
   }
 
