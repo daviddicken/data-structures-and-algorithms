@@ -10,7 +10,8 @@ CHALLENGE 1 - Review
 
 Use the characters data below for all of the challenges except challenge 2.
 
-Write a function named templatingWithMustache that uses mustache to create the markup templates for each of the characters. Use the snippet as your guide for creating your templates. Return an array of template strings. Note: this function does not need to actually append the markup to the DOM.
+Write a function named tem
+platingWithMustache that uses mustache to create the markup templates for each of the characters. Use the snippet as your guide for creating your templates. Return an array of template strings. Note: this function does not need to actually append the markup to the DOM.
 
 ------------------------------------------------------------------------------------------------ */
 let characters = [
@@ -69,8 +70,26 @@ let $ = createSnippetWithJQuery(`
 </script>
 `);
 
-const templatingWithMustache = () => {
-  // Solution code here...
+const templatingWithMustache =() => {
+  // let template = $('template').html();
+
+  // //console.log(Object.entries(luke));
+  // characters.forEach(obj => {
+    
+  //   //Mustache.render(template , this);
+  //   console.log(oj);
+
+  // });
+
+  // for(let i in characters)
+  // {
+  //    console.log(Object.entries(characters[i]));
+  //     let test = Mustache.render(template, characters[i]);
+  //    console.log('************', test );
+  //  }
+  
+
+
 };
 
 /* 
@@ -94,8 +113,11 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+    let test = [];
+    test = Object.keys(obj);
+    return test;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -105,11 +127,17 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  
+  for(let i in arr)
+  {
+    houses.push(arr[i].house);
+  }
+
   return houses;
 };
 
 /*------------------------------------------------------------------------------------------------
+
 CHALLENGE 4
 
 Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
@@ -122,11 +150,20 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let test = Object.values(arr);
 
+  for(let i in test)
+  {
+    if(test[i].name === character && test[i].children !== [ ])
+    {
+      return true
+    }
+  // return test[i].name === character ? test[i].children !== [ ] ? true : false;
+  }
+  return false;
 };
-
 /* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 5 - Stretch Goal
 
 Write a function named hasChildrenEntries that is similar to your hasChildrenValues function from challenge 4, but uses the data's entries instead of its values.
