@@ -71,36 +71,19 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templatingWithMustache =() => {
-  // let template = $('template').html();
+  let template = $('#template').html();
+  let returnArr = [];
 
-  // //console.log(Object.entries(luke));
-  // characters.forEach(obj => {
-    
-  //   //Mustache.render(template , this);
-  //   console.log(oj);
-
-  // });
-
-  // for(let i in characters)
-  // {
-  //    console.log(Object.entries(characters[i]));
-  //     let test = Mustache.render(template, characters[i]);
-  //    console.log('************', test );
-  //  }
+  for(let i in characters)
+  {
+    let test = Mustache.render(template, characters[i]);
+    returnArr.push(test); 
+   }
   
-
-
+return returnArr;
 };
 
-/* 
-describe('Testing challenge 1', () => {
-  test('It should return html markup with the character', () => {
-    const filledTemplates = templatingWithMustache();
-    const $ = cheerio.load(filledTemplates[0]);
-    expect($('h2').text()).toStrictEqual('Eddard');
-  });
-});
-------------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
