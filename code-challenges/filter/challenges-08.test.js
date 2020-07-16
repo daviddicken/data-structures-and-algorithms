@@ -57,60 +57,10 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-//const notInFirstArray = (forbiddenValues, arr) => arr.filter(num => forbiddenValues.includes(!num));
-//const notInFirstArray = (forbiddenValues, arr) => forbiddenValues === [] ? arr : arr.filter(num => forbiddenValues.includes(!num));
-const notInFirstArray = (forbiddenValues, arr) => //=> arr.filter(num => forbiddenValues.includes(!num));
-{
-  returnArr = arr.filter(num => forbiddenValues.includes(num))
-  if(returnArr.length > 0)
-  {
-    console.log('returnAR==========', returnArr)
-    return returnArr
-  }
-  else
-  {
-    console.log('arrr=========', arr)
-    return arr
-  }
-//   if(forbiddenValues.length > 1)
-//     {
-//       return arr.filter(num => forbiddenValues.includes(num))
-      
-//       // console.log('else array retuned========', returnArray)
-//       // return returnArray
-//     }
-//     else
-//     {
-//       console.log('returning arr==============', arr)
-//       return arr
-//     }
-
-}
+const notInFirstArray = (forbiddenValues, arr) => arr.filter(num => !forbiddenValues.includes(num));
 
 
 /* 
-describe('Testing challenge 4', () => {
-  const firstNums = [1, 2, 3];
-  const secondNums = [1, 2, 3, 4];
-
-  const firstStrings = ['Demi', 'Gregor', 'Hound'];
-  const secondStrings = ['Gary', 'Charlotte', 'Demi', 'Gregor', 'Hound'];
-
-  test('It should return an array that includes any elements not in the first array', () => {
-    expect(notInFirstArray(firstNums, secondNums)).toStrictEqual([4]);
-    expect(notInFirstArray(firstNums, secondNums).length).toStrictEqual(1);
-  });
-
-  test('It should also work with an array of strings', () => {
-    expect(notInFirstArray(firstStrings, secondStrings)).toStrictEqual(['Gary', 'Charlotte']);
-    expect(notInFirstArray(firstStrings, secondStrings).length).toStrictEqual(2);
-  });
-
-  test('It should work with empty arrays', () => {
-    expect(notInFirstArray([], [])).toStrictEqual([]);
-    expect(notInFirstArray([], [1,2,3,4,5])).toStrictEqual([1,2,3,4,5]);
-    expect(notInFirstArray([1,2,3,4,5], [])).toStrictEqual([]);
-  });
 });------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
