@@ -262,7 +262,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 const reversedString = (str) => {
   let stringArr = str.split('');
 
-  let string = stringArr.reduce((acc,value,index,array) =>
+  let string = stringArr.reduce((acc,value) =>
   { 
     acc.unshift(value)
     return acc
