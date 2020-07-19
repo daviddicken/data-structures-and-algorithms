@@ -9,13 +9,8 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 const createServer = () => {
   // --------------------------------------------------
   const express = require('express')
-  //const cors = require('cors')
-  //require('dotenv').config()
-
   const app = express()
-  //const port = process.env.PORT || 3001
-  //app.use(cors())
-
+ 
   app.get('/hello', greetings)
   app.get('/aboutme', myStory)
   app.get('/favoritefoods', yummyArray)
@@ -41,8 +36,6 @@ const createServer = () => {
     let greeting = 'Hello'
     res.status(200).send(greeting)
   }
-  
-  
 //----------------------------------------------------------------
   var server = app.listen(3301, function () {
     var port = server.address().port;
@@ -69,10 +62,6 @@ const count = (target, input) =>
     int.filter(nestedInt =>
       {
         nestedInt === target ? counter++ : 'blah'
-        // if(nestedInt === target)
-        // {
-        //   counter++
-        // }
       })  
   })
   return counter
@@ -88,7 +77,15 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  
+  let totalSums = input.map(array => 
+    {
+      return array.reduce((accum, value) =>
+        {
+          return  value + accum
+        }, 0) 
+
+    })
+    return totalSums.reduce((addThem, ints) => ints + addThem , 0)
 };
 
 /* ------------------------------------------------------------------------------------------------
