@@ -100,9 +100,27 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+const divisibleByFiveTwoToThePower = (input) => input.map(soloArry => soloArry.reduce((accum, int) =>
+{ 
+  int % 5 === 0 && typeof int === 'number' ? accum.push(Math.pow(2, int)) : 'blah'
+  return accum
+}, []))
+
+
+// { let allArrays = input.map(soloArry => 
+//     {
+//         let fiver = soloArry.reduce((accum, int) =>
+//         { console.log('int', int)
+//         console.log('intTest', typeof int === 'number')
+//           int % 5 === 0 && typeof int === 'number' ? accum.push(int) : 'blah'
+//           return accum
+//         }, [])
+//         return fiver.map(num => Math.pow(2, num))
+//     })
+//     return allArrays
+//   }
+
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stetch Goal
