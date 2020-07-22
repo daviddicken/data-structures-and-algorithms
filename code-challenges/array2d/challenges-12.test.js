@@ -8,9 +8,18 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
-  // Solution code here...
-};
+
+const maxInArray = (arr) => arr.reduce((num, arrNum) => arrNum > num ? num = arrNum : num = num)
+
+// let theNum = arr.reduce((num, arrNum) => {
+
+//   arrNum > num ? num = arrNum : 'blah'
+//   return num
+// })
+// return theNum
+// };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -34,10 +43,12 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
-const grandTotal = (stores) => {
-  // Solution code here...
+//https://stackoverflow.com/questions/34458132/how-to-sum-elements-at-the-same-index-in-array-of-arrays-into-a-single-array
 
-};
+const grandTotal = (stores) => stores.reduce((acc, value) => value.map((num, index) => (acc[index] || 0) + num), [])
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -49,9 +60,30 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
-const salesData = (hours, data) => {
-  // Solution code here...
-};
+// Rizo's great idea :
+const salesData = (hours, data) => 
+{
+  let cookiesSold = [];
+  data.forEach((total, sold) => {
+    cookiesSold.push({sales: `${total} cookies`, time: hours[sold]});
+  });
+  return cookiesSold
+}
+  
+  
+  //==========================================
+  // let newArr = []
+  // data.forEach((value, i) =>
+  // {
+  //   console.log('value====',value)
+  //   console.log('hours=====',hours[i])
+  //   //console.log('============', `sales: '${value} cookies', time: '${hours[i]}'`)
+  //   newArr[i] = `sales: '${value} cookies', time: '${hours[i]}'`
+  //   newArr[i] = 'sales: \'' + value + ' cookies\', ' + 'time: \'' + hours[i] + '\''
+  // })
+  // console.log('==========', newArr)
+//};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -74,9 +106,21 @@ const errands = [
   }
 ];
 
+// Thank you again Rizo :)
 const howManyTreats = (arr) => {
-  // Solution code here...
-};
+
+    let counter = 0;
+    arr.forEach(errand => {
+      if (errand.store === 'Pet store') {
+        errand.items.forEach(item => {
+          if (item.name === 'Treats'){
+            counter = item.quantity;
+          }
+        });
+      }
+    });
+    return counter;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
