@@ -8,6 +8,7 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
+
 const maxInArray = (arr) => arr.reduce((num, arrNum) => arrNum > num ? num = arrNum : num = num)
 
 // let theNum = arr.reduce((num, arrNum) => {
@@ -17,6 +18,8 @@ const maxInArray = (arr) => arr.reduce((num, arrNum) => arrNum > num ? num = arr
 // })
 // return theNum
 // };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -39,16 +42,15 @@ const capHill = [5, 85, 58, 51, 50, 13, 33, 32, 47, 94, 31, 62];
 const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
+
 //https://stackoverflow.com/questions/34458132/how-to-sum-elements-at-the-same-index-in-array-of-arrays-into-a-single-array
 
 const grandTotal = (stores) => stores.reduce((acc, value) => value.map((num, index) => (acc[index] || 0) + num), [])
 
-/* 
-describe('Testing challenge 2', () => {
-  test('It should add the hourly totals array', () => {
-    expect(grandTotal(cookieStores)).toStrictEqual([88, 153, 252, 286, 139, 161, 145, 232, 276, 207, 161, 169]);
-  });
-});------------------------------------------------------------------------------------------------
+
+
+
+/* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Pat has decided that he would also like to organize his data as objects containing the number of cookies sold per hour and the time.
@@ -57,6 +59,7 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
+
 // Rizo's great idea :
 const salesData = (hours, data) => 
 {
@@ -81,26 +84,8 @@ const salesData = (hours, data) =>
   // console.log('==========', newArr)
 //};
 
-/* describe('Testing challenge 3', () => {
-  test('It should create an object of data for each store', () => {
-    expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
-      { sales: '88 cookies', time: '9 a.m.' },
-      { sales: '153 cookies', time: '10 a.m.' },
-      { sales: '252 cookies', time: '11 a.m.' },
-      { sales: '286 cookies', time: '12 p.m.' },
-      { sales: '139 cookies', time: '1 p.m.' },
-      { sales: '161 cookies', time: '2 p.m.' },
-      { sales: '145 cookies', time: '3 p.m.' },
-      { sales: '232 cookies', time: '4 p.m.' },
-      { sales: '276 cookies', time: '5 p.m.' },
-      { sales: '207 cookies', time: '6 p.m.' },
-      { sales: '161 cookies', time: '7 p.m.' },
-      { sales: '169 cookies', time: '8 p.m.' }
-    ]);
 
-    expect(salesData(hoursOpen, grandTotal(cookieStores)).length).toStrictEqual(hoursOpen.length);
-  });
-});------------------------------------------------------------------------------------------------
+/* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array.
@@ -120,6 +105,7 @@ const errands = [
     items: [{ name: 'Cans of food', quantity: 8 }, { name: 'Treats', quantity: 24 }, { name: 'Leash', quantity: 1 }]
   }
 ];
+
 // Thank you again Rizo :)
 const howManyTreats = (arr) => {
 
@@ -135,7 +121,6 @@ const howManyTreats = (arr) => {
     });
     return counter;
   };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
