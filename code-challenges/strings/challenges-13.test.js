@@ -19,9 +19,8 @@ const $ = createSnippetWithJQuery(`
 </ul>
 `);
 
-const fixTheTypo = () => {
-// Solution code here...
-};
+const fixTheTypo = () => $('.pear').text('Pear');
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -31,20 +30,28 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = (arr) => {
-  // Solution code here...
-};
+const firstLetters = (arr) => arr.map((string) => string[0])
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named findHappiness that takes in an array of strings and returns an array containing only the strings from the input array that contain ":)".
 
-For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
+For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))'
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
-  // Solution code here...
+const findHappiness = (arr) => 
+{
+  let test = [] 
+  arr.forEach((string) => 
+  {
+    if(string.includes(':)'))
+    {
+      test.push(string);
+    }
+  })
+  return test
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,9 +62,7 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+const standardizePhoneNumbers = (arr) => arr.map((numbs) => numbs.replace(/\D/g,''))
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
