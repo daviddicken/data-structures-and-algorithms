@@ -52,3 +52,17 @@ repeat till found ? return -1 if not found
 
 _________________________________________________________________________________
 
+# Linked List
+This library will create a linked list of int's. It will have the ability to add a new node to the head and will also have a toString method
+
+### Challenge
+Need to be able to insert a new node and be able to traverse through the linked list for the toString method and to be able to search the list for a value
+
+#### Aproach & Efficiency
+Space: O(n)
+Time: O(n)
+Make a Node constructor and a Linked List constructor
+create a linked list with a tail and head node both set to null 
+When adding to list if head isn't empty store current head in a temp var create new head node and move old head to the .next of new head
+
+
