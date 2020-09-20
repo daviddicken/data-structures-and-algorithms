@@ -2,8 +2,7 @@ package linkedList;
 
 public class LinkedList
 {
-    public class Node
-    {
+    public class Node {
         public int value;
         public Node next;
 
@@ -16,32 +15,29 @@ public class LinkedList
     public Node head;
     public Node tail;
 
-    public LinkedList()
-    {
+    public LinkedList() {
         this.head = null;
         this.tail = null;
     }
 
-    public void insert(int num)
-    {
+    public void insert(int num) {
         Node node = new Node(num);
-        if(this.head == null)
-        {
+
+        if(this.head == null) {
             this.head = node;
             this.tail = node;
-        }else
-        {
+        }else {
             Node tempNode = this.head;
             this.head = node;
             node.next = tempNode;
         }
     }
 
+//----------------------------------
     public String toString()
     {
         // Got great guidance from Jack Nelson on a better way to create the toString method
-        if(this.head == null)
-        {
+        if(this.head == null) {
             return "NULL";
         }
 
@@ -49,8 +45,7 @@ public class LinkedList
         String returnString = String.format("{%d} -> ", currentNode.value);
         currentNode = currentNode.next;
 
-        while(currentNode != null)
-        {
+        while(currentNode != null) {
             returnString += String.format("{%d} ->", currentNode.value);
             currentNode = currentNode.next;
         }
@@ -59,13 +54,13 @@ public class LinkedList
         return returnString;
     }
 
+//-------------------------------------------
     public boolean listSearch(int searchValue)
     {
         Node currentNode = this.head;
-        while(currentNode != null)
-        {
-           if(searchValue == currentNode.value)
-           {
+
+        while(currentNode != null) {
+           if(searchValue == currentNode.value) {
                return true;
            }
            currentNode = currentNode.next;
