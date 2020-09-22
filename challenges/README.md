@@ -4,6 +4,7 @@
 [Reverse an Array](#Reverse-an-Array)
 [Array Shift](#Array-Shift)
 [Binary Search](#Binary-Search)
+[Linked List Insertions](Linked-List-Insertions)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -52,3 +53,26 @@ repeat till found ? return -1 if not found
 
 _________________________________________________________________________________
 
+# Linked List Insertions
+Need to add a method to append a new node to the end of our linked list.
+Need to add a method to insert a node with a new value before a node with a value entered by user
+need to add a method same as above but insert the node after.
+
+### Challenge
+To insert a new node without loosing track of other nodes in the linked list.
+
+### Aproach & Efficiency
+Space: O(n)
+Time: O(n)
+Append to End:
+Find tail set tail.next to new Node replace tail node with new node
+Insert before:
+Search linked list for search value and keep track of last node
+If found last node.next = new node & new node.next = current node
+Insert after:
+Search linked list for search value keeping next node in a variable
+If found current node.next = new node & new node.next = next node
+
+### Whiteboard
+
+[whiteboard](whiteboards/ll-insertions.png )
