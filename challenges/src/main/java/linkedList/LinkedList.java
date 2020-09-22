@@ -6,8 +6,8 @@ public class LinkedList {
         public Node next;
 
         public Node(int num) {
-            this.value = num;
-            this.next = null;
+            value = num;
+            next = null;
         }
     }
 
