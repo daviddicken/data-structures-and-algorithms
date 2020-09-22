@@ -2,9 +2,11 @@ package linkedList;
 
 public class LinkedList {
     public class Node {
+
         public int value;
         public Node next;
 
+//====== Node constructor ===========
         public Node(int num) {
             value = num;
             next = null;
@@ -14,11 +16,13 @@ public class LinkedList {
     public Node head;
     public Node tail;
 
+//======== Linked list constructor           
     public LinkedList() {
         this.head = null;
         this.tail = null;
     }
 
+//---------------------------------------------
     public void insert(int num) {
         Node node = new Node(num);
 
