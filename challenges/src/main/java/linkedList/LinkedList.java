@@ -1,15 +1,18 @@
 package linkedList;
 
 public class LinkedList {
+
     public class Node {
 
         public int value;
         public Node next;
+        //public Node last;
 
 //====== Node constructor ===========
         public Node(int num) {
             value = num;
             next = null;
+            //last = null;
         }
     }
 
@@ -23,6 +26,17 @@ public class LinkedList {
     }
 
 //---------------------------------------------
+    public int size(){
+        Node currentNode = this.head;
+        int length = 0;
+
+        while (currentNode != null) {
+            length++;
+            currentNode = currentNode.next;
+        }
+        return length;
+
+    }
     public void insert(int num) {
         Node node = new Node(num);
 
@@ -33,6 +47,7 @@ public class LinkedList {
             Node tempNode = this.head;
             this.head = node;
             node.next = tempNode;
+
         }
     }
 
@@ -81,6 +96,28 @@ public class LinkedList {
             currentNode = currentNode.next;
         }
         return false;
+    }
+
+//-===========================================================================
+    public int findFromEnd(int placesFromEnd) throws Exception {
+        Node currentNode = this.head;
+
+        if(placesFromEnd > size())
+        {
+            System.out.println("Your link list is shorter then your search value");
+
+            throw new Exception("Your link list is shorter then your search value");
+        }
+
+        int fromFront = size() - placesFromEnd;
+        int counter = 1;
+        while (counter < fromFront) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+
+        return currentNode.value;
+
     }
 
     //---------------------------------------
