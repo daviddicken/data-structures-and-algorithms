@@ -5,6 +5,7 @@
 [Array Shift](#Array-Shift)
 [Binary Search](#Binary-Search)
 [Linked List Insertions](Linked-List-Insertions)
+[Search from end](Search-from-end)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -29,7 +30,7 @@ Time:  O(n)
 Create a new array that is + 1 in length from original Array. Find middle index of original array and save in a variable. Have two variable for stepping through arrays. write a if statement to catch when the middle index is reached and insert value.
 
 ### Whiteboard
-![whiteboard](whiteboards/ArrayShift.png )
+[whiteboard](whiteboards/ArrayShift.png )
 
 ___________________________________________________________________________________
 
@@ -89,4 +90,18 @@ If found current node.next = new node & new node.next = next node
 ### Whiteboard
 
 [whiteboard](whiteboards/ll-insertions.png )
+
+_________________________________________________________________
+
+# Search from end
+This method should take an integer from the user and return the value found in the node that many spots from the end
+
+### Challenge
+To search from the end only being able to traverse from the front
+
+### Approach & Efficiency
+create a size method to be able to find out the size of my list then size - value entered to know how many nodes to traverse through from the front of the list.
+
+### Whiteboard
+[whiteboard](whiteboards/CC7Whiteboard.PNG)
 
