@@ -2,6 +2,9 @@ package linkedList;
 
 public class LinkedList {
 
+    public Node head;
+    public Node tail;
+
     public class Node {
 
         public int value;
@@ -16,10 +19,7 @@ public class LinkedList {
         }
     }
 
-    public Node head;
-    public Node tail;
-
-//======== Linked list constructor           
+//======== Linked list constructor
     public LinkedList() {
         this.head = null;
         this.tail = null;
@@ -60,8 +60,6 @@ public class LinkedList {
             tail = newNode;
             head = newNode;
         } else {
-            //Node temp = tail;
-            //newNode.last = temp;
             newNode.last = tail;
             tail.next = newNode;
             tail = newNode;
@@ -204,5 +202,48 @@ public class LinkedList {
         }else {
             System.out.println("List is empty");
         }
+    }
+
+    public static LinkedList zipLists(LinkedList one, LinkedList two){
+        Node currentNode = one.head;
+        Node tempA = one.head;
+        Node tempB = two.head;
+
+        if(tempA == null){
+            return two;
+        }else if(tempB == null){
+            return one;
+        }
+
+        while((tempA != null) && (tempB != null)){
+            System.out.println("from the while");
+//            tempA = tempA.next;
+//            currentNode.next = tempB;
+//            currentNode.next.next = tempA;
+//            currentNode = currentNode.next.next;
+//
+//            tempB = tempB.next;
+            tempA = currentNode.next;
+            currentNode.next = tempB;
+            currentNode = currentNode.next;
+
+            tempB = currentNode.next;
+            currentNode.next = tempA;
+            currentNode = currentNode.next;
+        }
+        System.out.println("out of the while");
+       // System.out.println("tempA " + tempA.value );
+       // System.out.println("tempB " + tempB.value);
+        if((tempA == null) && (tempB != null)) {
+            currentNode.next = tempB.next;
+            System.out.println(".next in if " + currentNode.next);
+        }else if(tempB == null && tempA != null) {
+            currentNode.next = tempA.next;
+            System.out.println(".next in else " + currentNode.next);
+        }
+
+
+
+        return one;
     }
 }

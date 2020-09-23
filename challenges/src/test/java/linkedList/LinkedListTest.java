@@ -5,6 +5,41 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
+    @Test public void textZip(){
+//        LinkedList a = new LinkedList();
+//        a.insertEnd(1);
+//        a.insertEnd(3);
+//        a.insertEnd(5);
+//        a.insertEnd(7);
+//        a.insertEnd(9);
+//
+//        LinkedList b = new LinkedList();
+//        b.insertEnd(2);
+//        b.insertEnd(4);
+//        b.insertEnd(6);
+//        b.insertEnd(8);
+//        b.insertEnd(10);
+//
+//        LinkedList c = LinkedList.zipLists(a, b);
+
+        //System.out.println(c);
+
+        LinkedList aFull = new LinkedList();
+        aFull.insertEnd(1);
+        aFull.insertEnd(3);
+        aFull.insertEnd(5);
+        aFull.insertEnd(7);
+        aFull.insertEnd(9);
+
+        LinkedList oneB = new LinkedList();
+        oneB.insertEnd(2);
+
+// test failing when a has just one node and b has multiple
+        LinkedList d = LinkedList.zipLists(oneB, aFull);
+        System.out.println(d);
+
+
+    }
     @Test public void testTostring() throws Exception {
         LinkedList test = new LinkedList();
         LinkedList empty = new LinkedList();
