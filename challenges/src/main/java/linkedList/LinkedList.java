@@ -6,13 +6,13 @@ public class LinkedList {
 
         public int value;
         public Node next;
-        //public Node last;
+        public Node last;
 
 //====== Node constructor ===========
         public Node(int num) {
             value = num;
             next = null;
-            //last = null;
+            last = null;
         }
     }
 
@@ -40,13 +40,14 @@ public class LinkedList {
     public void insert(int num) {
         Node node = new Node(num);
 
-        if (this.head == null) {
-            this.head = node;
-            this.tail = node;
+        if (head == null) {
+            head = node;
+            tail = node;
         } else {
-            Node tempNode = this.head;
-            this.head = node;
+            Node tempNode = head;
+            head = node;
             node.next = tempNode;
+            tempNode.last = node;
 
         }
     }
@@ -56,13 +57,15 @@ public class LinkedList {
         Node newNode = new Node(value);
 
         if (this.tail == null) {
-            this.tail = newNode;
-            this.head = newNode;
+            tail = newNode;
+            head = newNode;
         } else {
+            //Node temp = tail;
+            //newNode.last = temp;
+            newNode.last = tail;
             tail.next = newNode;
             tail = newNode;
         }
-
     }
 
     //----------------------------------
@@ -98,14 +101,35 @@ public class LinkedList {
         return false;
     }
 
-//-===========================================================================
+//============= Search from back with doubly linked list =============
+
+    public int fromTail(int placesFromBack) throws Exception {
+        Node currentNode = this.tail;
+        if(placesFromBack == 0) {
+            return tail.value;
+        } else if(placesFromBack == size()){
+            return head.value;
+        }
+        if(placesFromBack > size()){
+            throw new Exception("The linked list is to short for a search like that!");
+        }
+
+        for(int i = 1; i <= placesFromBack; i++){
+            currentNode = currentNode.last;
+        }
+        return currentNode.value;
+    }
+
+ //=============== Search from back with singly linked list ===========
     public int findFromEnd(int placesFromEnd) throws Exception {
         Node currentNode = this.head;
-
+        if(placesFromEnd == 0)
+        {
+            return tail.value;
+        }
         if(placesFromEnd > size())
         {
             System.out.println("Your link list is shorter then your search value");
-
             throw new Exception("Your link list is shorter then your search value");
         }
 
