@@ -8,11 +8,17 @@ public class LinkedListTest {
     @Test public void testTostring() throws Exception {
         LinkedList test = new LinkedList();
         LinkedList empty = new LinkedList();
+        LinkedList even = new LinkedList();
         test.insert(1);
         test.insert(2);
         test.insertEnd(9);
         test.insertEnd(10);
 
+        even.insert(2);
+        even.insert(4);
+        even.insert(6);
+        even.insert(8);
+        even.insert(10);
         //test.listSearch(2);
         //test.listSearch(3);
         //test.insertBefore(9, 8);
@@ -29,7 +35,12 @@ public class LinkedListTest {
         assertEquals(2, test.findFromEnd(4));
         assertEquals(2,test.fromTail(4));
 
+        //========== test to find middle ========
+        assertEquals(6,even.findMiddleNode());
+        assertEquals(1,test.findMiddleNode());
+
         System.out.println(test);
+        //System.out.println(empty.findMiddleNode());
         System.out.println("From the end: " + test.findFromEnd(0));
         System.out.println("From the back: " + test.fromTail(3));
        // String expecting = "{2} -> {1} -> NULL";

@@ -144,6 +144,21 @@ public class LinkedList {
 
     }
 
+    //--------------------------------------
+    public int findMiddleNode() throws Exception {
+        Node currentNode = this.tail;
+        if(head == null){
+            throw new Exception("List is empty");
+        }
+        int middle = size() / 2;
+
+        for (int i = 0; i < middle; i++) {
+            currentNode = currentNode.last;
+        }
+        return currentNode.value;
+
+    }
+
     //---------------------------------------
     public void insertBefore(int searchValue, int newValue) {
         Node newNode = new Node(newValue);
