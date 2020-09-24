@@ -6,23 +6,54 @@ import static org.junit.Assert.*;
 
 public class LinkedListTest {
     @Test public void textZip(){
-//        LinkedList a = new LinkedList();
-//        a.insertEnd(1);
-//        a.insertEnd(3);
-//        a.insertEnd(5);
-//        a.insertEnd(7);
-//        a.insertEnd(9);
-//
-//        LinkedList b = new LinkedList();
-//        b.insertEnd(2);
-//        b.insertEnd(4);
-//        b.insertEnd(6);
-//        b.insertEnd(8);
-//        b.insertEnd(10);
-//
-//        LinkedList c = LinkedList.zipLists(a, b);
+        LinkedList a = new LinkedList();
+        a.insertEnd(1);
+        a.insertEnd(3);
+        a.insertEnd(5);
+        a.insertEnd(7);
+        a.insertEnd(9);
 
-        //System.out.println(c);
+        LinkedList b = new LinkedList();
+        b.insertEnd(2);
+        b.insertEnd(4);
+        b.insertEnd(6);
+        b.insertEnd(8);
+        b.insertEnd(10);
+
+
+        LinkedList expected = new LinkedList();
+        expected.insertEnd(1);
+        expected.insertEnd(2);
+        expected.insertEnd(3);
+        expected.insertEnd(4);
+        expected.insertEnd(5);
+        expected.insertEnd(6);
+        expected.insertEnd(7);
+        expected.insertEnd(8);
+        expected.insertEnd(9);
+        expected.insertEnd(10);
+
+        LinkedList c = LinkedList.zipLists(a, b);
+        System.out.println(c);
+        //String expected = "{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> {7} -> {8} -> {9} -> {10} ->  NULL";
+        //assertEquals(expected, LinkedList.zipLists(a,b).toString());
+        //assertEquals(expected.toString(), LinkedList.zipLists(a,b).toString());
+
+        LinkedList bFull = new LinkedList();
+        bFull.insertEnd(1);
+        bFull.insertEnd(3);
+        bFull.insertEnd(5);
+        bFull.insertEnd(7);
+        bFull.insertEnd(9);
+
+        LinkedList oneA = new LinkedList();
+        oneA.insertEnd(2);
+
+        LinkedList d = LinkedList.zipLists(oneA, bFull);
+        System.out.println("oneA 123579" + d);
+
+        LinkedList oneB = new LinkedList();
+        oneB.insertEnd(2);
 
         LinkedList aFull = new LinkedList();
         aFull.insertEnd(1);
@@ -31,15 +62,19 @@ public class LinkedListTest {
         aFull.insertEnd(7);
         aFull.insertEnd(9);
 
-        LinkedList oneB = new LinkedList();
-        oneB.insertEnd(2);
+        LinkedList e = LinkedList.zipLists(aFull, oneB);
+        System.out.println("oneB 123579 : " + e);
 
-// test failing when a has just one node and b has multiple
-        LinkedList d = LinkedList.zipLists(oneB, aFull);
-        System.out.println(d);
+        LinkedList bothOne = new LinkedList();
+        bothOne.insertEnd(1);
 
+        LinkedList oneForBoth = new LinkedList();
+        oneForBoth.insert(2);
+
+        System.out.println(LinkedList.zipLists(bothOne, oneForBoth));
 
     }
+
     @Test public void testTostring() throws Exception {
         LinkedList test = new LinkedList();
         LinkedList empty = new LinkedList();

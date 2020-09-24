@@ -209,20 +209,24 @@ public class LinkedList {
         Node tempA = one.head;
         Node tempB = two.head;
 
+        //test to make sure that an empty linked list is not passed in
         if(tempA == null){
             return two;
         }else if(tempB == null){
             return one;
         }
+        //check if list with single node was passed in
+        if(tempA.next == null){
+            currentNode.next = tempB.next;
+            tempB.next = currentNode;
+            return two;
+        }else if(tempB.next == null){
+            tempB.next = currentNode.next;
+            currentNode.next = tempB;
+            return one;
+        }
 
         while((tempA != null) && (tempB != null)){
-            System.out.println("from the while");
-//            tempA = tempA.next;
-//            currentNode.next = tempB;
-//            currentNode.next.next = tempA;
-//            currentNode = currentNode.next.next;
-//
-//            tempB = tempB.next;
             tempA = currentNode.next;
             currentNode.next = tempB;
             currentNode = currentNode.next;
@@ -231,15 +235,10 @@ public class LinkedList {
             currentNode.next = tempA;
             currentNode = currentNode.next;
         }
-        System.out.println("out of the while");
-       // System.out.println("tempA " + tempA.value );
-       // System.out.println("tempB " + tempB.value);
         if((tempA == null) && (tempB != null)) {
             currentNode.next = tempB.next;
-            System.out.println(".next in if " + currentNode.next);
         }else if(tempB == null && tempA != null) {
             currentNode.next = tempA.next;
-            System.out.println(".next in else " + currentNode.next);
         }
 
 
