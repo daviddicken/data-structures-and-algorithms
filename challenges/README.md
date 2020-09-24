@@ -6,6 +6,7 @@
 [Binary Search](#Binary-Search)
 [Linked List Insertions](Linked-List-Insertions)
 [Search from end](Search-from-end)
+[Linked List Zip](Linked-List-Zip)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -105,3 +106,22 @@ create a size method to be able to find out the size of my list then size - valu
 ### Whiteboard
 [whiteboard](whiteboards/CC7Whiteboard.PNG)
 
+# Linked List Zip
+This method will take in two linked list and merge them together to 
+return a linked list containing all nodes sorted every other one.
+InputA = 1 -> 3 -> 5 -> 7 -> 9
+InputB = 2 -> 4 -> 6 -> 8 -> 10
+Output = 1 -> 2-> 3-> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
+
+### Challenge
+To merge nodes together with out loosing track of one of the list. 
+And to be able to handle edge cases. If one list was empty or only had one node.
+
+### Aproach & Efficiency
+Time: O(n)
+Space: O(n)
+Create 3 temp nodes to work with. save Ahead.next in tempA point 
+Ahead.next to Bhead store Bhead.next in tempB point Bhead.next to tempA ect ect  
+
+### Whiteboard
+[whiteboard](whiteboards/CCo8.PNG)
