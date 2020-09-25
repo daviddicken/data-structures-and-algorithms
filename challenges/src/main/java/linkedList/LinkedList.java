@@ -27,7 +27,7 @@ public class LinkedList {
 
 //---------------------------------------------
     public int size(){
-        Node currentNode = this.head;
+        Node currentNode = this.head;      
         int length = 0;
 
         while (currentNode != null) {
