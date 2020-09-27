@@ -36,10 +36,47 @@ public class LibraryTest {
         //toString test
         assertEquals("{16} -> {8} -> {4} -> NULL", testStack.toString());
         //push test
-        testStack.push(24);
-        assertEquals("{24} -> {16} -> {8} -> {4} -> NULL", testStack.toString());
+        testStack.push(32);
+        assertEquals("{32} -> {16} -> {8} -> {4} -> NULL", testStack.toString());
         //empty stack test
         assertEquals("NULL", emptyStack.toString());
+    }
+
+    @Test
+    public void testPop(){
+        Stack emptyStack = new Stack();
+        Stack testStack = new Stack();
+        testStack.push(1);
+        testStack.push(2);
+        testStack.push(3);
+
+        assertEquals("{3} -> {2} -> {1} -> NULL", testStack.toString());
+        //testStack.pop();
+        assertEquals("{2} -> {1} -> NULL", testStack.toString());
+    }
+
+    @Test
+    public void testPeek() throws Exception {
+        Stack emptyStack = new Stack();
+        Stack testStack = new Stack();
+        testStack.push(1);
+        testStack.push(2);
+        testStack.push(3);
+
+        //peek and pop test
+       assertEquals(3,testStack.peek());
+       assertEquals(3,testStack.pop());
+       assertEquals(2,testStack.pop());
+       assertEquals(1, testStack.peek());
+    }
+    @Test
+    public void testIsEmpty(){
+        Stack emptyStack = new Stack();
+        Stack oneNode = new Stack();
+        oneNode.push(1);
+
+        assertFalse(oneNode.isEmpty());
+        assertTrue(emptyStack.isEmpty());
     }
 
 }

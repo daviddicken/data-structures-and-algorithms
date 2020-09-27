@@ -2,8 +2,9 @@ package stacksandqueues;
 
 public class Stack {
    public Node top;
+    private Object Exception;
 
-   //========== Stack constructor ========
+    //========== Stack constructor ========
    public Stack() {
       this.top = null;
    }
@@ -14,6 +15,30 @@ public class Stack {
       node.setNext(top);
       top = node;
    }
+
+   //========= pop =====================
+    public int pop() throws Exception{
+       if(top == null){
+           throw new Exception("The stack is empty");
+       }
+       int returnValue = top.getValue();
+       top = top.getNext();
+       return returnValue;
+    }
+
+   //========= peek ====================
+    public int peek() throws Exception {
+        if (top == null) {
+            throw new Exception("Stack is empty");
+        }
+        return top.getValue();
+    }
+
+    //========= isEmpty ================
+    public boolean isEmpty(){
+       if(top == null) return true;
+       return false;
+    }
 
    //========== toString ================
    public String toString(){
