@@ -43,21 +43,19 @@ public class LibraryTest {
     }
 
     @Test
-    public void testPop() {
-        Stack emptyStack = new Stack();
+    public void testPop() throws Exception {
         Stack testStack = new Stack();
         testStack.push(1);
         testStack.push(2);
         testStack.push(3);
 
         assertEquals("{3} -> {2} -> {1} -> NULL", testStack.toString());
-        //testStack.pop();
+        testStack.pop();
         assertEquals("{2} -> {1} -> NULL", testStack.toString());
     }
 
     @Test
     public void testPeek() throws Exception {
-        Stack emptyStack = new Stack();
         Stack testStack = new Stack();
         testStack.push(1);
         testStack.push(2);
@@ -82,7 +80,6 @@ public class LibraryTest {
 
     @Test
     public void testEnqueue() throws Exception {
-        Queue empty = new Queue();
         Queue testQ = new Queue();
         testQ.enqueue(1);
         testQ.enqueue(2);
@@ -112,7 +109,10 @@ public class LibraryTest {
 
         //isEmpty test
         assertFalse(testQ.isEmpty());
-        assertTrue(empty.isEmpty());
+        assertEquals(1, testQ.size());
+        testQ.dequeue();
+        assertEquals(0, testQ.size());
+        assertTrue(testQ.isEmpty());
     }
 
 }

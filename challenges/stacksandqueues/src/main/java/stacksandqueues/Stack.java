@@ -51,6 +51,6 @@ public class Stack {
     if (currentNode.getNext() == null) {
         return String.format("{%d} -> NULL", currentNode.getValue());
     }
-    return String.format("{%d} -> ", currentNode.getNext()) + toString(currentNode.getNext());
+    return String.format("{%d} -> ", currentNode.getValue()) + toString(currentNode.getNext());
    }
 }

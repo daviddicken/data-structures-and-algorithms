@@ -12,8 +12,7 @@ public class Queue {
 
     //======= isEmpty ====================
     public boolean isEmpty(){
-        if(front == null) return true;
-        return false;
+        return front == null;
     }
     //======= Peek =======================
     public int peek() throws Exception{
@@ -28,9 +27,13 @@ public class Queue {
             throw new Exception("This queue is empty");
         }
         int returnValue = front.getValue();
-        front.getNext().setLast(null);
-        front = front.getNext();
 
+        if(front.getNext() != null) {
+            front.getNext().setLast(null);
+            front = front.getNext();
+        }else{
+            front = null;
+        }
         return returnValue;
     }
 
