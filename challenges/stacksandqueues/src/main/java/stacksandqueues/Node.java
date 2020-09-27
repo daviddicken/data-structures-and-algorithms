@@ -3,10 +3,12 @@ package stacksandqueues;
 public class Node {
         private int value;
         private Node next;
+        private Node last;
 
         public Node(int num) {
             value = num;
             next = null;
+            last = null;
         }
 
         public String toString(){
@@ -29,5 +31,13 @@ public class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    public Node getLast() {
+        return last;
+    }
+
+    public void setLast(Node last) {
+        this.last = last;
     }
 }

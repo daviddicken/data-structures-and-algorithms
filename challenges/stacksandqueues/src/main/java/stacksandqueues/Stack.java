@@ -2,7 +2,7 @@ package stacksandqueues;
 
 public class Stack {
    public Node top;
-    private Object Exception;
+    //private Object Exception;
 
     //========== Stack constructor ========
    public Stack() {
