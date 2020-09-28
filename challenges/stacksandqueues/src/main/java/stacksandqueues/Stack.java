@@ -2,7 +2,6 @@ package stacksandqueues;
 
 public class Stack {
    public Node top;
-    //private Object Exception;
 
     //========== Stack constructor ========
    public Stack() {
@@ -13,7 +12,9 @@ public class Stack {
    public void push(int num){
       Node node = new Node(num);
       node.setNext(top);
+
       top = node;
+
    }
 
    //========= pop =====================

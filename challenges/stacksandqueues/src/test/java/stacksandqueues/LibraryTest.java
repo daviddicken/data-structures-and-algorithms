@@ -115,4 +115,36 @@ public class LibraryTest {
         assertTrue(testQ.isEmpty());
     }
 
+    @Test
+    public void testPseudoQ() throws Exception {
+        PseudoQueue empty = new PseudoQueue();
+        PseudoQueue testQ = new PseudoQueue();
+
+        //test for empty stack
+        assertEquals("NULL", empty.toString());
+
+        //test for enqueue
+        testQ.enqueue(20);
+        assertEquals("{20} -> NULL", testQ.toString());
+        assertEquals(1, testQ.size());
+        testQ.enqueue(15);
+        testQ.enqueue(10);
+        assertEquals("{10} -> {15} -> {20} -> NULL", testQ.toString());
+        assertEquals(3, testQ.size());
+
+        //test for dequeue
+        assertEquals(10, testQ.dequeue());
+        assertEquals("{15} -> {20} -> NULL", testQ.toString());
+        assertEquals(2, testQ.size());
+        testQ.dequeue();
+        assertEquals(20, testQ.dequeue());
+        assertEquals("NULL", testQ.toString());
+        assertEquals(0, testQ.size());
+
+        //test for exception
+        assertThrows(Exception.class,  testQ::dequeue);
+        assertThrows(Exception.class,() -> testQ.dequeue());
+
+    }
+
 }
