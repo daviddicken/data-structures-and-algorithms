@@ -7,11 +7,11 @@ public class PseudoQueue {
     //========= deQ =============================
     public int dequeue() throws Exception {
         try {
-            if (currentStack.top != null) {
-                Node thisNode = currentStack.top;
-                while (thisNode != null) {
-                    tempStack.push(currentStack.pop());
-                    thisNode = thisNode.getNext();
+            if (currentStack.top != null) {      //check that stack is not empty
+                Node thisNode = currentStack.top;// create node to work with
+                while (thisNode != null) {       // run this code till node = null
+                    tempStack.push(currentStack.pop()); // push the top of currentStack to tempStack
+                    thisNode = thisNode.getNext(); // move to the next node
                 }
                 currentStack = tempStack;
             }
