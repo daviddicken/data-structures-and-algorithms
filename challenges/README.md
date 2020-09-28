@@ -7,6 +7,7 @@
 [Linked List Insertions](Linked-List-Insertions)
 [Search from end](Search-from-end)
 [Linked List Zip](Linked-List-Zip)
+[Stacks and Queues](Stacks-&-Queues)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -125,3 +126,27 @@ Ahead.next to Bhead store Bhead.next in tempB point Bhead.next to tempA ect ect
 
 ### Whiteboard
 [whiteboard](whiteboards/CCo8.PNG)
+
+//____________________________________________________________
+
+# Stacks & Queues
+Create a Queue class, and a Stack class 
+The Queue class will have methods:
+enqueue - add new node to the rear of the queue
+dequeue - remove node from front of queue and return value of node
+peek - to return the value from the node in the front of the queue
+isEmpty - to check if queue is empty
+
+The Stack class will have methods:
+push - add new node to top of stack
+pop - remove node from top of the stack and return nodes value
+peek - to return node at the top of the stacks value
+isEmpty - to check if stack is empty
+
+### Challenges
+to ensure that nodes are being added and remove from the correct side of the stack or queue.
+
+### Efficiency 
+Time O(1)
+Space O(1)
+

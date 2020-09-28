@@ -241,8 +241,6 @@ public class LinkedList {
             currentNode.next = tempA.next;
         }
 
-
-
         return one;
     }
 }

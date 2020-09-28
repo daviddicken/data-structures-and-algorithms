@@ -6,7 +6,7 @@ public class Stack {
 
     //========== Stack constructor ========
    public Stack() {
-      this.top = null;
+      top = null;
    }
 
   //============ push ====================
