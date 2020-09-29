@@ -8,6 +8,7 @@
 [Search from end](Search-from-end)
 [Linked List Zip](Linked-List-Zip)
 [Stacks and Queues](Stacks-&-Queues)
+[Pseudo Queue](Pseudo-Queue)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -149,4 +150,27 @@ to ensure that nodes are being added and remove from the correct side of the sta
 ### Efficiency 
 Time O(1)
 Space O(1)
+//---------------------------------------------------------
+
+# Pseudo Queue
+Create a Pseudo Queue class that will have two methods: enqueue & dequeue
+It will only be able to use 2 stacks internally
+enqueue will take in a value and insert it to the front of the Q
+dequeue will remove the node from the front of the Q and return its value
+
+### Challenges
+To find a way to flip the stack we were working with when we needed to add or remove something
+
+### Aproach & Efficiency
+Time O(n)
+Space O(n)
+
+Before adding or removing a node we pop every node from the current stack to a temp stack. 
+Then overwrite the current stack with the temp stack. 
+Then we can add or remove a node to the new current stack.
+
+### Whiteboard
+[whiteboard](whiteboards/CC11.PNG)
+
+//---------------------------------------------------------
 

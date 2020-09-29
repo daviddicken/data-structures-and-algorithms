@@ -118,7 +118,7 @@ public class LibraryTest {
     @Test
     public void testPseudoQ() throws Exception {
         PseudoQueue empty = new PseudoQueue();
-        PseudoQueue testQ = new PseudoQueue();
+       PseudoQueue testQ = new PseudoQueue();
 
         //test for empty stack
         assertEquals("NULL", empty.toString());
@@ -133,18 +133,17 @@ public class LibraryTest {
         assertEquals(3, testQ.size());
 
         //test for dequeue
-        assertEquals(10, testQ.dequeue());
-        assertEquals("{15} -> {20} -> NULL", testQ.toString());
+        assertEquals(20, testQ.dequeue());
+        assertEquals("{15} -> {10} -> NULL", testQ.toString());
         assertEquals(2, testQ.size());
         testQ.dequeue();
-        assertEquals(20, testQ.dequeue());
+        assertEquals(10, testQ.dequeue());
         assertEquals("NULL", testQ.toString());
         assertEquals(0, testQ.size());
 
         //test for exception
         assertThrows(Exception.class,  testQ::dequeue);
         assertThrows(Exception.class,() -> testQ.dequeue());
-
     }
 
 }

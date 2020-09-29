@@ -1,46 +1,50 @@
 package stacksandqueues;
 
 public class PseudoQueue {
-    private Stack currentStack = new Stack();
-    private Stack tempStack = new Stack();
-
-    //========= Slinky ==========================
-    public void slinky() throws Exception {
-
-        Node thisNode = currentStack.top;// create node to work with
-        while (thisNode != null) {       // run this code till node = null
-            tempStack.push(currentStack.pop()); // push the top of currentStack to tempStack
-            thisNode = thisNode.getNext(); // move to the next node
-        }
-        currentStack = tempStack; // change the tempStack to be the current Stack
-    }
+    private Stack enQueueStack = new Stack();
+    private Stack deQueueStack = new Stack();
 
     //========= deQ =============================
     public int dequeue() throws Exception {
-       
-        try {
-            slinky();
-            return currentStack.pop(); // return the value in the top node
-        }catch (Exception e){ //check if queue is empty
-            throw new Exception("This queue is empty");
-        }
+       if(deQueueStack.isEmpty() && !enQueueStack.isEmpty()){
+           Node thisNode = enQueueStack.top;// create node to work with
+           while (thisNode != null) {       // run this code till node = null
+               deQueueStack.push(enQueueStack.pop()); // push the top of currentStack to tempStack
+               thisNode = thisNode.getNext(); // move to the next node
+           }
+       }
+        return deQueueStack.pop();
     }
 
     //========= enQ =============================
     public void enqueue(int number) throws Exception {
-       
-        if (currentStack.top != null) {
-            slinky();
+
+        if(enQueueStack.isEmpty() && !deQueueStack.isEmpty()){
+            Node thisNode = deQueueStack.top;// create node to work with
+            while (thisNode != null) {       // run this code till node = null
+                enQueueStack.push(deQueueStack.pop()); // push the top of currentStack to tempStack
+                thisNode = thisNode.getNext(); // move to the next node
+            }
         }
-        currentStack.push(number);
+        enQueueStack.push(number);
     }
 
     //========= size =============================
     public int size(){
-        Node thisNode = currentStack.top;
-        int length = 0;
+        int length;
 
-        while(thisNode != null){
+        if(deQueueStack.isEmpty()) {
+            length =stepThrough(enQueueStack.top);
+        }else{
+            length = stepThrough(deQueueStack.top);
+        }
+        return length;
+    }
+    
+    //========= step through ====================
+    public int stepThrough(Node thisNode){
+        int length = 0;
+        while (thisNode != null) {
             length++;
             thisNode = thisNode.getNext();
         }
@@ -49,12 +53,18 @@ public class PseudoQueue {
 
     //========= toString =========================
     public String toString(){
-        if(currentStack.top == null){
+        if(enQueueStack.top == null && deQueueStack.top == null){
             return "NULL";
         }
-        return toString(currentStack.top); }
+        if(enQueueStack.isEmpty()){
+            return toString(deQueueStack.top);
+        }else {
+            return toString(enQueueStack.top);
+        }
+    }
     //------------ helper ----------------
     private String toString(Node currentNode){
+
         if (currentNode.getNext() == null) {
             return String.format("{%d} -> NULL", currentNode.getValue());
         }
