@@ -1,4 +1,4 @@
-package stacksandqueues;
+package challenges.stacksandqueues.src.main.java.stacksandqueues;
 
 public class Stack {
    public Node top;

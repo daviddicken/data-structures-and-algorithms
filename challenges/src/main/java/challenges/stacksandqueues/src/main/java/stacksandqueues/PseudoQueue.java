@@ -1,4 +1,4 @@
-package stacksandqueues;
+package challenges.stacksandqueues.src.main.java.stacksandqueues;
 
 public class PseudoQueue {
     private Stack enQueueStack = new Stack();
