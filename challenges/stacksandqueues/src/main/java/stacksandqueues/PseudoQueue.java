@@ -4,35 +4,37 @@ public class PseudoQueue {
     private Stack currentStack = new Stack();
     private Stack tempStack = new Stack();
 
+    //========= Slinky ==========================
+    public void slinky() throws Exception {
+
+        Node thisNode = currentStack.top;// create node to work with
+        while (thisNode != null) {       // run this code till node = null
+            tempStack.push(currentStack.pop()); // push the top of currentStack to tempStack
+            thisNode = thisNode.getNext(); // move to the next node
+        }
+        currentStack = tempStack; // change the tempStack to be the current Stack
+    }
+
     //========= deQ =============================
     public int dequeue() throws Exception {
+       
         try {
-            if (currentStack.top != null) {
-                Node thisNode = currentStack.top;
-                while (thisNode != null) {
-                    tempStack.push(currentStack.pop());
-                    thisNode = thisNode.getNext();
-                }
-                currentStack = tempStack;
-            }
-            return currentStack.pop();
-
-        }catch (Exception e){
+            slinky();
+            return currentStack.pop(); // return the value in the top node
+        }catch (Exception e){ //check if queue is empty
             throw new Exception("This queue is empty");
         }
     }
+
     //========= enQ =============================
     public void enqueue(int number) throws Exception {
+       
         if (currentStack.top != null) {
-            Node thisNode = currentStack.top;
-            while (thisNode != null) {
-                tempStack.push(currentStack.pop());
-                thisNode = thisNode.getNext();
-            }
-            currentStack = tempStack;
+            slinky();
         }
         currentStack.push(number);
     }
+
     //========= size =============================
     public int size(){
         Node thisNode = currentStack.top;
@@ -43,7 +45,6 @@ public class PseudoQueue {
             thisNode = thisNode.getNext();
         }
         return length;
-
     }
 
     //========= toString =========================
@@ -60,21 +61,4 @@ public class PseudoQueue {
         return String.format("{%d} -> ", currentNode.getValue()) + toString(currentNode.getNext());
     }
 
-    //========= Getters & Setters ================
-//    public Stack getCurrentStack() {
-//        return currentStack;
-//    }
-//
-//
-//    public void setCurrentStack(Stack currentStack) {
-//        this.currentStack = currentStack;
-//    }
-//
-//    public Stack getTempStack() {
-//        return tempStack;
-//    }
-//
-//    public void setTempStack(Stack tempStack) {
-//        this.tempStack = tempStack;
-//    }
 }
