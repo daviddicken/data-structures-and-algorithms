@@ -37,7 +37,8 @@ public class LinkedList {
         return length;
 
     }
-    public void insert(int num) {
+    //=========
+    public void insertFront(int num) {
         Node node = new Node(num);
 
         if (head == null) {
