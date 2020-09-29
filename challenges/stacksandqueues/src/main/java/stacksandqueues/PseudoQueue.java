@@ -40,7 +40,7 @@ public class PseudoQueue {
         }
         return length;
     }
-    
+
     //========= step through ====================
     public int stepThrough(Node thisNode){
         int length = 0;
