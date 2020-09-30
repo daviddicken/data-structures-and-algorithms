@@ -35,11 +35,26 @@ public class Gqueue {
             Gnode<String> thisNode = front;
             while (thisNode != null) {
                 if (thisNode.getValue() == type) {
-                    //set the next pointer of the node behind this node to this nodes next node
-                    thisNode.getLast().setNext(thisNode.getNext());
-                    //set the pointer of the node in front of this node to this nodes last node
-                    thisNode.getNext().setLast(thisNode.getLast());
-                    return thisNode.getValue();
+
+                    if(thisNode.getNext() == null){
+                        thisNode.getNext().setLast(thisNode.getLast());
+
+                        front = thisNode.getNext();
+                        return thisNode.getValue();
+
+                    }else if(thisNode.getLast() == null){
+                        thisNode.getLast().setNext(thisNode.getNext());
+
+                        back = thisNode.getLast();
+                        return thisNode.getValue();
+
+                    }else {
+                        //set the next pointer of the node behind this node to this nodes next node
+                        thisNode.getLast().setNext(thisNode.getNext());
+                        //set the pointer of the node in front of this node to this nodes last node
+                        thisNode.getNext().setLast(thisNode.getLast());
+                        return thisNode.getValue();
+                    }
                 }
                 thisNode = thisNode.getNext();
             }
