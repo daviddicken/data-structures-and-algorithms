@@ -25,7 +25,7 @@ public class LinkedList {
         this.tail = null;
     }
 
-//---------------------------------------------
+//======== Size ====================
     public int size(){
         Node currentNode = this.head;      
         int length = 0;
