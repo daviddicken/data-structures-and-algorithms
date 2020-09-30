@@ -2,13 +2,13 @@ package utilities;
 
 public class Gnode<T>{
     private T value;
-    private Gnode<T> next;
-    private Gnode<T> last;
+    private Gnode<T> behind;
+    private Gnode<T> inFront;
 
     public Gnode(T value) {
         this.value = value;
-        this.next = null;
-        this.last = null;
+        this.behind = null;
+        this.inFront = null;
     }
 
     //========= toString ===========================
@@ -29,19 +29,19 @@ public class Gnode<T>{
         this.value = value;
     }
 
-    public Gnode getNext() {
-        return next;
+    public Gnode getBehind() {
+        return behind;
     }
 
-    public void setNext(Gnode next) {
-        this.next = next;
+    public void setBehind(Gnode behind) {
+        this.behind = behind;
     }
 
-    public Gnode getLast() {
-        return last;
+    public Gnode getInFront() {
+        return inFront;
     }
 
-    public void setLast(Gnode last) {
-        this.last = last;
+    public void setInFront(Gnode inFront) {
+        this.inFront = inFront;
     }
 }
