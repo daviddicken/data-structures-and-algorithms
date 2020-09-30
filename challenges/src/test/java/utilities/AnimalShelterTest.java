@@ -6,13 +6,9 @@ import static org.junit.Assert.*;
 public class AnimalShelterTest {
     @Test
             public void shelterTest() {
-        //===== test generic node ========
-        //Gnode<String> testNode = new Gnode("test");
 
-        //System.out.println("generic :" + testNode.getValue());
-
-        Gqueue testQ = new Gqueue();
-        Gqueue empty = new Gqueue();
+        petQ testQ = new petQ();
+        petQ empty = new petQ();
 
         //test empty "out of animals"
         assertEquals("We are all out of pets.", empty.dequeue("cat"));
