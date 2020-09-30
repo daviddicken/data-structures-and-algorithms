@@ -8,6 +8,7 @@
 [Search from end](Search-from-end)
 [Linked List Zip](Linked-List-Zip)
 [Stacks and Queues](Stacks-&-Queues)
+[Animal Shelter](Animal-Shelter)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -149,4 +150,25 @@ to ensure that nodes are being added and remove from the correct side of the sta
 ### Efficiency 
 Time O(1)
 Space O(1)
+
+//-------------------------------------------------------------------------
+# Animal Shelter
+Create a class called AnimalShelter which holds only dogs and cats. 
+And operates in a FIFO.
+
+### Challenges
+We used a doubly linked list and the chalenge was handling the edge cases
+when the pet was found at the end or the start of the list.
+
+### Aproach & Efficiency
+Time: O(n)
+Space: O(1)
+
+To create a queue with nodes that had pointers to the node in front and the node behind it.
+The step through the list looking for the type the user is looking for. When a match is found
+we take the pointer of the node behind the current node and point it to the node in front of it
+and take the pointer of the node in front of current node and point it to the node behind it 
+then return the value of the node  
+
+[whiteboard](whiteboards/animalShelter.png)
 

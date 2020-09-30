@@ -24,6 +24,17 @@ public class Gqueue {
         }
         back = newNode;
     }
+    //======== deQ (get the animal that has been here longest =====
+    public String dequeue(){
+        if(front == null){
+            return "Sorry we are all out of dogs and cats";
+        }
+        String returnAnimal = front.getValue();
+        front.getNext().setLast(null);
+        front = front.getNext();
+
+        return returnAnimal;
+    }
 
     //======== deQ (animal getter) ====
     public String dequeue(String type){
@@ -35,11 +46,33 @@ public class Gqueue {
             Gnode<String> thisNode = front;
             while (thisNode != null) {
                 if (thisNode.getValue() == type) {
-                    //set the next pointer of the node behind this node to this nodes next node
-                    thisNode.getLast().setNext(thisNode.getNext());
-                    //set the pointer of the node in front of this node to this nodes last node
-                    thisNode.getNext().setLast(thisNode.getLast());
-                    return thisNode.getValue();
+
+                    if(thisNode.getNext() == null && thisNode.getLast() == null){
+                        String returnValue = thisNode.getValue();
+                        front = null;
+                        back = null;
+                        return returnValue;
+                    }
+                    if(thisNode.getNext() == null){
+                        thisNode.getLast().setNext(null);
+
+                        back = thisNode.getLast();
+                        return thisNode.getValue();
+
+                    }else if(thisNode.getLast() == null){
+
+                        thisNode.getNext().setLast(null);
+
+                        front = thisNode.getNext();
+                        return thisNode.getValue();
+
+                    }else {
+                        //set the next pointer of the node behind this node to this nodes next node
+                        thisNode.getLast().setNext(thisNode.getNext());
+                        //set the pointer of the node in front of this node to this nodes last node
+                        thisNode.getNext().setLast(thisNode.getLast());
+                        return thisNode.getValue();
+                    }
                 }
                 thisNode = thisNode.getNext();
             }
@@ -61,9 +94,9 @@ public class Gqueue {
     private String toString(Gnode currentNode){
 
         if (currentNode.getNext() == null) {
-            return currentNode.getValue() + " -> NULL";
+            return currentNode.getValue() + " <-> BACK";
         }
-        return currentNode.getValue() + " -> " + toString(currentNode.getNext());
+        return currentNode.getValue() + " <-> " + toString(currentNode.getNext());
     }
 
 
