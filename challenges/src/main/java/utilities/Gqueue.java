@@ -24,6 +24,17 @@ public class Gqueue {
         }
         back = newNode;
     }
+    //======== deQ (get the animal that has been here longest =====
+    public String dequeue(){
+        if(front == null){
+            return "Sorry we are all out of dogs and cats";
+        }
+        String returnAnimal = front.getValue();
+        front.getNext().setLast(null);
+        front = front.getNext();
+
+        return returnAnimal;
+    }
 
     //======== deQ (animal getter) ====
     public String dequeue(String type){
@@ -36,16 +47,23 @@ public class Gqueue {
             while (thisNode != null) {
                 if (thisNode.getValue() == type) {
 
+                    if(thisNode.getNext() == null && thisNode.getLast() == null){
+                        String returnValue = thisNode.getValue();
+                        front = null;
+                        back = null;
+                        return returnValue;
+                    }
                     if(thisNode.getNext() == null){
-                        thisNode.getNext().setLast(thisNode.getLast());
+                        thisNode.getLast().setNext(null);
 
-                        front = thisNode.getNext();
+                        back = thisNode.getLast();
                         return thisNode.getValue();
 
                     }else if(thisNode.getLast() == null){
-                        thisNode.getLast().setNext(thisNode.getNext());
 
-                        back = thisNode.getLast();
+                        thisNode.getNext().setLast(null);
+
+                        front = thisNode.getNext();
                         return thisNode.getValue();
 
                     }else {
@@ -76,9 +94,9 @@ public class Gqueue {
     private String toString(Gnode currentNode){
 
         if (currentNode.getNext() == null) {
-            return currentNode.getValue() + " -> NULL";
+            return currentNode.getValue() + " <-> BACK";
         }
-        return currentNode.getValue() + " -> " + toString(currentNode.getNext());
+        return currentNode.getValue() + " <-> " + toString(currentNode.getNext());
     }
 
 
