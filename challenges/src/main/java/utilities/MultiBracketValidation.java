@@ -2,32 +2,26 @@ package utilities;
 
 public class MultiBracketValidation {
     public static void main(String[] args) {
-        //System.out.println(multiBracketValidation("{{}}"));
-        //System.out.println(bracketValid("{{{"))
-//        System.out.println("Should be true: " + multiBV("{}"));
-//        System.out.println("Should be false: " + multiBV("[{]}"));
-//        System.out.println("Should be false: " + multiBV("["));
-//        System.out.println("Should be true: " + multiBV("((((code fellows)))){}[]gdhx"));
-//        System.out.println("Should be true: " + multiBV("kjhdsnjcdf"));
-//        System.out.println("Should be false: " + multiBV("}kjhdsnjcdf"));
 
     }
 
     public static boolean multiBV(String input) {
+        //check if input string has less then 2 chars & make sure string doesn't start with a closing bracket
         if(input.length() < 2){ return false; }
         if(input.charAt(0) == '}' || input.charAt(0) == ')' || input.charAt(0) == ']'){
             return false;
         }
+        //set variables
         Q<Character> nextQ = new Q<>();
         char searchChar;
         int i = 0;
         int j;
 
-        while(i < input.length()){
-            searchChar = input.charAt(i);
+        while(i < input.length()){ //This is one of the while loops that will be used to cycle through all chars in string
+            searchChar = input.charAt(i); //set search char
             j = i + 1;
-
-            if(j > input.length()){
+                                     //check if j is bigger then length then make sure that there isn't a left over bracket in q
+            if(j > input.length()){  // or that the last left over char of string is a bracket
                 if (nextQ.size() > 0 || searchChar == '(' || searchChar == ')'
                     || searchChar == '{' || searchChar == '}'
                     || searchChar == '[' || searchChar == ']'){
@@ -36,32 +30,32 @@ public class MultiBracketValidation {
                     return true;
                 }
             }
-
+                    // This do loop allows me to keep searching the string if I come across back to back ((( ect
             do{
-                if(nextQ.size() > 0 && j > input.length()){
-                    return false;
+                if(nextQ.size() > 0 && j > input.length()){ // if j is bigger then length and there
+                    return false;                           // is something in the Q then not all brackets were closed
                 }
-                if(nextQ.size() > 0){
+                if(nextQ.size() > 0){                   // check if Q has something then deQ it and assign its value as new search char
                     searchChar = nextQ.dequeueFromFront();
                 }
-                while (j < input.length()){
-                    if(doesBreak(searchChar, input.charAt(j))){
+                while (j < input.length()){  // This loop allows me to compare search char to to each char in string until it closes or throws a false
+                    if(doesBreak(searchChar, input.charAt(j))){ //send to switch statement to check if an illegal char is found
                         return false;
                     }
-                    if(doesClose(searchChar, input.charAt(j))){
-                        break;
+                    if(doesClose(searchChar, input.charAt(j))){ // send to switch statement to check if closing bracket is found
+                        break;                                 // if found break out of while loop into do loop
                     }
-                    if(searchChar == input.charAt(j)){
-                        nextQ.enqueueToFront(input.charAt(j));
-                    }
+                    if(searchChar == input.charAt(j)){         // if matching brackets are found send to Q continue searching with first search char
+                        nextQ.enqueueToFront(input.charAt(j)); // a matching closing bracket will have to be found for this one before being allowed
+                    }                                          // to leave the do loop and get another char to search with
 
-                 j++;
+                 j++;                                         // increment j to compare search char to next char
                 }
-                j++;
-                i = j;
-            }while (nextQ.size() > 0);
+                j++;                                          // increment j if a closing bracket was found and while loop was broken out before j incremented
+                i = j;                                        // set i to j in case this goes back out to th first while loop so that we don't research chars
+            }while (nextQ.size() > 0);  //check if any chars in Q before letting it back out to the first while
         }
-    return true;
+    return true;                       // if we make it here all brackets were closed :)
     }
 
     //====================== does close ======================
@@ -87,7 +81,6 @@ public class MultiBracketValidation {
         }
     }
 
-
     //====================== does break ======================
     public static boolean doesBreak(char open, char close) {
         switch (open) {
@@ -110,121 +103,5 @@ public class MultiBracketValidation {
                 return false;
         }
     }
-
-    //======================================================================
-    public boolean multiBracketValidation(String input) {
-        Q<Character> open = new Q<>();
-        int i = 0;
-        char c;
-
-        if (input.length() < 0) {
-            return false;
-        }
-
-        while (i < input.length()) {
-            c = input.charAt(i);
-            // if(Pattern.matches("[({[]^", c){}
-            if (c == '[' || c == '(' || c == '{') {
-
-                open.enqueueToFront(c);
-
-
-            } else if (c == ']' || c == ')' || c == '}') {
-
-                if (c == ']' && open.peek().equals('[')) {
-                    open.dequeueFromFront();
-                } else if (c == ')' && open.peek().equals('(')) {
-                    open.dequeueFromFront();
-                } else if (c == '}' && open.peek().equals('{')) {
-                    open.dequeueFromFront();
-                } else {
-
-                    return false;
-                }
-
-
-                i++;
-            }
-            if (open.size() > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean bracketValid(String input){
-        int i = 0;
-        char searchChar;
-        boolean isTrue;
-
-        while (i < input.length()){
-            searchChar = input.charAt(i);
-                if (searchChar == '[' || searchChar == '(' || searchChar == '{'){
-                    isTrue = switchTest(searchChar, input, i);
-
-                    if(isTrue == false){
-                        return false;
-                    }
-                }
-        i++;
-        }
-
-     return true;
-    }
-
-
-    public static boolean switchTest(char searchChar, String input, int index) {
-        int j = 0;
-
-
-        while (index < input.length()) {
-            //searchChar = input.charAt(index);
-
-           // if (searchChar == '[' || c == '(' || c == '{') {
-                j = index + 1;
-
-                switch (searchChar) {
-                    case '[':
-                        while (j < input.length()) {
-                            if (input.charAt(j) == '(' || input.charAt(j) == '{') {
-                                return false;
-                            } else if (input.charAt(j) == ']') {
-                                break;
-                            } else if (input.charAt(j) == '[') {
-                                switchTest(searchChar,input, j);
-                            }
-                            j++;
-                        }
-                    break;
-                case '(':
-                    while (j < input.length()) {
-                        if (input.charAt(j) == '[' || input.charAt(j) == '{') {
-                            return false;
-                        } else if (input.charAt(j) == ')') {
-                            break;
-                        } else if (input.charAt(j) == '(') {
-                            switchTest(searchChar,input, j);
-                        }
-                        j++;
-                    }
-                    return false;
-                case '{':
-                    while (j < input.length()) {
-                        if (input.charAt(j) == '[' || input.charAt(j) == '(') {
-                            return false;
-                        } else if (input.charAt(j) == '}') {
-                            break;
-                        } else if (input.charAt(j) == '{') {
-                            switchTest(searchChar,input, j);
-                        }
-                        j++;
-                    }
-                    return true;
-                default:
-                    break;
-                }
-            }
-        return false;
-        }
-    }
+}
 
