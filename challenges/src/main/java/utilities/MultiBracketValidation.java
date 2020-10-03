@@ -51,13 +51,14 @@ public class MultiBracketValidation {
 
                  j++;                                         // increment j to compare search char to next char
                 }
-                j++;                                          // increment j if a closing bracket was found and while loop was broken out before j incremented
-                i = j;                                        // set i to j in case this goes back out to th first while loop so that we don't research chars
+                j++;                                         // increment j if a closing bracket was found and while loop was broken out before j incremented
+                i = j;                                       // set i to j in case this goes back out to th first while loop so that we don't research chars
             }while (nextQ.size() > 0);  //check if any chars in Q before letting it back out to the first while
         }
     return true;                       // if we make it here all brackets were closed :)
     }
 
+    // Borrowed switch idea from Paul.... and not giving it back :)
     //====================== does close ======================
     public static boolean doesClose(char open, char close) {
         switch (open) {
