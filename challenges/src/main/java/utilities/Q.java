@@ -11,6 +11,11 @@ public class Q<T> {
         this.back = null;
     }
 
+    //======== isEmpty ====================
+    public boolean isEmpty(){
+        if (front == null){return true;}
+        return false;
+    }
     //======== size =======================
     public int size(){
         Gnode<T> thisNode = front;
