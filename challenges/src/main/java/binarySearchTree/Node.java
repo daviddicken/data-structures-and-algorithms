@@ -21,7 +21,6 @@ public class Node{
 
     //========= Getters & Setters =======
 
-
     public int getValue() {
         return value;
     }

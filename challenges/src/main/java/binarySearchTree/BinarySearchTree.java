@@ -3,6 +3,7 @@ package binarySearchTree;
 class BinarySearchTree {
     private Node root;
 
+    //====== Constructor ===============
     public BinarySearchTree() {
         this.root = null;
     }

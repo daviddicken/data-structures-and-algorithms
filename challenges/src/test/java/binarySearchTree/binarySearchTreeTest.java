@@ -13,14 +13,29 @@ public class binarySearchTreeTest {
         testTree.addNode( 6);
         testTree.addNode( 8);
 
-        // I have no idea where the null is coming from but happy that i got a readable toString for now
-        // need to come back and figure out how to get rid of the null
         assertEquals("6 8 10 20 ", testTree.toString());
-//
+
         testTree.addNode(30);
         testTree.addNode(2);
 
         assertEquals("2 6 8 10 20 30 ", testTree.toString());
+
+    }
+
+    @Test
+    public void binaryTreeTest(){
+        Tree testTree = new Tree();
+
+        testTree.addBinaryTreeNode(1);
+        testTree.addBinaryTreeNode(2);
+        testTree.addBinaryTreeNode(3);
+        testTree.addBinaryTreeNode(4);
+        testTree.addBinaryTreeNode(5);
+        testTree.addBinaryTreeNode(6);
+        testTree.addBinaryTreeNode(7);
+        testTree.addBinaryTreeNode(8);
+
+        System.out.println(testTree.toString());
 
     }
 }
