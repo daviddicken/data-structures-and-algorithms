@@ -25,17 +25,25 @@ public class binarySearchTreeTest {
     @Test
     public void binaryTreeTest(){
         Tree testTree = new Tree();
+        Tree emptyTree = new Tree();
 
-        testTree.addBinaryTreeNode(1);
-        testTree.addBinaryTreeNode(2);
-        testTree.addBinaryTreeNode(3);
-        testTree.addBinaryTreeNode(4);
-        testTree.addBinaryTreeNode(5);
-        testTree.addBinaryTreeNode(6);
-        testTree.addBinaryTreeNode(7);
-        testTree.addBinaryTreeNode(8);
+        testTree.addBinaryTreeNode(testTree.getRoot(), 1);
+        testTree.addBinaryTreeNode(testTree.getRoot(), 2);
+        testTree.addBinaryTreeNode(testTree.getRoot(), 3);
+        testTree.addBinaryTreeNode(testTree.getRoot(), 4);
+        testTree.addBinaryTreeNode(testTree.getRoot(), 5);
+        testTree.addBinaryTreeNode(testTree.getRoot(), 6);
 
-        System.out.println(testTree.toString());
+        //in order test
+        assertEquals("[4, 2, 5, 1, 6, 3]", testTree.inOrder().toString());
+        testTree.addBinaryTreeNode(testTree.getRoot(), 7);
+        assertEquals("[4, 2, 5, 1, 6, 3, 7]", testTree.inOrder().toString());
+
+        //assertEquals("[]", emptyTree.inOrder().toString());
+
+        System.out.println("PreOrder: " + testTree.preOrder().toString());
+        System.out.println("InOrder: " + testTree.inOrder().toString());
+        System.out.println("PostOrder: " + testTree.postOrder().toString());
 
     }
 }
