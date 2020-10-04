@@ -1,51 +1,57 @@
 package binarySearchTree;
 
 import utilities.Q;
-
-import java.lang.reflect.Array;
-import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 
 public class Tree {
+    ArrayList<Integer> arrBuild = new ArrayList<>();
     private Node root;
 
-    //====== Constructor =========
+    //====== Constructor ==============
     public Tree() {
         this.root = null;
     }
 
-    //======= Add node =============
+    //======= Add node ==================
     //https://www.geeksforgeeks.org/insertion-in-a-binary-tree-in-level-order/
-    public void addBinaryTreeNode(Node current, int value) {
-        if (current == null) {
+    public void addBinaryTreeNode( int value) {
+        if (root == null) {
             root = new Node(value);
             return;
         }
-        Q<Node> nodeQ = new Q<Node>();
-        nodeQ.enqueueToBack(current);
+        Node current = root;
+        Q<Node> nodeQ = new Q<>();    // Q to hold nodes as I work through the tree
+        nodeQ.enqueueToBack(current); // Place current node in Q
 
         while (!nodeQ.isEmpty()) {
-            current = nodeQ.peek();
-            nodeQ.dequeueFromFront();
+            current = nodeQ.peek();   // Set current node to node at front of Q
+            nodeQ.dequeueFromFront(); // Remove that node from Q
 
-            if (current.getLeftChild() == null) {
-                current.setLeftChild(new Node(value));
-                break;
-            } else {
+            if (current.getLeftChild() == null) {       // if left child is empty place
+                current.setLeftChild(new Node(value));  // set left child to new node
+                break;                                  // exit
+            } else {                                    // if left child has node place node in back of Q
                 nodeQ.enqueueToBack(current.getLeftChild());
             }
 
-            if (current.getRightChild() == null) {
-                current.setRightChild(new Node(value));
-                break;
+            if (current.getRightChild() == null) {      // if let node was empty check if right node is empty
+                current.setRightChild(new Node(value)); // set right node to new node if it was empty
+                break;                                  // exit
             } else {
-                nodeQ.enqueueToBack(current.getRightChild());
+                nodeQ.enqueueToBack(current.getRightChild()); //if right node has node place it in the back of the Q
             }
         }
     }
 
+    //=========== toArray ==========================
+    public Integer[] toArray(ArrayList<Integer> list) throws Exception {
+        if(list == null){
+            throw new Exception("List given passed into toArray was empty");
+        }
+        return list.toArray(new Integer[0]);
+    }
+
     //=========== pre order ========================
-    ArrayList<Integer> arrBuild = new ArrayList<>();
     public ArrayList preOrder(){
 
         arrBuild = new ArrayList<>();
@@ -81,7 +87,6 @@ public class Tree {
         postOrder(node.getRightChild());
         arrBuild.add(node.getValue());
 
-
         return arrBuild;
     }
 
@@ -105,21 +110,6 @@ public class Tree {
         return arrBuild;
     }
 
-
-//        Q tempQ = new Q();System.out.println(tempQ.toString());
-//
-//        int[] treeArr = new int[tempQ.size()];
-//        for(int i =0; i < tempQ.size(); i++){
-//            treeArr
-//            treeArr[i] = (int)tempQ.dequeueFromFront();
-//            System.out.println(treeArr[i]);
-//        }
-//        treeArr.
-//    return treeArr;
-//    }
-
-
-//Think to sting might not work need to just make a in order method to test with
     //========= In Order toString ===========
     private static String str = "";  // created my string outside, but it doesn't feel right. will look into better implementation.
     public String toString(){

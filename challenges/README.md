@@ -10,6 +10,7 @@
 [Stacks and Queues](Stacks-&-Queues)
 [Pseudo Queue](Pseudo-Queue)
 [Multi Bracket Validation](Multi-Bracket-Validation)
+[Binary Tree and BST Implementation](Binary-Tree-and-BST-Implementation)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -36,7 +37,7 @@ Create a new array that is + 1 in length from original Array. Find middle index 
 ### Whiteboard
 [whiteboard](whiteboards/ArrayShift.png )
 
-___________________________________________________________________________________
+-----------------------------------------------------
 
 # Binary Search
 This program will take a sorted int array and an integer and search through the array for the integer and return the index of where integer is located or -1 if integer is not found.
@@ -56,7 +57,7 @@ repeat till found ? return -1 if not found
 ### Whiteboard
 [whiteboard](whiteboards/binarySearch.png )
 
-____________________________________________________________________________________
+-------------------------------------------------------
 # Linked List
 This library will create a linked list of int's. It will have the ability to add a new node to the head and will also have a toString method
 
@@ -69,8 +70,8 @@ Time: O(n)
 Make a Node constructor and a Linked List constructor
 create a linked list with a tail and head node both set to null 
 When adding to list if head isn't empty store current head in a temp var create new head node and move old head to the .next of new head
-________________________________________________________________________________________
 
+-------------------------------------------------------
 # Linked List Insertions
 Need to add a method to append a new node to the end of our linked list.
 Need to add a method to insert a node with a new value before a node with a value entered by user
@@ -95,8 +96,7 @@ If found current node.next = new node & new node.next = next node
 
 [whiteboard](whiteboards/ll-insertions.png )
 
-_________________________________________________________________
-
+----------------------------------------------------
 # Search from end
 This method should take an integer from the user and return the value found in the node that many spots from the end
 
@@ -109,6 +109,7 @@ create a size method to be able to find out the size of my list then size - valu
 ### Whiteboard
 [whiteboard](whiteboards/CC7Whiteboard.PNG)
 
+-------------------------------------------------
 # Linked List Zip
 This method will take in two linked list and merge them together to 
 return a linked list containing all nodes sorted every other one.
@@ -129,8 +130,7 @@ Ahead.next to Bhead store Bhead.next in tempB point Bhead.next to tempA ect ect
 ### Whiteboard
 [whiteboard](whiteboards/CCo8.PNG)
 
-//____________________________________________________________
-
+-----------------------------------------------------
 # Stacks & Queues
 Create a Queue class, and a Stack class 
 The Queue class will have methods:
@@ -151,8 +151,8 @@ to ensure that nodes are being added and remove from the correct side of the sta
 ### Efficiency 
 Time O(1)
 Space O(1)
-//---------------------------------------------------------
 
+--------------------------------------------------
 # Pseudo Queue
 Create a Pseudo Queue class that will have two methods: enqueue & dequeue
 It will only be able to use 2 stacks internally
@@ -173,7 +173,7 @@ Then we can add or remove a node to the new current stack.
 ### Whiteboard
 [whiteboard](whiteboards/CC11.PNG)
 
-//---------------------------------------------------------
+-------------------------------------------------
 # Multi Bracket Validation
 Input : string
 Output: Boolean 
@@ -193,4 +193,25 @@ Lots and lots of if statements and while loops even threw a do loop in for good 
 ### Whiteboard
 
 [whiteboard](whiteboards/bracketWB.jpg)
+
+---------------------------------------------------
+# Binary Tree and BST Implementation 
+A Binary Tree class with preOrder, inOrder and postOrder methods
+And a Binary Search Tree with add and contains methods
+
+### Challenges
+To use recursion to traverse through the tree's
+
+### Approach
+Add to binary tree - traverse through the tree row by row until an empty node and place new node in empty spot
+Add to BST - traverse through tree comparing value to add with current node value if value to add is less than 
+value in current node traverse to the left child. If value to add is greater than current node value traverse 
+to the right child. If there is not a node in the path traversed to set that child to the new node. If not 
+compare and continue to traverse the tree.
+
+inOrder/preOrder/postOrder - recursively traverse through the tree adding node value to the array list as you traverse.
+Placing the value in array list either before traversing both children, in between traversing the children, or after 
+traversing both children, depending on which method is used to traverse.
+
+contains - traverse through tree then check array list to see if it contains the value that was entered
 
