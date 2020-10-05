@@ -6,6 +6,28 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
+    @Test public void linkedlistTest(){
+    // redoing linklist test for code challenge 5
+    // test insert which takes a value and adds it to the head of a list
+    // test includes which takes a value and returns a boolean if value exist in list
+    // test toString
+    //    Can successfully instantiate an empty linked list
+    LinkedList testList = new LinkedList();
+    assertEquals("NULL", testList.toString());
+    testList.insert(5);
+    assertEquals("{5} ->  NULL", testList.toString());
+    testList.insert(8);
+    assertEquals("{8} -> {5} ->  NULL", testList.toString());
+        System.out.println("aa " + testList.toString());
+    //    Can properly insert into the linked list
+    //    The head property will properly point to the first node in the linked list
+    //    Can properly insert multiple nodes into the linked list
+    //    Will return true when finding a value within the linked list that exists
+    //    Will return false when searching for a value in the linked list that does not exist
+    //    Can properly return a collection of all the values that exist in the linked list
+
+
+    }
     @Test public void textZip(){
         LinkedList a = new LinkedList();
         a.insertEnd(1);
