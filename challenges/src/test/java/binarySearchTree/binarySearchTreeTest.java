@@ -72,4 +72,27 @@ public class binarySearchTreeTest {
         assertEquals("[4, 5, 2, 6, 3, 1]", testTree.postOrder().toString());
 
     }
+    @Test
+    public void maxSearchTest() throws Exception {
+        Tree testTree = new Tree();
+        
+        assertThrows(Exception.class, ()->testTree.findMaxValue());
+
+        testTree.addBinaryTreeNode(100);
+        assertEquals(100, testTree.findMaxValue());
+
+        testTree.addBinaryTreeNode(250);
+        testTree.addBinaryTreeNode(10);
+        testTree.addBinaryTreeNode(5);
+        testTree.addBinaryTreeNode(300);
+        testTree.addBinaryTreeNode(500);
+        testTree.addBinaryTreeNode(40);
+        testTree.addBinaryTreeNode(12);
+
+        assertEquals(500, testTree.findMaxValue());
+
+
+
+
+    }
 }

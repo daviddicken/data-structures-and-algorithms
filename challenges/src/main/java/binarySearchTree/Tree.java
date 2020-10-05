@@ -6,10 +6,37 @@ import java.util.ArrayList;
 public class Tree {
     ArrayList<Integer> arrBuild = new ArrayList<>();
     private Node root;
+    public int max;
 
     //====== Constructor ==============
     public Tree() {
         this.root = null;
+    }
+
+    //======= Find Max ==================
+    public int findMaxValue() throws Exception {
+        if(root != null){
+//
+           max = root.getValue();
+            return findMaxValue(root);
+        }
+       // throw null pointer exception
+        throw new NullPointerException("This tree is empty");
+    }
+    //------- Helper --------------------
+    private int findMaxValue(Node current){
+        // Base
+        if(current == null){
+            return max;
+        }
+
+        if(current.getValue() > max){
+            max = current.getValue();
+        }
+        findMaxValue(current.getLeftChild());
+        findMaxValue(current.getRightChild());
+
+        return max;
     }
 
     //======= Add node ==================
@@ -19,6 +46,7 @@ public class Tree {
             root = new Node(value);
             return;
         }
+        //---------- Helper --------------
         Node current = root;
         Q<Node> nodeQ = new Q<>();    // Q to hold nodes as I work through the tree
         nodeQ.enqueueToBack(current); // Place current node in Q
