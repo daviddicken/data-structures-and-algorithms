@@ -16,25 +16,24 @@ public class Tree {
     //======= Find Max ==================
     public int findMaxValue() throws Exception {
         if(root != null){
-//
-           max = root.getValue();
-            return findMaxValue(root);
+           max = root.getValue();       //set max to root's value then pass root to the helper
+           return findMaxValue(root);
         }
        // throw null pointer exception
         throw new NullPointerException("This tree is empty");
     }
     //------- Helper --------------------
     private int findMaxValue(Node current){
-        // Base
-        if(current == null){
-            return max;
+        // Base                             // when a null node is reached return max to start stepping back through the recursive
+        if(current == null){                // calls on the stack
+            return max;                     // If all leaves have been reached and the call stack depleted, return max
         }
 
-        if(current.getValue() > max){
+        if(current.getValue() > max){       //check value and set to max if it is greater
             max = current.getValue();
         }
-        findMaxValue(current.getLeftChild());
-        findMaxValue(current.getRightChild());
+        findMaxValue(current.getLeftChild());  // recursively move down the left side of tree
+        findMaxValue(current.getRightChild()); // then the right side
 
         return max;
     }

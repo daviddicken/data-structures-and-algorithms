@@ -75,9 +75,11 @@ public class binarySearchTreeTest {
     @Test
     public void maxSearchTest() throws Exception {
         Tree testTree = new Tree();
-        
+
+        // test that exception is thrown when tree is empty. This line of code was thanks to Vij
         assertThrows(Exception.class, ()->testTree.findMaxValue());
 
+        // test that it can return the max value when the tree only has one node
         testTree.addBinaryTreeNode(100);
         assertEquals(100, testTree.findMaxValue());
 
@@ -89,6 +91,7 @@ public class binarySearchTreeTest {
         testTree.addBinaryTreeNode(40);
         testTree.addBinaryTreeNode(12);
 
+        // test that it can find the max value in a full tree
         assertEquals(500, testTree.findMaxValue());
 
 
