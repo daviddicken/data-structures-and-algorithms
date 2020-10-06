@@ -11,6 +11,7 @@
 [Pseudo Queue](Pseudo-Queue)
 [Multi Bracket Validation](Multi-Bracket-Validation)
 [Binary Tree and BST Implementation](Binary-Tree-and-BST-Implementation)
+[Find Maximum Value](Find-Maximum-Value)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -215,3 +216,21 @@ traversing both children, depending on which method is used to traverse.
 
 contains - traverse through tree then check array list to see if it contains the value that was entered
 
+//---------------------------------------------------------
+#  Find Maximum Value
+This is a method that can be ran on an int binary tree. It will return the largest int in the tree.
+output: int
+
+### Challenges
+To check every node on the tree since this is a binary tree and not a binary search tree. 
+Then to keep track of the largest int in the tree.
+
+### Approach and Efficiency 
+Time: O(n)
+Space: O(1)
+First create a global int variable to hold the max. In the main method test that tree is not empty. If it's not then 
+set max.value to root.value and pass root to the helper method that will do a depth traversal through the tree
+comparing max to current node.value and replacing max with any value that is greater as it traverses.
+
+### Whiteboard
+[whiteboard](whiteboards/maxNumWB.png)
