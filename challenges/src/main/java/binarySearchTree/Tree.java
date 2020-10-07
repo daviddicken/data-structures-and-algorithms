@@ -37,6 +37,49 @@ public class Tree {
 
         return max;
     }
+    //======= Sum binary tree values breadth traversal============
+    public int sumBtree(){
+        if(root == null){ throw new NullPointerException();};
+        Q<Node> theQ = new Q();
+        int treeSum = 0;
+        Node current = root;
+        theQ.enqueueToBack(current);
+
+        while(!theQ.isEmpty()){
+            current = theQ.dequeueFromFront();
+            treeSum += current.getValue();
+
+            if(current.getLeftChild() != null){
+                theQ.enqueueToBack(current.getLeftChild());
+            }
+            if(current.getRightChild() != null){
+                theQ.enqueueToBack(current.getRightChild());
+            }
+        }
+        return treeSum;
+    }
+
+    //======= binary tree breadth traversal =============
+    public ArrayList<Integer> treeList(){
+        if(root == null){ throw new NullPointerException();};
+        Q<Node> theQ = new Q();
+        ArrayList<Integer> treeArr = new ArrayList<>();
+        Node current = root;
+        theQ.enqueueToBack(current);
+
+        while(!theQ.isEmpty()){
+            current = theQ.dequeueFromFront();
+            treeArr.add(current.getValue());
+
+            if(current.getLeftChild() != null){
+                theQ.enqueueToBack(current.getLeftChild());
+            }
+            if(current.getRightChild() != null){
+                theQ.enqueueToBack(current.getRightChild());
+            }
+        }
+        return treeArr;
+    }
 
     //======= Add node ==================
     //https://www.geeksforgeeks.org/insertion-in-a-binary-tree-in-level-order/
@@ -45,7 +88,7 @@ public class Tree {
             root = new Node(value);
             return;
         }
-        //---------- Helper --------------
+
         Node current = root;
         Q<Node> nodeQ = new Q<>();    // Q to hold nodes as I work through the tree
         nodeQ.enqueueToBack(current); // Place current node in Q
