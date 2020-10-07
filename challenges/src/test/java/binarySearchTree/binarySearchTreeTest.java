@@ -93,6 +93,31 @@ public class binarySearchTreeTest {
 
         // test that it can find the max value in a full tree
         assertEquals(500, testTree.findMaxValue());
+    }
+
+    @Test
+    public void traverseBreadthTest(){
+        Tree testTree = new Tree();
+
+        //test that it throws an exception if a empty tree is passed in
+        assertThrows(Exception.class, ()->testTree.treeList());
+
+        //build out tree
+        testTree.addBinaryTreeNode(10);
+        testTree.addBinaryTreeNode(5);
+        testTree.addBinaryTreeNode(20);
+        testTree.addBinaryTreeNode(100);
+        testTree.addBinaryTreeNode(6);
+        testTree.addBinaryTreeNode(4);
+        testTree.addBinaryTreeNode(2);
+
+        assertEquals("[10, 5, 20, 100, 6, 4, 2]", testTree.treeList().toString());
+
+        //test sumBtree
+        assertEquals(147, testTree.sumBtree());
+        testTree.addBinaryTreeNode(100);
+        assertEquals(247, testTree.sumBtree());
+
 
 
 

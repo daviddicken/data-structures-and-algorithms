@@ -12,6 +12,7 @@
 [Multi Bracket Validation](Multi-Bracket-Validation)
 [Binary Tree and BST Implementation](Binary-Tree-and-BST-Implementation)
 [Find Maximum Value](Find-Maximum-Value)
+[Binary Tree Breadth Traversal](Binary-Tree-Breadth-Traversal)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -216,7 +217,7 @@ traversing both children, depending on which method is used to traverse.
 
 contains - traverse through tree then check array list to see if it contains the value that was entered
 
-//---------------------------------------------------------
+---------------------------------------------------------
 #  Find Maximum Value
 This is a method that can be ran on an int binary tree. It will return the largest int in the tree.
 output: int
@@ -234,3 +235,27 @@ comparing max to current node.value and replacing max with any value that is gre
 
 ### Whiteboard
 [whiteboard](whiteboards/maxNumWB.png)
+
+---------------------------------------------------------------
+# Binary Tree Breadth Traversal
+Traverse through a binary tree with breadth traversal and save each node value in an
+ArrayList as you come across the node.
+input = binary tree
+output = arraylist
+Stretch goal: traverse through a binary tree with breadth traversal and sum up
+the value of the nodes as you go.
+input = binary tree
+output = int
+
+### Challenges
+To get node values from both sides of the tree evenly
+
+### Efficiency & Approach
+Time O(n)
+Space O(n)
+Create a queue and enqueue left and right child of current node. grab current node value 
+then dequeue node from queue to replace current node and repeat. Do this until 
+all leaves have been reached.
+
+### Whiteboard
+[whiteboard](whiteboards/cc17.png)
