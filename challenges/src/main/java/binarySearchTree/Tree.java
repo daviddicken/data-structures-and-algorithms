@@ -118,7 +118,7 @@ public class Tree {
         if(list == null){
             throw new Exception("List given passed into toArray was empty");
         }
-        return list.toArray(new Integer[0]);
+        return list.toArray(new  Integer[0]);
     }
 
     //=========== pre order ========================
