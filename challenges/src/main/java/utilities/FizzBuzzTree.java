@@ -41,26 +41,6 @@ public class FizzBuzzTree<T> {
         }
     }
 
-
-
-    //========== Getters & Setters ===
-
-    public gTreeNode getRoot() {
-        return root;
-    }
-
-    public void setRoot(gTreeNode root) {
-        this.root = root;
-    }
-
-    public static String getStr() {
-        return str;
-    }
-
-    public static void setStr(String str) {
-        FizzBuzzTree.str = str;
-    }
-
     //========== FIZZ BUZZ ============
     FizzBuzzTree<String> newtree = new FizzBuzzTree<>();
     public FizzBuzzTree<String> fizzbuzz(FizzBuzzTree<Integer> inTree, FizzBuzzTree<String> newtree) {
@@ -100,7 +80,23 @@ public class FizzBuzzTree<T> {
 
 
 
+    //========== Getters & Setters ===
 
+    public gTreeNode getRoot() {
+        return root;
+    }
+
+    public void setRoot(gTreeNode root) {
+        this.root = root;
+    }
+
+    public static String getStr() {
+        return str;
+    }
+
+    public static void setStr(String str) {
+        FizzBuzzTree.str = str;
+    }
 
 
     //======== toString ==============
