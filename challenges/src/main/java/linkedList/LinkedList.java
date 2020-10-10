@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.ArrayList;
+
 public class LinkedList {
 
     public Node head;
@@ -21,8 +23,8 @@ public class LinkedList {
 
 //======== Linked list constructor
     public LinkedList() {
-        this.head = null;
-        this.tail = null;
+        head = null;
+        tail = null;
     }
 
 //======== Size ====================
@@ -37,7 +39,7 @@ public class LinkedList {
         return length;
 
     }
-    //=========
+    //========= Insert ========================
     public void insert(int num) {
         Node node = new Node(num);
 
@@ -53,7 +55,7 @@ public class LinkedList {
         }
     }
 
-    //-----------------------------------------
+    //============= Insert end ================
     public void insertEnd(int value) {
         Node newNode = new Node(value);
 
@@ -67,7 +69,7 @@ public class LinkedList {
         }
     }
 
-    //----------------------------------
+    //============== To String =================
     public String toString() {
         // Got great guidance from Jack Nelson on a better way to create the toString method
         if (this.head == null) {
@@ -87,7 +89,7 @@ public class LinkedList {
         return returnString;
     }
 
-    //-------------------------------------------
+    //============== Search List ========================
     public boolean listSearch(int searchValue) {
         Node currentNode = this.head;
 
@@ -101,7 +103,6 @@ public class LinkedList {
     }
 
 //============= Search from back with doubly linked list =============
-
     public int fromTail(int placesFromBack) throws Exception {
         Node currentNode = this.tail;
         if(placesFromBack == 0) {
@@ -138,12 +139,10 @@ public class LinkedList {
             currentNode = currentNode.next;
             counter++;
         }
-
         return currentNode.value;
-
     }
 
-    //--------------------------------------
+    //============== Find Middle =================
     public int findMiddleNode() throws Exception {
         Node currentNode = this.tail;
         if(head == null){
@@ -155,10 +154,9 @@ public class LinkedList {
             currentNode = currentNode.last;
         }
         return currentNode.value;
-
     }
 
-    //---------------------------------------
+    //================= Insert Before ===============
     public void insertBefore(int searchValue, int newValue) {
         Node newNode = new Node(newValue);
         Node lastNode = head;
@@ -182,7 +180,7 @@ public class LinkedList {
         }
     }
 
-    //--------------------------------------------------
+    //=============== Insert After ================
     public void insertAfter(int searchValue, int newValue) {
         Node newNode = new Node(newValue);
         Node nextNode = head.next;
@@ -205,6 +203,7 @@ public class LinkedList {
         }
     }
 
+    //============= Zip Linked List =================
     public static LinkedList zipLists(LinkedList one, LinkedList two){
         Node currentNode = one.head;
         Node tempA = one.head;
@@ -241,7 +240,23 @@ public class LinkedList {
         }else if(tempB == null && tempA != null) {
             currentNode.next = tempA.next;
         }
-
         return one;
+    }
+    //============ Getters & Setters ===============
+
+    public Node getHead() {
+        return head;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public Node getTail() {
+        return tail;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
     }
 }
