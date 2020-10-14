@@ -1,33 +1,36 @@
 package linkedList;
 
-import linkedList.LinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
+    //================= Linked List Test =====================
     @Test public void linkedlistTest(){
-    // redoing linklist test for code challenge 5
-    // test insert which takes a value and adds it to the head of a list
-    // test includes which takes a value and returns a boolean if value exist in list
-    // test toString
-    //    Can successfully instantiate an empty linked list
+
+    // test that we can successfully instantiate an empty linked list
     LinkedList testList = new LinkedList();
     assertEquals("NULL", testList.toString());
+
+    //test that we can insert a new node to linked list
     testList.insert(5);
     assertEquals("{5} ->  NULL", testList.toString());
+
+
+     // test for inserting multiple nodes
     testList.insert(8);
-    assertEquals("{8} -> {5} ->  NULL", testList.toString());
-        System.out.println("aa " + testList.toString());
-    //    Can properly insert into the linked list
-    //    The head property will properly point to the first node in the linked list
-    //    Can properly insert multiple nodes into the linked list
-    //    Will return true when finding a value within the linked list that exists
-    //    Will return false when searching for a value in the linked list that does not exist
-    //    Can properly return a collection of all the values that exist in the linked list
+    testList.insert(12);
+    assertEquals("{12} -> {8} -> {5} ->  NULL", testList.toString());
 
+    //test that head pointer points to first node in list (last node to be inserted)
+    assertEquals(12, testList.getHead().value);
 
+  // test to see if a value exist or does not exist in a list
+        assertTrue(testList.listSearch(8));
+        assertFalse(testList.listSearch(9));
     }
+
+    //============== Link List Zipper Test ===================
     @Test public void textZip(){
         LinkedList a = new LinkedList();
         a.insertEnd(1);
@@ -43,7 +46,6 @@ public class LinkedListTest {
         b.insertEnd(8);
         b.insertEnd(10);
 
-
         LinkedList expected = new LinkedList();
         expected.insertEnd(1);
         expected.insertEnd(2);
@@ -57,10 +59,6 @@ public class LinkedListTest {
         expected.insertEnd(10);
 
         LinkedList c = LinkedList.zipLists(a, b);
-        System.out.println(c);
-        //String expected = "{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> {7} -> {8} -> {9} -> {10} ->  NULL";
-        //assertEquals(expected, LinkedList.zipLists(a,b).toString());
-        //assertEquals(expected.toString(), LinkedList.zipLists(a,b).toString());
 
         LinkedList bFull = new LinkedList();
         bFull.insertEnd(1);
@@ -73,7 +71,6 @@ public class LinkedListTest {
         oneA.insertEnd(2);
 
         LinkedList d = LinkedList.zipLists(oneA, bFull);
-        System.out.println("oneA 123579" + d);
 
         LinkedList oneB = new LinkedList();
         oneB.insertEnd(2);
@@ -86,16 +83,12 @@ public class LinkedListTest {
         aFull.insertEnd(9);
 
         LinkedList e = LinkedList.zipLists(aFull, oneB);
-        System.out.println("oneB 123579 : " + e);
 
         LinkedList bothOne = new LinkedList();
         bothOne.insertEnd(1);
 
         LinkedList oneForBoth = new LinkedList();
         oneForBoth.insert(2);
-
-        System.out.println(LinkedList.zipLists(bothOne, oneForBoth));
-
     }
 
     @Test public void testTostring() throws Exception {
@@ -112,14 +105,8 @@ public class LinkedListTest {
         even.insert(6);
         even.insert(8);
         even.insert(10);
-        //test.listSearch(2);
-        //test.listSearch(3);
-        //test.insertBefore(9, 8);
-        //empty.insertBefore(12, 3);
-        //test.insertAfter(2,3);
+
 //============= search from end test ====================
-        //assertThrows(test.findFromEnd(1000));
-        //assertEquals("Your link list is shorter then your search value", test.findFromEnd(100));
 
         assertEquals(10, test.findFromEnd(0));
         assertEquals(10,test.fromTail(0));
@@ -131,17 +118,5 @@ public class LinkedListTest {
         //========== test to find middle ========
         assertEquals(6,even.findMiddleNode());
         assertEquals(1,test.findMiddleNode());
-
-        System.out.println(test);
-        //System.out.println(empty.findMiddleNode());
-        System.out.println("From the end: " + test.findFromEnd(0));
-        System.out.println("From the back: " + test.fromTail(3));
-       // String expecting = "{2} -> {1} -> NULL";
-//        assertEquals("Creation of list insertion of nodes and tostring should equal:",expecting, test.toString());
-//        assertTrue(test.listSearch("Expecting true if number is found:",2));
-//        assertFalse("Expecting False if number is not in list: ", test.listSearch(3));
-    }
-
-    private void assertThrows(int fromEnd) {
     }
 }

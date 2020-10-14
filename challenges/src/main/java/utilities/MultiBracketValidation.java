@@ -12,7 +12,7 @@ public class MultiBracketValidation {
             return false;
         }
         //set variables
-        Q<Character> nextQ = new Q<>();
+        Q<Character> nextQ = new Q<Character>();
         char searchChar;
         int i = 0;
         int j;
