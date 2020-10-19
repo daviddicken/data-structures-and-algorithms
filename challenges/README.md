@@ -13,6 +13,7 @@
 [Binary Tree and BST Implementation](Binary-Tree-and-BST-Implementation)
 [Find Maximum Value](Find-Maximum-Value)
 [Binary Tree Breadth Traversal](Binary-Tree-Breadth-Traversal)
+[Insert Sort](Insert-Sort)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -259,3 +260,23 @@ all leaves have been reached.
 
 ### Whiteboard
 [whiteboard](whiteboards/cc17.png)
+
+//------------------------------------------------
+# Insert Sort
+The insert sort method will take and array of integers and return an array of those
+integers organized from smallest to greatest.
+Input - int[]
+Output - int[]
+
+### Challenges
+To move through array passed in comparing and replacing index value as needed without
+losing the index value.
+
+### Efficiency & Approach
+Time O(n^2)
+Space O(1)
+Create a temp variable to hold 
+
+
+
+
