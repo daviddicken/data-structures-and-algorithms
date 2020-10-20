@@ -275,7 +275,12 @@ losing the index value.
 ### Efficiency & Approach
 Time O(n^2)
 Space O(1)
-Create a temp variable to hold 
+
+### Blog
+[Insert Sort Blog](BLOG.md)
+
+### Whiteboard
+[whiteboard](whiteboards/CodeChallenge26InsertSort.PNG)
 
 
 
