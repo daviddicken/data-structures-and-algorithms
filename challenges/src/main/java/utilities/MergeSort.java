@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class MergeSort {
     public int[] mergeSort(int[] arr){
-        int[] n = new int[arr.length];
+        int n = arr.length;
 
-        if( n.length > 1){
-            int mid = n.length/2; // Got help from Jack Nelson with the awesome copy of range :)
+        if( n > 1){
+            int mid = n/2; // Got help from Jack Nelson with the awesome copy of range :)
             int[] left = Arrays.copyOfRange(arr, 0, mid);
             int[] right = Arrays.copyOfRange(arr, mid , arr.length);
 
