@@ -13,6 +13,7 @@ public class HashtableTest {
         ArrayList[] test = new ArrayList[20];
         Hashtable testHash = new Hashtable(test);
 
+        // My kids helped me with these key value pairs. They were awesome rubber duckies :)
         testHash.add("abc", "Bob");
         testHash.add("notBob" , "Sally");
         testHash.add("bobby" , "Dad");
@@ -25,9 +26,11 @@ public class HashtableTest {
         testHash.add("Mom" , "Mom");
         testHash.add("toilet", "Mrs. Poop");
 
+        //System.out.println("contains " + testHash.contains("Bobby"));
+        System.out.println("get value " + testHash.getValue("toilet"));
 
 
-        System.out.println("testHash" + testHash);
+        //System.out.println("testHash" + testHash);
         //System.out.println(testHash.hash("abc"));
     }
 }
