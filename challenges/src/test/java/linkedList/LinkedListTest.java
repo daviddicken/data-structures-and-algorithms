@@ -7,7 +7,6 @@ import static org.junit.Assert.*;
 public class LinkedListTest {
     //================= Linked List Test =====================
     @Test public void linkedlistTest(){
-
     // test that we can successfully instantiate an empty linked list
     LinkedList testList = new LinkedList();
     assertEquals("NULL", testList.toString());
