@@ -22,42 +22,64 @@ public class Hashtable {
             throw new Exception("Please select a larger size for your Hashtable");
         }
 
-//        ArrayList<HashNode<String>> test = new ArrayList<>();
-//        test.
-
-        //LinkedList [] buckets = new LinkedList[size];
         ArrayList [] buckets = new ArrayList[size];
-        for(int i = 0; i < buckets.length; i++){
-            //buckets[i] = new ArrayList<HashNode<String>>();
-            //buckets[i] = new LinkedList();
-           // buckets[i].insert("key","value");
-        }
         Hashtable hashtable = new Hashtable(buckets);
         return hashtable;
     }
 
-    //========== Hash and Add ====================
-    public void add(String key, String value) throws Exception {
+    //========== Contains =======================
+    public boolean contains(String key){
         int hash = hash(key);
-        HashNode<String> newNode = new HashNode<>(key,value);
-
         ArrayList<HashNode<String>> list = buckets[hash];
 
         if(list == null){
-            list = new ArrayList<HashNode<String>>();
-            list.add(newNode);
-            buckets[hash] = list;
+            return false;
         }else{
-            System.out.println("Entered into the else");
             for(int i = 0; i < list.size(); i++){
                 if(list.get(i).getKey() == key) {
-                    System.out.println("Hey Bozo, you already used that key");
-                    throw new Exception("Key has already been used please pick a new key");
+                    return true;
                 }
             }
-            list.add(newNode);
+            return false;
         }
+    }
 
+    //========== Get value =======================
+    public String getValue(String key){
+
+        if(this.contains(key)){
+            int hash = hash(key);
+            ArrayList<HashNode<String>> list = buckets[hash];
+
+            for(int i = 0; i < list.size(); i++){
+                if(list.get(i).getKey() == key) {
+                   return list.get(i).getValue();
+                }
+            }
+        }
+        return "Key not found";
+
+    }
+
+    //========== Hash and Add ====================
+    public void add(String key, String value) throws Exception {
+
+        if (contains(key)) {
+            throw new Exception("Key has already been used please pick a new key");
+        } else {
+            int hash = hash(key);
+            HashNode<String> newNode = new HashNode<>(key, value);
+
+            ArrayList<HashNode<String>> list = buckets[hash];
+
+            if (list == null) {
+                list = new ArrayList<HashNode<String>>();
+                list.add(newNode);
+                buckets[hash] = list;
+            } else {
+                list.add(newNode);
+            }
+        }
     }
 
     //========== Hash ============================
@@ -69,6 +91,9 @@ public class Hashtable {
         }
 
         bucket = bucket % buckets.length;
+        // for some reason I was ending up with a negative number when hashing large strings
+        // Math.abs converts a negative number to a positive number
+        //https://stackoverflow.com/questions/493494/make-a-negative-number-positive
         bucket = Math.abs(bucket);
         return bucket;
     }
@@ -96,9 +121,22 @@ public class Hashtable {
         theString += "]";
         return theString;
     }
-
-    //=========== Getters and Setters ============
-
-
-
 }
+
+//        int hash = hash(key);
+//        HashNode<String> newNode = new HashNode<>(key,value);
+//
+//        ArrayList<HashNode<String>> list = buckets[hash];
+//
+//        if(list == null){
+//            list = new ArrayList<HashNode<String>>();
+//            list.add(newNode);
+//            buckets[hash] = list;
+//        }else{
+//            for(int i = 0; i < list.size(); i++){
+//                if(list.get(i).getKey() == key) {
+//                    throw new Exception("Key has already been used please pick a new key");
+//                }
+//            }
+//            list.add(newNode);
+//        }
