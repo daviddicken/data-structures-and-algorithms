@@ -9,6 +9,9 @@ public class LinkedList {
 
     public class Node {
 
+//        public T tValue;
+//        public T tKey;
+
         public int value;
         public Node next;
         public Node last;
@@ -19,6 +22,14 @@ public class LinkedList {
             next = null;
             last = null;
         }
+
+//        //----- node with generic key value pair------
+//        public Node(T tValue, T tKey) {
+//            this.tValue = tValue;
+//            this.tKey = tKey;
+//            this.next = null;
+//            this.last = null;
+//        }
     }
 
 //======== Linked list constructor
@@ -27,9 +38,10 @@ public class LinkedList {
         tail = null;
     }
 
+
 //======== Size ====================
     public int size(){
-        Node currentNode = this.head;      
+        Node currentNode = this.head;
         int length = 0;
 
         while (currentNode != null) {
@@ -54,6 +66,23 @@ public class LinkedList {
 
         }
     }
+
+    //========= Key:Value insert ===============
+//    public void insert(String key, String value) {
+//        Node node = new Node<>(key, value);
+//
+//        if (head == null) {
+//            head = node;
+//            tail = node;
+//        } else {
+//            Node tempNode = head;
+//            head = node;
+//            node.next = tempNode;
+//            tempNode.last = node;
+//
+//        }
+//    }
+
 
     //============= Insert end ================
     public void insertEnd(int value) {
