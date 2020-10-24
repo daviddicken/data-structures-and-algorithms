@@ -1,33 +1,62 @@
 package hashtable;
 
+import linkedList.LinkedList;
+import utilities.HashNode;
+
+import java.util.ArrayList;
+
 public class Hashtable {
     //========= Hashmap constructor ================
+    //LinkedList [] buckets = new LinkedList[1];
+    ArrayList<HashNode<String>> [] buckets = new ArrayList[1];
 
-    int [] buckets = new int[1];
-
-    public Hashtable(int[] buckets) {
+    //public Hashtable(LinkedList[] buckets) {this.buckets = buckets;}
+    public Hashtable(ArrayList [] buckets) {
         this.buckets = buckets;
     }
 
     //========= Method to create and return a hashtable =======
     public Hashtable createHashtable(int size) throws Exception {
-        //Catch a pointless hashmap
+        //Catch a pointless hashtable
         if(size < 2){
-            throw new Exception("Please select a larger size for your Hashmap");
+            throw new Exception("Please select a larger size for your Hashtable");
         }
-        int [] buckets = new int[size];
+
+//        ArrayList<HashNode<String>> test = new ArrayList<>();
+//        test.
+
+        //LinkedList [] buckets = new LinkedList[size];
+        ArrayList [] buckets = new ArrayList[size];
         for(int i = 0; i < buckets.length; i++){
-            // populate indexs with linked list here
+            //buckets[i] = new ArrayList<HashNode<String>>();
+            //buckets[i] = new LinkedList();
+           // buckets[i].insert("key","value");
         }
-        // Maybe write a for loop to populate each index with an arraylist
         Hashtable hashtable = new Hashtable(buckets);
         return hashtable;
     }
 
     //========== Hash and Add ====================
-    public void add(String key, String value){
+    public void add(String key, String value) throws Exception {
         int hash = hash(key);
-        //buckets[hash]
+        HashNode<String> newNode = new HashNode<>(key,value);
+
+        ArrayList<HashNode<String>> list = buckets[hash];
+
+        if(list == null){
+            list = new ArrayList<HashNode<String>>();
+            list.add(newNode);
+            buckets[hash] = list;
+        }else{
+            System.out.println("Entered into the else");
+            for(int i = 0; i < list.size(); i++){
+                if(list.get(i).getKey() == key) {
+                    System.out.println("Hey Bozo, you already used that key");
+                    throw new Exception("Key has already been used please pick a new key");
+                }
+            }
+            list.add(newNode);
+        }
 
     }
 
@@ -40,6 +69,7 @@ public class Hashtable {
         }
 
         bucket = bucket % buckets.length;
+        bucket = Math.abs(bucket);
         return bucket;
     }
 
@@ -48,8 +78,19 @@ public class Hashtable {
         String theString = "[\n";
 
         for(int i = 0; i < buckets.length; i++){
-           // theString += i + ": [";
-            theString += String.format("%d: [%d]\n", i, buckets[i]);
+           theString += i + ": [";
+            if(buckets[i] == null){
+                theString += "null";
+            }else{
+                ArrayList<HashNode<String>> list = buckets[i];
+                for(int j = 0; j < list.size(); j++){
+                    if(j > 0){
+                        theString += ", ";
+                    }
+                    theString +=  list.get(j).getKey() +" : " + list.get(j).getValue();
+                }
+            }
+            theString += "]\n";
         }
 
         theString += "]";
@@ -59,11 +100,5 @@ public class Hashtable {
     //=========== Getters and Setters ============
 
 
-    public int[] getBuckets() {
-        return buckets;
-    }
 
-    public void setBuckets(int[] buckets) {
-        this.buckets = buckets;
-    }
 }
