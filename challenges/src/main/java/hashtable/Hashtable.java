@@ -7,10 +7,8 @@ import java.util.ArrayList;
 
 public class Hashtable {
     //========= Hashmap constructor ================
-    //LinkedList [] buckets = new LinkedList[1];
     ArrayList<HashNode<String>> [] buckets = new ArrayList[1];
 
-    //public Hashtable(LinkedList[] buckets) {this.buckets = buckets;}
     public Hashtable(ArrayList [] buckets) {
         this.buckets = buckets;
     }

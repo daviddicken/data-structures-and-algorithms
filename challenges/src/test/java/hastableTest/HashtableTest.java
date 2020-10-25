@@ -1,10 +1,13 @@
 package hastableTest;
 
 import hashtable.Hashtable;
-import linkedList.LinkedList;
 import org.junit.Test;
+import static org.junit.Assert.*;
+
+
 
 import java.util.ArrayList;
+
 
 public class HashtableTest {
 
@@ -26,11 +29,18 @@ public class HashtableTest {
         testHash.add("Mom" , "Mom");
         testHash.add("toilet", "Mrs. Poop");
 
-        //System.out.println("contains " + testHash.contains("Bobby"));
-        System.out.println("get value " + testHash.getValue("toilet"));
+        // Test that contains returns true or false if key exist or not & test add
+        assertFalse(testHash.contains("addTest"));
+        testHash.add("addTest", "done");
+        assertTrue(testHash.contains("addTest"));
 
+        // Test for exception if user tries to add a key that already exist
+        assertThrows(Exception.class, () -> testHash.add("addTest", "not again"));
 
-        //System.out.println("testHash" + testHash);
-        //System.out.println(testHash.hash("abc"));
+        // Test getValue
+        assertEquals("done", testHash.getValue("addTest"));
+        // if key doesn't exist
+        assertEquals("Key not found", testHash.getValue("doesntExist"));
+
     }
 }
