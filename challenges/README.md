@@ -15,6 +15,7 @@
 [Find Maximum Value](Find-Maximum-Value)
 [Binary Tree Breadth Traversal](Binary-Tree-Breadth-Traversal)
 [Insert Sort](Insert-Sort)
+[Hash Table](Hash-Table)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -287,7 +288,7 @@ all leaves have been reached.
 ### Whiteboard
 [whiteboard](whiteboards/cc17.png)
 
-//------------------------------------------------
+----------------------------------------------------------------------------------
 # Insert Sort
 The insert sort method will take and array of integers and return an array of those
 integers organized from smallest to greatest.
@@ -308,6 +309,29 @@ Space O(1)
 ### Whiteboard
 [whiteboard](whiteboards/CodeChallenge26InsertSort.PNG)
 
+----------------------------------------------------------------
+# Hash Table
+A hash table is a array of arraylists of nodes of key : value pairs. A mathematical equation is ran on the key in an 
+attempt to create a unique number that is used to determine the index of the array where the arraylist lives that we
+will store the key value pair at. This spreads the key value pairs out allowing for fast look up and add to ability.
+
+### Challenges
+To create an array of linked list of nodes of key value pairs
+
+### Efficiency and Approach
+Time: O(1)
+Space: O(1)
+
+* Create an array of a size determined by user
+* Create a Node that holds a key value pair
+* Create a Hash method that will do some math on the key and the % the size of the array.
+* Create a Contains method that takes a key and checks if the key already exist in the array.
+* Create a Add method that takes a key value pair. If key doesn't already exist in the array
+then it creates a new Node with the key value pair. Runs the Hash method on the key and checks
+if the index at the hash spot of the array is empty. If it's empty then create an arraylist and
+add new node to it. If it is not empty just add the new node to the arraylist that was found.
+* Create a Get method that takes a key runs the hash on it and check the arraylist found at the hash
+index for a match. If match is found return the value from the node that contained the key.
 
 
 

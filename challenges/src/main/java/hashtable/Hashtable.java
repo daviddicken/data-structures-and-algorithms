@@ -7,10 +7,8 @@ import java.util.ArrayList;
 
 public class Hashtable {
     //========= Hashmap constructor ================
-    //LinkedList [] buckets = new LinkedList[1];
     ArrayList<HashNode<String>> [] buckets = new ArrayList[1];
 
-    //public Hashtable(LinkedList[] buckets) {this.buckets = buckets;}
     public Hashtable(ArrayList [] buckets) {
         this.buckets = buckets;
     }
@@ -123,20 +121,4 @@ public class Hashtable {
     }
 }
 
-//        int hash = hash(key);
-//        HashNode<String> newNode = new HashNode<>(key,value);
-//
-//        ArrayList<HashNode<String>> list = buckets[hash];
-//
-//        if(list == null){
-//            list = new ArrayList<HashNode<String>>();
-//            list.add(newNode);
-//            buckets[hash] = list;
-//        }else{
-//            for(int i = 0; i < list.size(); i++){
-//                if(list.get(i).getKey() == key) {
-//                    throw new Exception("Key has already been used please pick a new key");
-//                }
-//            }
-//            list.add(newNode);
-//        }
+
