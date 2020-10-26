@@ -1,45 +1,42 @@
 package hashtable;
 
-import linkedList.LinkedList;
 import utilities.HashNode;
-
 import java.util.ArrayList;
 
 public class Hashtable {
     //========= Hashmap constructor ================
-    ArrayList<HashNode<String>> [] buckets = new ArrayList[1];
+    ArrayList<HashNode<String>> [] buckets;
 
-    public Hashtable(ArrayList [] buckets) {
+    public Hashtable(ArrayList<HashNode<String>> [] buckets) {
+
         this.buckets = buckets;
     }
 
     //========= Method to create and return a hashtable =======
-    public Hashtable createHashtable(int size) throws Exception {
-        //Catch a pointless hashtable
-        if(size < 2){
-            throw new Exception("Please select a larger size for your Hashtable");
-        }
-
-        ArrayList [] buckets = new ArrayList[size];
-        Hashtable hashtable = new Hashtable(buckets);
-        return hashtable;
-    }
+//    public Hashtable createHashtable(int size) throws Exception {
+//        //Catch a pointless hashtable
+//        if(size < 2){
+//            throw new Exception("Please select a larger size for your Hashtable");
+//        }
+//
+//        ArrayList [] buckets = new ArrayList[size];
+//        Hashtable hashtable = new Hashtable(buckets);
+//        return hashtable;
+//    }
 
     //========== Contains =======================
     public boolean contains(String key){
         int hash = hash(key);
         ArrayList<HashNode<String>> list = buckets[hash];
 
-        if(list == null){
-            return false;
-        }else{
-            for(int i = 0; i < list.size(); i++){
-                if(list.get(i).getKey() == key) {
+        if (list != null) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getKey().equals(key)) {
                     return true;
                 }
             }
-            return false;
         }
+        return false;
     }
 
     //========== Get value =======================
@@ -50,7 +47,7 @@ public class Hashtable {
             ArrayList<HashNode<String>> list = buckets[hash];
 
             for(int i = 0; i < list.size(); i++){
-                if(list.get(i).getKey() == key) {
+                if(list.get(i).getKey().equals(key)) {
                    return list.get(i).getValue();
                 }
             }
@@ -71,7 +68,7 @@ public class Hashtable {
             ArrayList<HashNode<String>> list = buckets[hash];
 
             if (list == null) {
-                list = new ArrayList<HashNode<String>>();
+                list = new ArrayList<>();
                 list.add(newNode);
                 buckets[hash] = list;
             } else {
