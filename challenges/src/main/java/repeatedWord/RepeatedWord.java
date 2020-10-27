@@ -19,7 +19,7 @@ public class RepeatedWord {
         String[] arrayOfWords = words.split("\\s+");
 
         if(arrayOfWords.length <= 1){
-            throw new Exception("Not enough words to compare bud.");
+            throw new Exception("Not enough words to compare.");
         }
 
         ArrayList [] buckets = new ArrayList[arrayOfWords.length];
