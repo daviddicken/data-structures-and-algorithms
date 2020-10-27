@@ -342,7 +342,7 @@ Write a method that takes in a string of words and returns the first word that i
 To use regex to rid the input string of punctuations before we grab the words at the whitespaces.
 
 ### Efficiency and Approach
-Time: O(1)
+Time: O(n)
 Space O(1)
 
 * Use regex to remove punctuations from input string and turn all chars to lower case.
