@@ -1,4 +1,4 @@
-package stacksAndQueues;
+package datastructures.stacksAndQueues;
 
 public class Node {
     private int value;

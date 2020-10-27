@@ -16,6 +16,7 @@
 [Binary Tree Breadth Traversal](Binary-Tree-Breadth-Traversal)
 [Insert Sort](Insert-Sort)
 [Hash Table](Hash-Table)
+[Repeated Word](Repeated-Word)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
@@ -333,5 +334,25 @@ add new node to it. If it is not empty just add the new node to the arraylist th
 * Create a Get method that takes a key runs the hash on it and check the arraylist found at the hash
 index for a match. If match is found return the value from the node that contained the key.
 
+---------------------------------------------------
+# Repeated Word
+Write a method that takes in a string of words and returns the first word that is repeated.
+
+### Challenges
+To use regex to rid the input string of punctuations before we grab the words at the whitespaces.
+
+### Efficiency and Approach
+Time: O(1)
+Space O(1)
+
+* Use regex to remove punctuations from input string and turn all chars to lower case.
+* Split the string into an array of words
+* Create a hashtable
+* Use a for loop to step through array of words. Make each word a key value pair and see if it exist in 
+the hashtable if not add it to the hashtable.
+* If it does return that word
+
+### Whiteboard
+[whiteboard](whiteboards/codeChallenge31wb.png)
 
 

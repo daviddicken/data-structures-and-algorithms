@@ -1,8 +1,5 @@
 package utilities;
 
-import binarySearchTree.Node;
-import binarySearchTree.Tree;
-
 public class FizzBuzzTree<T> {
     private gTreeNode root;
 

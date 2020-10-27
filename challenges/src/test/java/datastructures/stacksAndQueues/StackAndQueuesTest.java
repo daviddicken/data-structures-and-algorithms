@@ -1,4 +1,8 @@
-package stacksAndQueues;
+package datastructures.stacksAndQueues;
+import datastructures.stacksAndQueues.Node;
+import datastructures.stacksAndQueues.PseudoQueue;
+import datastructures.stacksAndQueues.Queue;
+import datastructures.stacksAndQueues.Stack;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
