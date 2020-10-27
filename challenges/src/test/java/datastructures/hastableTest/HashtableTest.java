@@ -1,6 +1,6 @@
-package hastableTest;
+package datastructures.hastableTest;
 
-import hashtable.Hashtable;
+import datastructures.hashtable.Hashtable;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

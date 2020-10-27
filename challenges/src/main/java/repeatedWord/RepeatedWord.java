@@ -1,8 +1,8 @@
 package repeatedWord;
 
-//import hashtable.Hashtable;
+//import Hashtable;
 
-import hashtable.Hashtable;
+import datastructures.hashtable.Hashtable;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,6 @@ public class RepeatedWord {
             }
 
         }
-        System.out.println(hashtable);
         return "No duplicate words found.";
     }
 }

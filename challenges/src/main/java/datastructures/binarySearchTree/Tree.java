@@ -1,4 +1,4 @@
-package binarySearchTree;
+package datastructures.binarySearchTree;
 
 import utilities.Q;
 import java.util.ArrayList;
