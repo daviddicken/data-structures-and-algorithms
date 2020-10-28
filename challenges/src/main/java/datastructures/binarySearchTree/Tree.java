@@ -2,9 +2,11 @@ package datastructures.binarySearchTree;
 
 import utilities.Q;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Tree {
     ArrayList<Integer> arrBuild = new ArrayList<>();
+    HashMap hashMap;
     private Node root;
     public int max;
 
@@ -37,6 +39,30 @@ public class Tree {
 
         return max;
     }
+
+    //======= Contains ===================
+    boolean flag;
+    public boolean contains(int num) throws Exception{
+        if(root != null){
+            flag = false;
+            return contains(num, root);
+        }
+        // throw null pointer exception
+        throw new NullPointerException("This tree is empty");
+    }
+    //-------- Helper --------------------
+    private boolean contains(int num, Node currentNode){
+        if(currentNode == null || flag == true){
+            return flag;
+        }
+        if(currentNode.getValue() == num){
+            flag = true;
+        }
+        contains(num, currentNode.getLeftChild());
+        contains(num, currentNode.getRightChild());
+        return flag;
+    }
+
     //======= Sum binary tree values breadth traversal============
     public int sumBtree(){
         if(root == null){ throw new NullPointerException();};
@@ -139,6 +165,26 @@ public class Tree {
 
         return arrBuild;
     }
+
+    //=========== hashmap preOrder ================
+    public HashMap preOrderHash(){
+        hashMap = new HashMap();
+        return preOrderHash(root);
+    }
+    //----------- Helper --------------------------
+    private HashMap preOrderHash(Node node) {
+
+        if (node == null) {
+            return hashMap;
+        }
+        hashMap.put(node.getValue(), node.getValue());
+        preOrder(node.getLeftChild());
+        preOrder(node.getRightChild());
+
+        return hashMap;
+
+    }
+
 
     //=========== post order =======================
     public ArrayList postOrder(){
