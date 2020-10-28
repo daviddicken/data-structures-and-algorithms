@@ -1,8 +1,8 @@
 
 # Table of Content
 
-[Reverse an Array](#Reverse-an-Array)
-[Array Shift](#Array-Shift)
+*[Reverse an Array](#Reverse-an-Array)
+*[Array Shift](#Array-Shift)
 [Binary Search](#Binary-Search)
 [Linked List Insertions](Linked-List-Insertions)
 [Search from end](Search-from-end)
