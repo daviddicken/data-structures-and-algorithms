@@ -1,21 +1,24 @@
 
 # Table of Content
 
+## Data Structures
+* [Binary Search](#Binary-Search)
+* [Linked List Insertions](Linked-List-Insertions)
+* [Stacks and Queues](Stacks-&-Queues)
+* [Pseudo Queue](Pseudo-Queue)
+* [Binary Tree and BST Implementation](Binary-Tree-and-BST-Implementation)
+* [Binary Tree Breadth Traversal](Binary-Tree-Breadth-Traversal)
+* [Insert Sort](Insert-Sort)
+* [Hash Table](Hash-Table)
+## Challenges
+* [Multi Bracket Validation](Multi-Bracket-Validation)
+* [Find Maximum Value](Find-Maximum-Value)
 * [Reverse an Array](#Reverse-an-Array)
 * [Array Shift](#Array-Shift)
-[Binary Search](#Binary-Search)
-[Linked List Insertions](Linked-List-Insertions)
-[Search from end](Search-from-end)
-[Linked List Zip](Linked-List-Zip)
-[Stacks and Queues](Stacks-&-Queues)
-[Animal Shelter](Animal-Shelter)
-[Pseudo Queue](Pseudo-Queue)
-[Multi Bracket Validation](Multi-Bracket-Validation)
-[Binary Tree and BST Implementation](Binary-Tree-and-BST-Implementation)
-[Find Maximum Value](Find-Maximum-Value)
-[Binary Tree Breadth Traversal](Binary-Tree-Breadth-Traversal)
-[Insert Sort](Insert-Sort)
-[Hash Table](Hash-Table)
+* [Linked List Zip](Linked-List-Zip)
+* [Search from end](Search-from-end)
+* [Animal Shelter](Animal-Shelter)
+
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
