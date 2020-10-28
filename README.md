@@ -18,6 +18,7 @@
 * [Linked List Zip](Linked-List-Zip)
 * [Search from end](Search-from-end)
 * [Animal Shelter](Animal-Shelter)
+* [Tree Intersection](Tree-Intersection)
 
 
 # Reverse an Array
@@ -345,7 +346,7 @@ To use regex to rid the input string of punctuations before we grab the words at
 
 ### Efficiency and Approach
 Time: O(1)
-Space O(1)
+Space: O(n)
 
 * Use regex to remove punctuations from input string and turn all chars to lower case.
 * Split the string into an array of words
@@ -357,5 +358,20 @@ the hashtable if not add it to the hashtable.
 ### Whiteboard
 [whiteboard](challenges/whiteboards/codeChallenge31wb.png)
 
+-----------------------------------------------------------
+# Tree Intersection
+Write a method that takes in two binary tree's and returns a set of values that are found in both trees.
 
+### Challenges
+To find a effecient way to search through a tree and compare it to another tree
+
+### Efficiency and Approach
+Time: O(n)
+Space: O(n)
+
+Take values in one tree and place in a hashmap as a key/value pair. Recursively step through other 
+tree and check to see if current nodes value is in the hashmap. If it is not then add it to a hashset. return the hashset
+
+### Whiteboard
+[whiteboard](challenges/whiteboards/codeChallenge32wb.png)
 
