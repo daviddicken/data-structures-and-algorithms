@@ -15,6 +15,7 @@ public class TreeIntersection extends Tree{
     Tree searchTree;
 
     public HashSet treeIntersection(Tree treeA, Tree treeB) throws Exception {
+        // This was Pauls great idea to add the or statement to the base case so I didn't have to traverse through the array when a match was found
         if(treeA.getRoot().equals(null) || treeB.getRoot().equals(null)){
             throw new NullPointerException("A tree is empty");
         }
