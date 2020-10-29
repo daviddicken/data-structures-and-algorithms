@@ -19,6 +19,7 @@
 * [Search from end](Search-from-end)
 * [Animal Shelter](Animal-Shelter)
 * [Tree Intersection](Tree-Intersection)
+* [Left Join](Left-Join)
 
 
 # Reverse an Array
@@ -375,3 +376,23 @@ tree and check to see if current nodes value is in the hashmap. If it is not the
 ### Whiteboard
 [whiteboard](challenges/whiteboards/codeChallenge32wb.png)
 
+-------------------------------------
+# Left Join
+Write a method that takes in two hashmaps and returns an array of arrays where each array in the main array contains only a key from the first hashmap and any value associated with that key from both hashmaps.
+
+### Challenge
+To figure out how to step through a hashmap and get all keys and values.
+
+### Efficiency And Approach
+Time: O(n)
+Space: O(n)
+* Create new array the size of hashmapA
+* Grab all keys from hashmapA and save in an arrayList
+* iterate through the new array that was created in step 1
+* create a new array with 3 indexes and set the i index of main array to new array
+* set 0 index of new array to key from i index of list
+* set 1 index of new array to value paired with key
+* check if hashmapB contains key if so set 2 index of new array to the value paired with key
+
+### Whiteboard
+[whiteboard](challenges/whiteboards/codeChallenge33wb.png)

@@ -30,6 +30,8 @@ public class HashtableTest {
         testHash.add("toilet", "Mrs. Poop");
 
 
+
+
         // Test that contains returns true or false if key exist or not & test add
         assertFalse(testHash.contains("addTest"));
         testHash.add("addTest", "done");
