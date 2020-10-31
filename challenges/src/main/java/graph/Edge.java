@@ -1,24 +1,21 @@
 package graph;
 
-public class Edge {
+public class Edge<T> {
     private GraphNode origin;
     private GraphNode dest;
+    private T weight;
 
-    public Edge(GraphNode origin, GraphNode dest) {
+    public Edge(GraphNode origin, GraphNode dest, T weight) {
+        this.weight = weight;
         this.origin = origin;
         this.dest = dest;
     }
 
     //=========== To String ========================
 
-//    @Override
-//    public String toString() {
-//        return "Edge{" +
-//                "origin=" + origin +
-//                ", dest=" + dest +
-//                '}';
-//    }
-
+    public String toString(){
+        return weight.toString() + " miles";
+    }
 
     //=========== Getters and Setters ==============
 
@@ -38,4 +35,11 @@ public class Edge {
         this.dest = dest;
     }
 
+    public T getWeight() {
+        return weight;
+    }
+
+    public void setWeight(T weight) {
+        this.weight = weight;
+    }
 }

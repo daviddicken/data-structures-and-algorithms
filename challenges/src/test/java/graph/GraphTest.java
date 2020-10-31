@@ -14,8 +14,11 @@ public class GraphTest {
         testGraph.addNode("Lake Stevens"); // 3
 
 
-        testGraph.addEdge(testGraph.vertexes.get(0), testGraph.vertexes.get(1));
-        testGraph.addEdge(testGraph.vertexes.get(2), testGraph.vertexes.get(3));
+        testGraph.addEdge(testGraph.vertexes.get(0), testGraph.vertexes.get(1), 2857);
+        testGraph.addEdge(testGraph.vertexes.get(2), testGraph.vertexes.get(3), 9672);
+        testGraph.addEdge(testGraph.vertexes.get(0), testGraph.vertexes.get(3), 36);
+
+        System.out.println("Neighbors: " + testGraph.getNeighbors(testGraph.vertexes.get(0)));
 
         ArrayList<GraphNode> nodes = testGraph.getVertexes();
         ArrayList<Edge> edges = nodes.get(0).getEdges();
