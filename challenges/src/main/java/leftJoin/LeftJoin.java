@@ -6,10 +6,10 @@ public class LeftJoin {
 
     String [][] returnArr;
     public String [][] leftJoin(HashMap tableA, HashMap tableB){
-
+        
         returnArr = new String[tableA.size()][];
         List<String> keys = new ArrayList<>(tableA.keySet());
-
+        
         for(int i = 0; i < tableA.size(); i++){
           returnArr[i] = new String[3];
           returnArr[i][0] = keys.get(i);
