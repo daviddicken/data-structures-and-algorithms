@@ -429,7 +429,4 @@ testing. If space is a issue and testing is not needed anymore simply change the
 
 * Create a hashmap to hold neighbor node and weight as a key value pair.
 * Grab the arraylist of edges for the current node.
-* Step through the arraylist of edges placing the destenation node and weight as a key value pair in the hashmap. return the hashmap when finished steping though arraylist
-
-
-
+* Step through the arraylist of edges placing the destenation node and weight as a key value pair in the hashmap. return the hashmap when finished steping though arraylist.
