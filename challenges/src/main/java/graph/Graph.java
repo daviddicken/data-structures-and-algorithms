@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Graph {
     ArrayList<GraphNode> vertexes;// = new HashSet();
-    //ArrayList<Edge> edges;// = new HashSet();
 
     //========== Constructor =======
     public Graph() { this.vertexes = new ArrayList<>(); }
@@ -50,22 +49,19 @@ public class Graph {
     //========== To String =========
     public String toString(){
         String returnString = "Graph:";
+
         for(GraphNode node : vertexes){
             String neighbors = String.format("\n%s : [", node.getValue());
             ArrayList<Edge> edges = node.getEdges();
             for(int i = 0; i < edges.size(); i++){
-            //for(Edge edge : edges){
-                //neighbors += edge.getDest() + " ";
                 if(i > 0){ neighbors += ", ";}
                 neighbors += edges.get(i).getDest() + " (" + edges.get(i).getWeight() + " mi)";
             }
             neighbors += "]"; //*
             returnString += neighbors;
         }
-
         return returnString;
     }
-
 
     //========== Getters and Setters ======
     public ArrayList<GraphNode> getVertexes() {
@@ -76,3 +72,16 @@ public class Graph {
         this.vertexes = vertexes;
     }
 }
+
+//==================== Zombie Code =========================
+
+// was having issues accessing data from hashsets in my toString:
+// HashSet<GraphNode> testVerts = new HashSet<>();
+//==========================
+//        for(GraphNode node : testVerts){
+//                String testNeighbors = String.format("\n%s : [", node.getValue());
+//                HashSet<Edge> testEdges = node.getHashEdges();
+//        for ((int i = 0; i < test ))
+//
+//        }
+//=============================

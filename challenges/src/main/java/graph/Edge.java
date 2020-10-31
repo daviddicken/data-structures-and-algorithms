@@ -12,7 +12,6 @@ public class Edge<T> {
     }
 
     //=========== To String ========================
-
     public String toString(){
         return weight.toString() + " miles";
     }
