@@ -10,6 +10,8 @@
 * [Binary Tree Breadth Traversal](Binary-Tree-Breadth-Traversal)
 * [Insert Sort](Insert-Sort)
 * [Hash Table](Hash-Table)
+* [Graph](Graph)
+
 ## Challenges
 * [Multi Bracket Validation](Multi-Bracket-Validation)
 * [Find Maximum Value](Find-Maximum-Value)
@@ -396,3 +398,38 @@ Space: O(n)
 
 ### Whiteboard
 [whiteboard](challenges/whiteboards/codeChallenge33wb.png)
+
+------------------------------
+# Graph
+A graph is a dataset that holds a set of nodes. The nodes are connected to each other with edges. There are few  types of graph's. 
+In a connected graph all nodes are are connected and it is possible to reach any node in the graph through another node. In a disconnected
+graph not all nodes are connected to each other.
+A directed graph has edges connecting nodes in one direction only. Example: node A could have a edge to Node B but Node B wouldn't have a edge to node A.
+In an undirected graph nodes would have edges in both directions to each other> Node A would have a edge to Node B and Node B would have a edge to Node A.
+
+### Challenge
+To store a list or set of connected nodes inside of nodes in a list or set and then access the correct data from these list or sets.
+
+### Efficiency and Approach
+Add Node:
+time: O(1)
+space: O(n)
+Create a new node and add it to the arraylist of nodes in the graph.
+
+Add edge:
+time: O(1)
+space O(n)
+Take two nodes and a int for weight. create a edge and add that edge to the edge arraylist of that node. Then flip the order of those nodes and create a edge to store
+in the edge arraylist of the other node.
+
+Get Neighbors:
+time: O(n)
+space: O(n) (I used a linkedHashMap fro testing purposes. It uses a small amount of space for a linked list that keeps the order of the nodes allowing for consistency when
+testing. If space is a issue and testing is not needed anymore simply change the linkedHashMap to a HashMap.
+
+* Create a hashmap to hold neighbor node and weight as a key value pair.
+* Grab the arraylist of edges for the current node.
+* Step through the arraylist of edges placing the destenation node and weight as a key value pair in the hashmap. return the hashmap when finished steping though arraylist
+
+
+
