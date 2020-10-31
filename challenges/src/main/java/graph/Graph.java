@@ -1,31 +1,27 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Graph {
     ArrayList<GraphNode> vertexes;// = new HashSet();
     //ArrayList<Edge> edges;// = new HashSet();
 
     //========== Constructor =======
-    public Graph() {
-        this.vertexes = new ArrayList<>();
-    }
+    public Graph() { this.vertexes = new ArrayList<>(); }
+
+    //========== Size ==============
+    public int size(){return vertexes.size();}
+
     //========== Get Nodes =========
-    // Returns all of the nodes in the graph as a collection (set, list, or similar)
-    public ArrayList<GraphNode> getNodes(){ return vertexes; }
+    public ArrayList<GraphNode> getNodes(){
+        if(vertexes.isEmpty()){ return null;}
+        return vertexes;
+    }
 
     //========== Get Neighbors =====
-//    Returns a collection of edges connected to the given node
-//    Takes in a given node
-//    Include the weight of the connection in the returned collection
+    public LinkedHashMap getNeighbors(GraphNode home){
 
-    public HashMap getNeighbors(GraphNode home){
-
-        // home.getValue
-        HashMap neighbors  = new HashMap();
+        LinkedHashMap neighbors  = new LinkedHashMap<>();
         ArrayList<Edge> neighborhood = home.getEdges();
 
         for(Edge neighbor : neighborhood) {
@@ -34,8 +30,7 @@ public class Graph {
         return neighbors;
     }
 
-
-
+//TODO should I overload so edge can be made w/o weight, would need to check if weight exist in methods that display or use weight
     //========== Add Edge ==========
     public void addEdge(GraphNode nodeA, GraphNode nodeB, int weight){
         Edge edge1 = new Edge(nodeA, nodeB, weight);
@@ -46,16 +41,17 @@ public class Graph {
     }
 
     //========== Add Node ==========
-    public void addNode(String value){
+    public GraphNode addNode(String value){
         GraphNode<String> newNode = new GraphNode<>(value);
         vertexes.add(newNode);
+        return newNode;
     }
 
     //========== To String =========
     public String toString(){
-        String returnString = "Graph :\n";
+        String returnString = "Graph:";
         for(GraphNode node : vertexes){
-            String neighbors = String.format("    %s : [", node.getValue());
+            String neighbors = String.format("\n%s : [", node.getValue());
             ArrayList<Edge> edges = node.getEdges();
             for(int i = 0; i < edges.size(); i++){
             //for(Edge edge : edges){
@@ -63,7 +59,7 @@ public class Graph {
                 if(i > 0){ neighbors += ", ";}
                 neighbors += edges.get(i).getDest() + " (" + edges.get(i).getWeight() + " mi)";
             }
-            neighbors += "]\n";
+            neighbors += "]"; //*
             returnString += neighbors;
         }
 
@@ -72,8 +68,6 @@ public class Graph {
 
 
     //========== Getters and Setters ======
-
-
     public ArrayList<GraphNode> getVertexes() {
         return vertexes;
     }
