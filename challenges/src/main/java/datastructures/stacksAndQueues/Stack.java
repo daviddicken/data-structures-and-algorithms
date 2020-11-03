@@ -1,7 +1,7 @@
 package datastructures.stacksAndQueues;
 
 public class Stack {
-    public Node top;
+    public Node<Integer> top;
 
     //========== Stack constructor ========
     public Stack() {

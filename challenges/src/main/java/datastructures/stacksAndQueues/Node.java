@@ -1,11 +1,11 @@
 package datastructures.stacksAndQueues;
 
-public class Node {
-    private int value;
+public class Node<T> {
+    private T value;
     private Node next;
     private Node last;
 
-    public Node(int num) {
+    public Node(T num) {
         value = num;
         next = null;
         last = null;
@@ -17,11 +17,11 @@ public class Node {
 
     //=========== Getters & Setters ============
 
-    public int getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(T value) {
         this.value = value;
     }
 
