@@ -1,9 +1,9 @@
 package datastructures.stacksAndQueues;
 
-public class Queue {
+public class Queue<T> {
 
-    public Node front;
-    public Node rear;
+    public Node<T> front;
+    public Node<T> rear;
 
     //========= Queue Constructor ========
     public Queue() {
@@ -16,39 +16,41 @@ public class Queue {
         return front == null;
     }
     //======= Peek =======================
-    public int peek() throws Exception{
+    public T peek() throws Exception{
         if(front == null){
             throw new Exception("This queue is empty");
         }
         return front.getValue();
     }
     //======= Dequeue ====================
-    public int dequeue() throws Exception {
+    public T dequeue() throws Exception {
         if(front == null){
             throw new Exception("This queue is empty");
         }
-        int returnValue = front.getValue();
+        T returnValue = front.getValue();
 
         if(front.getNext() != null) {
             front.getNext().setLast(null);
             front = front.getNext();
         }else{
             front = null;
+            rear = null;
         }
         return returnValue;
     }
 
     //======= Enqueue ====================
-    public void enqueue(int num){
+    public void enqueue(T num){
         Node node = new Node(num);
 
         if(rear == null){
             front = node;
             rear = node;
+        }else {
+            node.setLast(rear);
+            rear.setNext(node);
+            rear = node;
         }
-        node.setLast(rear);
-        rear.setNext(node);
-        rear = node;
     }
 
     //======== size ======================
