@@ -22,6 +22,7 @@
 * [Animal Shelter](Animal-Shelter)
 * [Tree Intersection](Tree-Intersection)
 * [Left Join](Left-Join)
+* [Depth First Graph](Depth-First-Graph)
 
 
 # Reverse an Array
@@ -295,7 +296,7 @@ all leaves have been reached.
 ### Whiteboard
 [whiteboard](challenges/whiteboards/cc17.png)
 
-----------------------------------------------------------------------------------
+-----------------------------------------------------------------
 # Insert Sort
 The insert sort method will take and array of integers and return an array of those
 integers organized from smallest to greatest.
@@ -430,3 +431,32 @@ testing. If space is a issue and testing is not needed anymore simply change the
 * Create a hashmap to hold neighbor node and weight as a key value pair.
 * Grab the arraylist of edges for the current node.
 * Step through the arraylist of edges placing the destenation node and weight as a key value pair in the hashmap. return the hashmap when finished steping though arraylist.
+
+------------------------------------
+# Depth First Graph
+Create a method that takes in a node in a graph and returns a list of the nodes in  pre-order.
+
+### Challenge
+To figure out how to place node in list in correct order.
+
+#### Efficiency & Approach
+Time O(n)
+Space O(n)
+
+* Create array list for return collection
+* Create a hashset to hold all visited nodes (for faster contains lookups)
+* Create a stack to hold nodes waiting to be added to return collection
+
+* push input node onto stack
+* while loop until the stack is empty
+* pop a node from the stack and add it to the return collection and hashset
+* get the edges of node and put in arraylist
+
+* write for loop for each edge in arraylist (start i at arraylist.size and decrement i on each pass)
+* get destination node at i and check if node exist in visited hashset
+* if not push onto stack and add to visited hashset
+
+* when stack is empty return the return collection
+
+### Whiteboard
+[whiteboard](challenges/whiteboards/codeChallenge38.png)
