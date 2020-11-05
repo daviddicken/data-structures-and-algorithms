@@ -1,11 +1,11 @@
 package datastructures.stacksAndQueues;
 
-public class PseudoQueue {
+public class PseudoQueue<T> {
     private Stack enQueueStack = new Stack();
     private Stack deQueueStack = new Stack();
 
     //========= deQ =============================
-    public int dequeue() throws Exception {
+    public T dequeue() throws Exception {
         if(deQueueStack.isEmpty() && !enQueueStack.isEmpty()){
             Node thisNode = enQueueStack.top;// create node to work with
             while (thisNode != null) {       // run this code till node = null
@@ -13,7 +13,7 @@ public class PseudoQueue {
                 thisNode = thisNode.getNext(); // move to the next node
             }
         }
-        return deQueueStack.pop();
+        return (T) deQueueStack.pop();
     }
 
     //========= enQ =============================

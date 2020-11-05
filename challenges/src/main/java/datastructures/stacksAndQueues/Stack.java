@@ -1,7 +1,7 @@
 package datastructures.stacksAndQueues;
 
-public class Stack {
-    public Node<Integer> top;
+public class Stack<T> {
+    public Node<T> top;
 
     //========== Stack constructor ========
     public Stack() {
@@ -9,26 +9,25 @@ public class Stack {
     }
 
     //============ push ====================
-    public void push(int num){
-        Node node = new Node(num);
+    public void push(T value){
+        Node node = new Node(value);
         node.setNext(top);
 
         top = node;
-
     }
 
     //========= pop =====================
-    public int pop() throws Exception{
+    public T pop() throws Exception{
         if(top == null){
             throw new Exception("The stack is empty");
         }
-        int returnValue = top.getValue();
+        T returnValue = top.getValue();
         top = top.getNext();
         return returnValue;
     }
 
     //========= peek ====================
-    public int peek() throws Exception {
+    public T peek() throws Exception {
         if (top == null) {
             throw new Exception("Stack is empty");
         }
