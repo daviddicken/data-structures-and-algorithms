@@ -22,7 +22,7 @@
 * [Animal Shelter](Animal-Shelter)
 * [Tree Intersection](Tree-Intersection)
 * [Left Join](Left-Join)
-* [Depth First Graph](Depth-First-Graph)
+[Depth First Graph](Depth-First-Graph)
 
 
 # Reverse an Array
