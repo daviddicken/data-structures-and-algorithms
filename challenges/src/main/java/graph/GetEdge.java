@@ -1,15 +1,5 @@
 package graph;
 
-
-//takes in an array of strings
-// get vertex of nodes from graph
-// search vertex node.values for match to array[0]
-
-// if found get edges
-// check if array[1] equals an edge.dest in edges
-// if not return false $0
-// if it is return true and dest $ weight
-
 import java.util.ArrayList;
 
 public class GetEdge {
@@ -31,8 +21,6 @@ public class GetEdge {
                             flag = true;
                             weightTotal += (int)flight.getWeight();
                             break;
-                        }else {
-                            flag = false;
                         }
                     }
                 }
