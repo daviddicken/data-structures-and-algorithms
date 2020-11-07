@@ -3,7 +3,7 @@
 
 ## Data Structures
 * [Binary Search](#Binary-Search)
-* [Linked List Insertions](Linked-List-Insertions)
+* [Linked List Insertions](#Linked-List-Insertions)
 * [Stacks and Queues](Stacks-&-Queues)
 * [Pseudo Queue](Pseudo-Queue)
 * [Binary Tree and BST Implementation](Binary-Tree-and-BST-Implementation)
@@ -22,7 +22,7 @@
 * [Animal Shelter](Animal-Shelter)
 * [Tree Intersection](Tree-Intersection)
 * [Left Join](Left-Join)
-[Depth First Graph](Depth-First-Graph)
+* [Depth First Graph](#Depth-First-Graph)
 
 
 # Reverse an Array
