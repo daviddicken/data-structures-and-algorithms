@@ -23,6 +23,7 @@
 * [Tree Intersection](#Tree-Intersection)
 * [Left Join](#Left-Join)
 * [Depth First Graph](#Depth-First-Graph)
+* [Get Edge](#Get-Edge)
 
 
 # Reverse an Array
@@ -460,3 +461,37 @@ Space O(n)
 
 ### Whiteboard
 [whiteboard](challenges/whiteboards/codeChallenge38.png)
+
+--------------------------------------------------------------------
+# Get Edge
+A  method that takes in an array of strings and a graph and checks if the nodes in the graph that have a value that match the strings in the 
+array are connected to each other. If they are then return True and a sum of the weights between nodes. if not return False $0
+
+### Challenge 
+The challenge for me was what to do if the string array had more then 2 strings to check
+
+### Efficiency & Approach
+Time O(n)
+Space O(n)
+
+create a counter for while loop
+create variable to hold weight total
+create a boolean to track if connection is made (set to true)
+
+write a while loop 
+that runs as long as counter is less then array size and the boolean is true
+
+set boolean to false
+get and step through all nodes in graph
+check to see if the nodes value matches the string found at the "counter" index of array
+if match is found get the edges of current node
+and step through each of the edges destination nodes
+comparing the value with the string at the next index spot of array (counter +1)
+if match is found add weight to weight total var
+and set boolean to true
+
+return a string of boolean and weight total
+
+### Whiteboard
+[whiteboard](challenges/whiteboards/codeChallenge37.png)
+
