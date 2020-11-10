@@ -49,7 +49,7 @@ Time:  O(n)
 Create a new array that is + 1 in length from original Array. Find middle index of original array and save in a variable. Have two variable for stepping through arrays. write a if statement to catch when the middle index is reached and insert value.
 
 ### Whiteboard
-[whiteboard](whiteboards/ArrayShift.png )
+[whiteboard](whiteboards/ArrayShift.png)
 
 -----------------------------------------------------
 
