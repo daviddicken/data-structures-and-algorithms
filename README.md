@@ -49,7 +49,7 @@ Time:  O(n)
 Create a new array that is + 1 in length from original Array. Find middle index of original array and save in a variable. Have two variable for stepping through arrays. write a if statement to catch when the middle index is reached and insert value.
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/ArrayShift.png )
+[whiteboard](whiteboards/ArrayShift.png )
 
 -----------------------------------------------------
 
@@ -69,7 +69,7 @@ if it doesn't match find new mid point depending on if it is greater then or les
 repeat till found ? return -1 if not found
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/binarySearch.png )
+[whiteboard](whiteboards/binarySearch.png )
 
 -------------------------------------------------------
 # Linked List
@@ -108,7 +108,7 @@ If found current node.next = new node & new node.next = next node
 
 ### Whiteboard
 
-[whiteboard](challenges/whiteboards/ll-insertions.png )
+[whiteboard](whiteboards/ll-insertions.png )
 
 ----------------------------------------------------
 # Search from end
@@ -121,7 +121,7 @@ To search from the end only being able to traverse from the front
 create a size method to be able to find out the size of my list then size - value entered to know how many nodes to traverse through from the front of the list.
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/CC7Whiteboard.PNG)
+[whiteboard](whiteboards/CC7Whiteboard.PNG)
 
 -------------------------------------------------
 # Linked List Zip
@@ -142,7 +142,7 @@ Create 3 temp nodes to work with. save Ahead.next in tempA point
 Ahead.next to Bhead store Bhead.next in tempB point Bhead.next to tempA ect ect  
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/CCo8.PNG)
+[whiteboard](whiteboards/CCo8.PNG)
 
 -----------------------------------------------------
 # Stacks & Queues
@@ -167,7 +167,7 @@ Time O(1)
 Space O(1)
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/CC11whiteboard.png)
+[whiteboard](whiteboards/CC11whiteboard.png)
 
 -------------------------------------------------------------------------
 # Animal Shelter
@@ -188,7 +188,7 @@ we take the pointer of the node behind the current node and point it to the node
 and take the pointer of the node in front of current node and point it to the node behind it 
 then return the value of the node  
 
-[whiteboard](challenges/whiteboards/animalShelter.png)
+[whiteboard](whiteboards/animalShelter.png)
 
 
 --------------------------------------------------
@@ -210,7 +210,7 @@ Then overwrite the current stack with the temp stack.
 Then we can add or remove a node to the new current stack.
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/CC11.PNG)
+[whiteboard](whiteboards/CC11.PNG)
 
 -------------------------------------------------
 # Multi Bracket Validation
@@ -231,7 +231,7 @@ Lots and lots of if statements and while loops even threw a do loop in for good 
 
 ### Whiteboard
 
-[whiteboard](challengeswhiteboards/bracketWB.jpg)
+[whiteboard](whiteboards/bracketWB.jpg)
 
 ---------------------------------------------------
 # Binary Tree and BST Implementation 
@@ -271,7 +271,7 @@ set max.value to root.value and pass root to the helper method that will do a de
 comparing max to current node.value and replacing max with any value that is greater as it traverses.
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/maxNumWB.png)
+[whiteboard](whiteboards/maxNumWB.png)
 
 ---------------------------------------------------------------
 # Binary Tree Breadth Traversal
@@ -295,7 +295,7 @@ then dequeue node from queue to replace current node and repeat. Do this until
 all leaves have been reached.
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/cc17.png)
+[whiteboard](whiteboards/cc17.png)
 
 -----------------------------------------------------------------
 # Insert Sort
@@ -316,7 +316,7 @@ Space O(1)
 [Insert Sort Blog](BLOG.md)
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/CodeChallenge26InsertSort.PNG)
+[whiteboard](whiteboards/CodeChallenge26InsertSort.PNG)
 
 ----------------------------------------------------------------
 # Hash Table
@@ -361,7 +361,7 @@ the hashtable if not add it to the hashtable.
 * If it does return that word
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/codeChallenge31wb.png)
+[whiteboard](whiteboards/codeChallenge31wb.png)
 
 -----------------------------------------------------------
 # Tree Intersection
@@ -378,7 +378,7 @@ Take values in one tree and place in a hashmap as a key/value pair. Recursively 
 tree and check to see if current nodes value is in the hashmap. If it is not then add it to a hashset. return the hashset
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/codeChallenge32wb.png)
+[whiteboard](whiteboards/codeChallenge32wb.png)
 
 -------------------------------------
 # Left Join
@@ -399,7 +399,7 @@ Space: O(n)
 * check if hashmapB contains key if so set 2 index of new array to the value paired with key
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/codeChallenge33wb.png)
+[whiteboard](whiteboards/codeChallenge33wb.png)
 
 ------------------------------
 # Graph
@@ -460,7 +460,7 @@ Space O(n)
 * when stack is empty return the return collection
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/codeChallenge38.png)
+[whiteboard](whiteboards/codeChallenge38.png)
 
 --------------------------------------------------------------------
 # Get Edge
@@ -493,5 +493,5 @@ and set boolean to true
 return a string of boolean and weight total
 
 ### Whiteboard
-[whiteboard](challenges/whiteboards/codeChallenge37.png)
+[whiteboard](whiteboards/codeChallenge37.png)
 
