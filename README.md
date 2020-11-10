@@ -69,7 +69,7 @@ if it doesn't match find new mid point depending on if it is greater then or les
 repeat till found ? return -1 if not found
 
 ### Whiteboard
-[whiteboard](whiteboards/binarySearch.png )
+[whiteboard](whiteboards/binarySearch.png)
 
 -------------------------------------------------------
 # Linked List
@@ -108,7 +108,7 @@ If found current node.next = new node & new node.next = next node
 
 ### Whiteboard
 
-[whiteboard](whiteboards/ll-insertions.png )
+[whiteboard](whiteboards/ll-insertions.png)
 
 ----------------------------------------------------
 # Search from end
