@@ -49,7 +49,7 @@ Time:  O(n)
 Create a new array that is + 1 in length from original Array. Find middle index of original array and save in a variable. Have two variable for stepping through arrays. write a if statement to catch when the middle index is reached and insert value.
 
 ### Whiteboard
-[whiteboard](whiteboards/ArrayShift.png )
+[whiteboard](whiteboards/ArrayShift.png)
 
 -----------------------------------------------------
 
@@ -69,7 +69,7 @@ if it doesn't match find new mid point depending on if it is greater then or les
 repeat till found ? return -1 if not found
 
 ### Whiteboard
-[whiteboard](whiteboards/binarySearch.png )
+[whiteboard](whiteboards/binarySearch.PNG)
 
 -------------------------------------------------------
 # Linked List
@@ -108,7 +108,7 @@ If found current node.next = new node & new node.next = next node
 
 ### Whiteboard
 
-[whiteboard](whiteboards/ll-insertions.png )
+[whiteboard](whiteboards/ll-insertions.png)
 
 ----------------------------------------------------
 # Search from end
@@ -142,7 +142,7 @@ Create 3 temp nodes to work with. save Ahead.next in tempA point
 Ahead.next to Bhead store Bhead.next in tempB point Bhead.next to tempA ect ect  
 
 ### Whiteboard
-[whiteboard](whiteboards/CCo8.PNG)
+[whiteboard](whiteboards/cco8.png)
 
 -----------------------------------------------------
 # Stacks & Queues
@@ -210,7 +210,7 @@ Then overwrite the current stack with the temp stack.
 Then we can add or remove a node to the new current stack.
 
 ### Whiteboard
-[whiteboard](whiteboards/CC11.PNG)
+[whiteboard](whiteboards/CC11whiteboard.png)
 
 -------------------------------------------------
 # Multi Bracket Validation
