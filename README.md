@@ -142,7 +142,7 @@ Create 3 temp nodes to work with. save Ahead.next in tempA point
 Ahead.next to Bhead store Bhead.next in tempB point Bhead.next to tempA ect ect  
 
 ### Whiteboard
-[whiteboard](whiteboards/CCo8.PNG)
+[whiteboard](whiteboards/cco8.png)
 
 -----------------------------------------------------
 # Stacks & Queues
@@ -210,7 +210,7 @@ Then overwrite the current stack with the temp stack.
 Then we can add or remove a node to the new current stack.
 
 ### Whiteboard
-[whiteboard](whiteboards/CC11.PNG)
+[whiteboard](whiteboards/CC11whiteboard.png)
 
 -------------------------------------------------
 # Multi Bracket Validation
