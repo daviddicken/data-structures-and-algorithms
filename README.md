@@ -460,7 +460,7 @@ Space O(n)
 * when stack is empty return the return collection
 
 ### Whiteboard
-[whiteboard](whiteboards/codeChallenge38.png)
+[whiteboard](whiteboards/codeChallenge38.PNG)
 
 --------------------------------------------------------------------
 # Get Edge
@@ -493,5 +493,5 @@ and set boolean to true
 return a string of boolean and weight total
 
 ### Whiteboard
-[whiteboard](whiteboards/codeChallenge37.png)
+[whiteboard](whiteboards/codeChallenge37.PNG)
 
