@@ -30,8 +30,42 @@ public class LinkedListTest {
         assertFalse(testList.listSearch(9));
     }
 
+    //============== Test inserts ============================
+    @Test public void testInserts() {
+        LinkedList testList = new LinkedList();
+        testList.insert(1);
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insert(5);
+
+        // Test insert after-------------------------
+        testList.insertAfter(4, 10);
+        String expected = "{5} -> {4} -> {10} -> {3} -> {2} -> {1} ->  NULL";
+        assertEquals(expected, testList.toString());
+
+        // Test user receives message when search value is not in ll
+        expected = "Search value was not found";
+        assertEquals(expected ,testList.insertAfter(15, 200));
+
+        // Test insert before---------------------------
+        testList.insertBefore(2, 100);
+        expected = "{5} -> {4} -> {10} -> {3} -> {100} -> {2} -> {1} ->  NULL";
+        assertEquals(expected, testList.toString());
+
+        // Test user receives message when search value is not in ll
+        expected = "Search value was not found";
+        assertEquals(expected ,testList.insertBefore(15, 200));
+        
+        // Test exception is thrown when list is empty
+        LinkedList empty = new LinkedList();
+
+        assertThrows(Exception.class, () -> empty.insertBefore(15, 200));
+        assertThrows(Exception.class, () -> empty.insertAfter(15, 200));
+    }
+
     //============== Link List Zipper Test ===================
-    @Test public void textZip(){
+    @Test public void testZip(){
         LinkedList a = new LinkedList();
         a.insertEnd(1);
         a.insertEnd(3);

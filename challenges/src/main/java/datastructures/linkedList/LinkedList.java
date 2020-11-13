@@ -184,7 +184,7 @@ public class LinkedList {
     }
 
     //================= Insert Before ===============
-    public void insertBefore(int searchValue, int newValue) {
+    public String insertBefore(int searchValue, int newValue) {
         Node newNode = new Node(newValue);
         Node lastNode = head;
         Node currentNode = head;
@@ -194,21 +194,21 @@ public class LinkedList {
                 if (searchValue == currentNode.value) {
                     lastNode.next = newNode;
                     newNode.next = currentNode;
-                    return;
+                    return "Successfully inserted";
 
                 } else {
                     lastNode = currentNode;
                     currentNode = currentNode.next;
                 }
             }
-            System.out.println("Search value was not found");
+            return "Search value was not found";
         }else {
-            System.out.println("List is empty");
+            throw new NullPointerException("List is empty");
         }
     }
 
     //=============== Insert After ================
-    public void insertAfter(int searchValue, int newValue) {
+    public String insertAfter(int searchValue, int newValue) {
         Node newNode = new Node(newValue);
         Node nextNode = head.next;
         Node currentNode = head;
@@ -218,15 +218,15 @@ public class LinkedList {
                 if (searchValue == currentNode.value) {
                     currentNode.next = newNode;
                     newNode.next = nextNode;
-                    return;
+                    return "Successfully inserted";
                 } else {
                     currentNode = nextNode;
                     nextNode = nextNode.next;
                 }
             }
-            System.out.println("Search value was not found");
+            return "Search value was not found";
         }else {
-            System.out.println("List is empty");
+            throw new NullPointerException("List is empty");
         }
     }
 
