@@ -80,19 +80,20 @@ public class LinkedListTest {
         b.insertEnd(8);
         b.insertEnd(10);
 
-        LinkedList expected = new LinkedList();
-        expected.insertEnd(1);
-        expected.insertEnd(2);
-        expected.insertEnd(3);
-        expected.insertEnd(4);
-        expected.insertEnd(5);
-        expected.insertEnd(6);
-        expected.insertEnd(7);
-        expected.insertEnd(8);
-        expected.insertEnd(9);
-        expected.insertEnd(10);
+        LinkedList c = new LinkedList();
+        c.insertEnd(1);
+        c.insertEnd(2);
+        c.insertEnd(3);
+        c.insertEnd(4);
+        c.insertEnd(5);
+        c.insertEnd(6);
+        c.insertEnd(7);
+        c.insertEnd(8);
+        c.insertEnd(9);
+        c.insertEnd(10);
 
-        LinkedList c = LinkedList.zipLists(a, b);
+        // test with 5 nodes in each LL
+        assertEquals(c.toString(), LinkedList.zipLists(a,b).toString());
 
         LinkedList bFull = new LinkedList();
         bFull.insertEnd(1);
@@ -104,7 +105,9 @@ public class LinkedListTest {
         LinkedList oneA = new LinkedList();
         oneA.insertEnd(2);
 
-        LinkedList d = LinkedList.zipLists(oneA, bFull);
+        // test with only one node in first LL
+        String expected ="{1} -> {2} -> {3} -> {5} -> {7} -> {9} ->  NULL";
+        assertEquals(expected, LinkedList.zipLists(oneA, bFull).toString());
 
         LinkedList oneB = new LinkedList();
         oneB.insertEnd(2);
@@ -116,13 +119,19 @@ public class LinkedListTest {
         aFull.insertEnd(7);
         aFull.insertEnd(9);
 
-        LinkedList e = LinkedList.zipLists(aFull, oneB);
+        // test with only one node in second LL
+        expected = "{1} -> {2} -> {3} -> {5} -> {7} -> {9} ->  NULL";
+        assertEquals(expected, LinkedList.zipLists(aFull, oneB).toString());
 
         LinkedList bothOne = new LinkedList();
         bothOne.insertEnd(1);
 
         LinkedList oneForBoth = new LinkedList();
         oneForBoth.insert(2);
+
+        // test With only 1 node in each LL
+        expected = "{2} -> {1} ->  NULL";
+        assertEquals(expected,LinkedList.zipLists(bothOne, oneForBoth).toString() );
     }
 
     @Test public void testTostring() throws Exception {
