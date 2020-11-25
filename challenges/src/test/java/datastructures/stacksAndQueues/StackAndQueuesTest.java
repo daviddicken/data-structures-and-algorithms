@@ -133,17 +133,17 @@ public class StackAndQueuesTest {
         assertEquals(3, testQ.size());
 
         //test for dequeue
-//        assertEquals(20, testQ.dequeue());
-//        assertEquals("{15} -> {10} -> NULL", testQ.toString());
-//        assertEquals(2, testQ.size());
-//        testQ.dequeue();
-//        assertEquals(10, testQ.dequeue());
-//        assertEquals("NULL", testQ.toString());
-//        assertEquals(0, testQ.size());
+        assertEquals(20, testQ.dequeue());
+        assertEquals("{15} -> {10} -> NULL", testQ.toString());
+        assertEquals(2, testQ.size());
+        testQ.dequeue();
+        assertEquals(10, testQ.dequeue());
+        assertEquals("NULL", testQ.toString());
+        assertEquals(0, testQ.size());
 
         //test for exception
-        assertThrows(Exception.class,  testQ::dequeue);
-        assertThrows(Exception.class,() -> testQ.dequeue());
+        assertThrows(Exception.class,  empty::dequeue);
+        assertThrows(Exception.class,() -> empty.dequeue());
     }
 
 }
