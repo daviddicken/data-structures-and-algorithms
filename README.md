@@ -24,6 +24,7 @@
 * [Left Join](#Left-Join)
 * [Depth First Graph](#Depth-First-Graph)
 * [Get Edge](#Get-Edge)
+* [Quick Sort Blog](challenges/quickSortBLOG.md)
 
 
 # Reverse an Array
