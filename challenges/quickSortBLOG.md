@@ -43,4 +43,4 @@ the array is now [8,4,16,23]
 
 It's getting late hopefully you can see how this is working I will have to revisit this blog another time.
 
- [whiteboard](whiteboards/quickSortWhiteboard.png)
+ [whiteboard](../whiteboards/quickSortWhiteboard.png)whiteboards/
