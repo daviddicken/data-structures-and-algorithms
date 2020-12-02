@@ -7,13 +7,13 @@
 * [Stacks and Queues](#Stacks-&-Queues)
 * [Pseudo Queue](#Pseudo-Queue)
 * [Binary Tree and BST Implementation](#Binary-Tree-and-BST-Implementation)
-* [Binary Tree Breadth Traversal](#Binary-Tree-Breadth-Traversal)
 * [Insert Sort](#Insert-Sort)
 * [Hash Table](#Hash-Table)
 * [Graph](#Graph)
 
 ## Challenges
 * [Multi Bracket Validation](#Multi-Bracket-Validation)
+* [Binary Tree Breadth Traversal](#Binary-Tree-Breadth-Traversal)
 * [Find Maximum Value](#Find-Maximum-Value)
 * [Reverse an Array](#Reverse-an-Array)
 * [Array Shift](#Array-Shift)
@@ -23,6 +23,7 @@
 * [Tree Intersection](#Tree-Intersection)
 * [Left Join](#Left-Join)
 * [Depth First Graph](#Depth-First-Graph)
+* [Breadth First Graph](#Breadth-First-Graph)
 * [Get Edge](#Get-Edge)
 * [Quick Sort Blog](challenges/quickSortBLOG.md)
 * [Repeated Word](#Repeated-Word)
@@ -427,21 +428,46 @@ in the edge arraylist of the other node.
 
 Get Neighbors:
 time: O(n)
-space: O(n) (I used a linkedHashMap fro testing purposes. It uses a small amount of space for a linked list that keeps the order of the nodes allowing for consistency when
+space: O(n) (I used a linkedHashMap for testing purposes. It uses a small amount of space for a linked list that keeps the order of the nodes allowing for consistency when
 testing. If space is a issue and testing is not needed anymore simply change the linkedHashMap to a HashMap.
 
 * Create a hashmap to hold neighbor node and weight as a key value pair.
 * Grab the arraylist of edges for the current node.
-* Step through the arraylist of edges placing the destenation node and weight as a key value pair in the hashmap. return the hashmap when finished steping though arraylist.
+* Step through the arraylist of edges placing the destination node and weight as a key value pair in the hashmap. return the hashmap when finished steping though arraylist.
 
 ------------------------------------
+# Breadth First Graph
+Create a method that takes in a node in a graph and returns a collection of nodes in the orger that
+they were visited during a breadth first traversal.
+
+### Challenge
+To make sure every node is visited in the correct order.
+
+### Efficiency & Approach
+Time O(n^2)
+Space O(n)
+
+* Create Arraylist to hold nodes in correct order and return to user
+* Create a currentNode var to hold current node we are working on
+* Add node that was given to a Q
+* Write a loop to run while Q is not empty
+* deQ node from Q to CurrentNode
+* Add currentNode to Arraylist
+* Get edges of currentNode and check if each edge.destination node has been visited yet
+* If not the add node to Q
+* Return Arraylist when loop is exited
+
+### WhiteBoard
+[whiteboard](whiteboards/codeChallenge36.PNG)
+
+--------------------------------
 # Depth First Graph
-Create a method that takes in a node in a graph and returns a list of the nodes in  pre-order.
+Create a method that takes in a node in a graph and returns a list of the nodes in pre-order.
 
 ### Challenge
 To figure out how to place node in list in correct order.
 
-#### Efficiency & Approach
+### Efficiency & Approach
 Time O(n)
 Space O(n)
 
