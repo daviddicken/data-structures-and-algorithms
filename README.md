@@ -25,7 +25,7 @@
 * [Depth First Graph](#Depth-First-Graph)
 * [Get Edge](#Get-Edge)
 * [Quick Sort Blog](challenges/quickSortBLOG.md)
-
+* [Repeated Word](#Repeated-Word)
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
