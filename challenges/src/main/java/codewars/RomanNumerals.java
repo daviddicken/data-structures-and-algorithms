@@ -41,7 +41,7 @@ public class RomanNumerals {
         int year = 0;
         romanNumeral += " ";
         char[] arr = romanNumeral.toCharArray();
-        
+
         for(int i = 0; i < arr.length - 1; i++){
 
             if(getValue(arr[i]) < getValue(arr[i+1])){
