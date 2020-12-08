@@ -1,16 +1,10 @@
 package repeatedWord;
 
-//import Hashtable;
-
 import datastructures.hashtable.Hashtable;
 
 import java.util.ArrayList;
 
 public class RepeatedWord {
-
-
-
-
 
     public String firstDouble(String words) throws Exception {
         String firstRepeated = "";
@@ -25,7 +19,7 @@ public class RepeatedWord {
         ArrayList [] buckets = new ArrayList[arrayOfWords.length];
         Hashtable hashtable = new Hashtable(buckets);
 
-        for(int i = 0; i< arrayOfWords.length; i++){
+        for(int i = 0; i < arrayOfWords.length; i++){
 
             if(hashtable.contains(arrayOfWords[i])){
                 return arrayOfWords[i];
