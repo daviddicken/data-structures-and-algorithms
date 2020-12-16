@@ -5,7 +5,7 @@
 * [Seahawks Win/Loss](#Seahawks-Win-Loss)
 
 ## Challenges
-* [Average Word](#Average-Word)
+* 
 
 # Seahawks Win Loss
 Date: 11/30/15
