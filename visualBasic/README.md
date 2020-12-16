@@ -2,12 +2,12 @@
 ## Table of Content
 
 ## Projects
-* [Seahawks Win/Loss](#Seahawks-Win/Loss)
+* [Seahawks Win/Loss](#Seahawks-Win-Loss)
 
 ## Challenges
 * [Average Word](#Average-Word)
 
-# Seahawks Win/Loss
+# Seahawks Win Loss
 Date: 11/30/15
 
 This is a form that reads and writes to a file allowing a user to enter/edit game scores
