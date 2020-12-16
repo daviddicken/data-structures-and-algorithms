@@ -22,6 +22,6 @@ The function will also work with the stream cin as the input stream
 * bulletproof
 
 ### Code
-[Code](c++/avgWord/avgWord/avgWord.cpp)
+[Code](avgWord/avgWord/avgWord.cpp)
 
 _________________________________________________________________________________
