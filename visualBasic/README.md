@@ -1,4 +1,4 @@
-# Visual Basic
+# **Visual Basic**
 ## Table of Content
 
 ## Projects
@@ -7,7 +7,7 @@
 ## Challenges
 * [Average Word](#Average-Word)
 
-# <ins>Seahawks Win Loss</ins>
+# Seahawks Win Loss
 Date: 11/30/15
 
 This program will read and write to a file allowing a user to enter/edit scores from Seahawks games.  
