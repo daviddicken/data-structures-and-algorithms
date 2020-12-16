@@ -17,7 +17,7 @@ and display overall stats and stats vs. individual teams
 [Read Me](visualBasic/HawksWinLoss/Seahawks.docx)
 
 ### Code
-[Code](visualBasic/HawksWinLoss/HawksWinLoss/Form1.vb)
+[Code](data-structures-and-algorithms/visualBasic/HawksWinLoss/HawksWinLoss/Form1.vb)
 
 
 _________________________________________________________________________________
