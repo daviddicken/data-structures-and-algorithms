@@ -14,7 +14,7 @@ This is a form that reads and writes to a file allowing a user to enter/edit gam
 and display overall stats and stats vs. individual teams
 
 ### <ins>Documents</ins>
-[Read Me](visualBasic/HawksWinLoss/Seahawks.docx)
+[Read Me](HawksWinLoss/Seahawks.docx)
 
 ### Code
 [Code](HawksWinLoss/HawksWinLoss/Form1.vb)
