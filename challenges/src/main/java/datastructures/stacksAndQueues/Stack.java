@@ -18,9 +18,8 @@ public class Stack<T> {
 
     //========= pop =====================
     public T pop() throws Exception{
-        if(top == null){
-            throw new Exception("The stack is empty");
-        }
+        if(top == null) throw new Exception("The stack is empty");
+
         T returnValue = top.getValue();
         top = top.getNext();
         return returnValue;
@@ -28,9 +27,8 @@ public class Stack<T> {
 
     //========= peek ====================
     public T peek() throws Exception {
-        if (top == null) {
-            throw new Exception("Stack is empty");
-        }
+        if (top == null) throw new Exception("Stack is empty");
+
         return top.getValue();
     }
 
@@ -42,9 +40,8 @@ public class Stack<T> {
 
     //========== toString ================
     public String toString(){
-        if(top == null){
-            return "NULL";
-        }
+        if(top == null) return "NULL";
+
         return toString(top); }
     //------------ helper ----------------
     private String toString(Node currentNode){
