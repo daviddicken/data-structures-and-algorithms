@@ -23,5 +23,4 @@ The function will also work with the stream cin as the input stream
 
 ### Code
 [Code](avgWord/avgWord/avgWord.cpp)
-
 _________________________________________________________________________________
