@@ -25,4 +25,18 @@ The function will also work with the stream cin as the input stream
 ### Code
 [Code](avgWord/avgWord/avgWord.cpp)
 _________________________________________________________________________________
-## BMR
+## BMR Calculator
+Date 1/13/16
+A program that gets the user to enter their weight in pounds, height in inches, age in years, 
+and either a M for male or F for female. 
+Then using the BMR formula calculate how many chocolate bars at 230 calories each 
+they would have to eat a day to maintain their weight.
+
+### Algorithm
+* Get weight, height, age, and male or female from user.
+* Calculate either female bmr or male bmr (to get calories) depending on user input.
+* Calories / 230 to find out how many chocolate bars are needed to mantain user weight.
+* Display the amount of chocolate bars the user needs to eat every day.
+
+### Code
+[Code](c++/bmr/Chap2Proj13/bmr.cpp)
