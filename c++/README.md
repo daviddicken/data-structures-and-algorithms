@@ -65,7 +65,6 @@ It needs to spell out the numbers ninety-eight not 98.
 ### Code
 [Code](Bottles/Bottles/bottles.cpp)
 ________________________________________________________________________________
-
 ## Change
 Date: 2/4/16
 This is a program that tells the users what coins to give for change.  
