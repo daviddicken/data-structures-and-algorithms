@@ -5,6 +5,7 @@
 ### Challenges
 * [Average Word](#Average-Word)
 * [BMR](#BMR)
+* [Ninty Nine Bottles](#Ninety-Nine-Bottles)
 
 ## Average Word
 Date: 2/11/16
@@ -40,3 +41,30 @@ they would have to eat a day to maintain their weight.
 
 ### Code
 [Code](bmr/Chap2Proj13/bmr.cpp)
+
+_______________________________________________________________________________
+## Ninety Nine Bottles
+Date 1/30/16
+A program that outputs lyrics to the song ninty-nine bottles of beer on the wall.
+It needs to spell out the numbers ninety-eight not 98.
+
+### Algorithm
+* create counter variable set at 99
+* do while counter > 0
+* create if statement for counter variable being between 2 - 19 (if(counter > 1 && counter < 20)
+* create case statement for 2-19 (function)
+* create else for counter variable = 1
+* add no more bottles of beer to end of one more bottle output
+* create tens function
+* counter / 10
+* make case statement to return written number (ninety, eighty, ect)
+* create ones function
+* counter % 10
+* make case statement to return written number (one, two, ect)
+
+### Code
+[Code](Bottles/Bottles/bottles.cpp)
+
+________________________________________________________________________________
+
+________________________________________________________________________________
