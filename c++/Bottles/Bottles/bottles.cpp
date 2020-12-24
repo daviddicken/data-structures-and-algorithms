@@ -1,7 +1,7 @@
 /*
 Filename: Bottles               (Chapter 4 Programming Project 4)
 Author:   David Dicken
-Description:  A program that outputs lyrics to the song ninty-nine bottles of beer on the wall.
+Description:  A program that outputs lyrics to the song ninety-nine bottles of beer on the wall.
               It needs to spell out the numbers ninety-eight not 98
 
 Date last modified: 1/30/16

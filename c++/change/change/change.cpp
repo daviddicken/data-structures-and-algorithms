@@ -8,7 +8,7 @@
  Algorithm: Introduce program
             Get amount of change that is needed from user
 			Convert to coins (quarters, dimes, pennies)
-			         to get quaters needed divide change by 25
+			         to get quarters needed divide change by 25
 					 mod change by 25 to get remaining amount
 
 					     to get dimes needed divide change by 10
