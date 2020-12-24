@@ -4,7 +4,7 @@
 
 ### Challenges
 * [Average Word](#Average-Word)
-* [BMR Calculator](#BMR-Calcutator)
+* [BMR](#BMR)
 
 ## Average Word
 Date: 2/11/16
@@ -25,7 +25,7 @@ The function will also work with the stream cin as the input stream
 ### Code
 [Code](avgWord/avgWord/avgWord.cpp)
 _________________________________________________________________________________
-## BMR Calculator
+## BMR
 Date 1/13/16
 A program that gets the user to enter their weight in pounds, height in inches, age in years, 
 and either a M for male or F for female. 
@@ -39,4 +39,4 @@ they would have to eat a day to maintain their weight.
 * Display the amount of chocolate bars the user needs to eat every day.
 
 ### Code
-[Code](c++/bmr/Chap2Proj13/bmr.cpp)
+[Code](bmr/Chap2Proj13/bmr.cpp)
