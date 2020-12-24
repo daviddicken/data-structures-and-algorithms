@@ -4,6 +4,7 @@
 
 ### Challenges
 * [Average Word](#Average-Word)
+* [BMR Calculator](#BMR-Calcutator)
 
 ## Average Word
 Date: 2/11/16
@@ -24,3 +25,4 @@ The function will also work with the stream cin as the input stream
 ### Code
 [Code](avgWord/avgWord/avgWord.cpp)
 _________________________________________________________________________________
+## BMR
