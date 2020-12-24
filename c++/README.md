@@ -8,7 +8,7 @@
 * [Ninty Nine Bottles](#Ninety-Nine-Bottles)
 
 ## Average Word
-Date: 2/11/16
+Date: 2/11/16  
 This is a program that reads a text file and outputs the avg lenth of the words found in the file.
 A word is defined as a string of symbols followed by a whitespace, comma, period, or end of line.
 The program will define a function that is called with input-file stream as a argument
@@ -27,7 +27,7 @@ The function will also work with the stream cin as the input stream
 [Code](avgWord/avgWord/avgWord.cpp)
 _________________________________________________________________________________
 ## BMR
-Date 1/13/16
+Date 1/13/16  
 A program that gets the user to enter their weight in pounds, height in inches, age in years, 
 and either a M for male or F for female. 
 Then using the BMR formula calculate how many chocolate bars at 230 calories each 
@@ -44,7 +44,7 @@ they would have to eat a day to maintain their weight.
 
 _______________________________________________________________________________
 ## Ninety Nine Bottles
-Date 1/30/16
+Date 1/30/16  
 A program that outputs lyrics to the song ninty-nine bottles of beer on the wall.
 It needs to spell out the numbers ninety-eight not 98.
 
