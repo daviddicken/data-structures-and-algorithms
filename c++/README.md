@@ -6,13 +6,14 @@
 * [Average Word](#Average-Word)
 * [BMR](#BMR)
 * [Ninty Nine Bottles](#Ninety-Nine-Bottles)
+* [Change](#Change)
 
 ## Average Word
 Date: 2/11/16  
 This is a program that reads a text file and outputs the avg lenth of the words found in the file.
 A word is defined as a string of symbols followed by a whitespace, comma, period, or end of line.
 The program will define a function that is called with input-file stream as a argument
-The function will also work with the stream cin as the input stream
+The function will also work with the stream cin as the input stream.
 
 ### Approach
 * Introduce - cout's to user
@@ -27,7 +28,7 @@ The function will also work with the stream cin as the input stream
 [Code](avgWord/avgWord/avgWord.cpp)
 _________________________________________________________________________________
 ## BMR
-Date 1/13/16  
+Date: 1/13/16  
 A program that gets the user to enter their weight in pounds, height in inches, age in years, 
 and either a M for male or F for female. 
 Then using the BMR formula calculate how many chocolate bars at 230 calories each 
@@ -44,7 +45,7 @@ they would have to eat a day to maintain their weight.
 
 _______________________________________________________________________________
 ## Ninety Nine Bottles
-Date 1/30/16  
+Date: 1/30/16  
 A program that outputs lyrics to the song ninty-nine bottles of beer on the wall.
 It needs to spell out the numbers ninety-eight not 98.
 
@@ -66,5 +67,24 @@ It needs to spell out the numbers ninety-eight not 98.
 [Code](Bottles/Bottles/bottles.cpp)
 
 ________________________________________________________________________________
+## Change
+Date: 2/4/16
+This is a program that tells the users what coins to give for change.  
+The till is out of nickles and half dollars.
 
+### Algorithm
+* Introduce program
+* Get amount of change that is needed from user
+* Convert to coins (quarters, dimes, pennies)
+* To get quarters needed divide change by 25 mod change by 25 to get remaining amount
+* To get dimes needed divide change by 10 mod change by 10 to get remaining amount
+* To get pennies needed divide change by 1
+* Include the books void compute_coins function
+* Output coins needed to make change
+* Repeat until user says they are done
+
+### Code
+[Code](change/change/change.cpp)
+
+________________________________________________________________________________
 ________________________________________________________________________________
