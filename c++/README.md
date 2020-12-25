@@ -7,6 +7,9 @@
 * [BMR](#BMR)
 * [Ninty Nine Bottles](#Ninety-Nine-Bottles)
 * [Change](#Change)
+* [Sound](#Sound)
+* [Clothing](#Clothing)
+* [Cubed Tic Tac Toe](#Cubed-Tic-Tac-Toe)
 
 ## Average Word
 Date: 2/11/16  
@@ -83,6 +86,52 @@ The till is out of nickles and half dollars.
 
 ### Code
 [Code](change/change/change.cpp)
-
 ________________________________________________________________________________
+## Sound
+Date: 1/13/16  
+This is a program that allows the user to enter a starting temperature and ending temperature.  
+Then within the temperature range the program needs to calculate and display velocity of sound (meters/sec) 
+by 1 degree increments.
+
+### Algorithm
+* Get starting and ending temperatures (in celsius) from user
+* Display the velocity of sound for each degree in the selected temperature range
+  velocity = 331.3 + 0.61 x temperature
+   
+### Code
+________________________________________________________________________________
+## Clothing
+Date: 1/27/16  
+This program will asks user for their height, weight, and age. Then calculates and outputs hat size, jacket size, and wait size.
+
+### Algorithm
+* Introduce Program
+* Get height, weight, and age from user
+* Write function to calculate hat size
+	(w/h) * 2.9
+* write function to calculate jacket size
+	((h * w)/288) + (y * .125)     (make variable names for 288 & .125)
+	 if a > 39 then  a - 30 = x
+	  x / 10 = y   (use integers)
+* write function to calculate waist size
+	(w / 5.7) + (y * .1)           (make variable names for 5.7 & .1)
+		if a > 29 then a - 28 = x
+		  x / 2  = y      (use integers)
+* output hat size, jacket size, and waist size
+* ask if user would like to enter different height, weight and age
+* end program
+
+### Code
+________________________________________________________________________________
+## Cubed Tic Tac Toe
+This is a 2 player three layered tic tac toe game. Player 1 is X's and player 2 is  O's.  
+Players will take turns placing X's and O's in ome of the 27 spots on a three layer tic tac toe board.  
+Each time a player gets three X's or 3 O's in a row they score a point. If you picture the gameboard as   
+three tic tac toe boards lying on top of eachother to form a cube, a player can get three in a row -
+up and down, diagonally, and side to side.
+
+### Algorithm
+* Indtroduce the game and explain the rules
+* Write function to build out board
+  * 
 ________________________________________________________________________________
