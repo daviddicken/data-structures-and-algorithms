@@ -133,5 +133,5 @@ up and down, diagonally, and side to side.
 ### Algorithm
 * Indtroduce the game and explain the rules
 * Write function to build out board
-  * 
+  * Next
 ________________________________________________________________________________
