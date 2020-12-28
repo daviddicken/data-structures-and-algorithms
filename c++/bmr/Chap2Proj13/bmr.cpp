@@ -4,7 +4,7 @@
  Description:  A program that gets the user to enter their weight in pounds, height in inches,
                age in years, and either a M for male or F for female.
 			   Then using the BMR formula calculate how many chocolate bars at 230 calories each
-			   they would have to eat a day to mantain their weight.
+			   they would have to eat a day to maintain their weight.
 
 			   Female BMR = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age)
 			   Male BMR = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age)
