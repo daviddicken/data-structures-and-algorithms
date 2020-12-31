@@ -1,6 +1,7 @@
 package codewars;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MathEvaluator {
     //2 / (2 + 3) * 4.33 - -6
@@ -35,6 +36,71 @@ public class MathEvaluator {
     */
     //================= new helpers process string and then parens
 public double doMath(String str){
+//    1-1    // 0
+//    1 -1   // 0
+//ArrayList<Character> arr = new ArrayList(Collections.singleton(str.toCharArray()));
+    ArrayList<String> arr = new ArrayList<>();
+    // 2 /2+3 * 4.75- -6
+    boolean wasDigit = false, newNum = true;
+    int multi = -1, div = -1;
+
+    while(str.contains("*") || str.contains("/")){
+        if(str.contains("*")) multi = str.indexOf("*");
+        if (str.contains("/")) div = str.indexOf("/");
+
+        // 2 /2+3 * 4.75- -6
+        if(multi < div && multi != -1){
+            int i = multi - 1, leftStart = 0, endStart = 0, rightEnd = 0;
+            while(i > 0){ //get number to left of *
+                if(str.charAt(i) == ' ' && i == multi - 1) i--;
+                if(Character.isDigit(str.charAt(i))) {
+                    if (newNum) endStart = i;
+                    leftStart = i;
+                    newNum = false;
+                }else if(str.charAt(i) == '-'){
+                    leftStart = i;
+                    break;
+                }else break;
+            }
+            double left = Double.parseDouble(str.substring(leftStart, endStart));
+            newNum = true;
+            i = multi + 1;
+            //=====================================================================
+            while(i < str.length() - 1){ //get number to right of *
+
+                if(str.charAt(i) == ' ' && i == multi + 1) i++;
+                if(Character.isDigit(str.charAt(i))) {
+                    if (newNum) endStart = i;
+                    rightEnd = i;
+                    newNum = false;
+                }else if(str.charAt(i) == '-' && newNum){
+                    endStart = i;
+                    newNum = false;
+                }else break;
+            }
+            double right = Double.parseDouble(str.substring(endStart, rightEnd));
+            newNum = true;
+//do math and remake string
+            double total = left * right;
+
+        }else{
+
+        }
+    }
+
+    // while str contains * or / get index of each compare index and process
+
+//    for(int i = 1; i < str.length() - 1; i++){
+//        if(Character.isDigit(str.charAt(i))){
+//            if(newNum) start = i;
+//            end = i;
+//            newNum = false;
+//            wasDigit = true;
+//        }else if(!newNum){
+//            //add str start - str end to arr
+//        }
+//
+//    }
 
     return 0.0;
 }
