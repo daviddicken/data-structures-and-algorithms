@@ -35,23 +35,18 @@ public class MathEvaluator {
 6 + -( -4) // 10
     */
     //================= new helpers process string and then parens
-public double doMath(String str){
-//    1-1    // 0
-//    1 -1   // 0
-//ArrayList<Character> arr = new ArrayList(Collections.singleton(str.toCharArray()));
-    ArrayList<String> arr = new ArrayList<>();
-    // 2 /2+3 * 4.75- -6
-    boolean wasDigit = false, newNum = true;
+public String doMath(String str){
+    boolean newNum = true;
     int multi = -1, div = -1;
 
+    //----------------- Multiplication and division --------------------
     while(str.contains("*") || str.contains("/")){
         if(str.contains("*")) multi = str.indexOf("*");
         if (str.contains("/")) div = str.indexOf("/");
 
-        // 2 /2+3 * 4.75- -6
-        if(multi < div && multi != -1){
+        if(multi < div && multi != -1){ //----------- Process multiplication
             int i = multi - 1, leftStart = 0, endStart = 0, rightEnd = 0;
-            while(i > 0){ //get number to left of *
+            while(i > 0){ //-------------------------- Get number to left
                 if(str.charAt(i) == ' ' && i == multi - 1) i--;
                 if(Character.isDigit(str.charAt(i))) {
                     if (newNum) endStart = i;
@@ -65,9 +60,8 @@ public double doMath(String str){
             double left = Double.parseDouble(str.substring(leftStart, endStart));
             newNum = true;
             i = multi + 1;
-            //=====================================================================
-            while(i < str.length() - 1){ //get number to right of *
 
+            while(i < str.length() - 1){ //------------------- Get number to right
                 if(str.charAt(i) == ' ' && i == multi + 1) i++;
                 if(Character.isDigit(str.charAt(i))) {
                     if (newNum) endStart = i;
@@ -80,30 +74,99 @@ public double doMath(String str){
             }
             double right = Double.parseDouble(str.substring(endStart, rightEnd));
             newNum = true;
-//do math and remake string
+            //----------- Do Math and remake string
             double total = left * right;
+            String tempStr = "";
+            tempStr = str.substring(0, leftStart - 1);
+            tempStr += total;
+            tempStr += str.substring(rightEnd + 1, str.length() - 1);
+            str = tempStr;
 
         }else{
+            //-------------- Process division ------------------------
+            int i = div - 1, leftStart = 0, endStart = 0, rightEnd = 0;
+            while(i > 0){ //------------------- Get number to left
+                if(str.charAt(i) == ' ' && i == multi - 1) i--;
+                if(Character.isDigit(str.charAt(i))) {
+                    if (newNum) endStart = i;
+                    leftStart = i;
+                    newNum = false;
+                }else if(str.charAt(i) == '-'){
+                    leftStart = i;
+                    break;
+                }else break;
+            }
+            double left = Double.parseDouble(str.substring(leftStart, endStart));
 
+            newNum = true;
+            i = div + 1;
+            while(i < str.length() - 1){ //---------- Get number to right
+                if(str.charAt(i) == ' ' && i == multi + 1) i++;
+                if(Character.isDigit(str.charAt(i))) {
+                    if (newNum) endStart = i;
+                    rightEnd = i;
+                    newNum = false;
+                }else if(str.charAt(i) == '-' && newNum){
+                    endStart = i;
+                    newNum = false;
+                }else break;
+            }
+            double right = Double.parseDouble(str.substring(endStart, rightEnd));
+            newNum = true;
+            //----------- Do math and remake string
+            double total = left / right;
+            String tempStr = "";
+            tempStr = str.substring(0, leftStart - 1);
+            tempStr += total;
+            tempStr += str.substring(rightEnd + 1, str.length() - 1);
+            str = tempStr;
         }
-    }
+    }//-------- end of * / while
 
-    // while str contains * or / get index of each compare index and process
+    //2 /2+3 * 4.75- -6
+    // 1+14.24- -6
+    //------------------------- addition and subtraction --------------------
+    int i = 0, start = 0, end = 0;
+    double numOne = 0, numTwo = 0;
+    boolean isMinus = false, add = true, first = true;
 
-//    for(int i = 1; i < str.length() - 1; i++){
-//        if(Character.isDigit(str.charAt(i))){
-//            if(newNum) start = i;
-//            end = i;
-//            newNum = false;
-//            wasDigit = true;
-//        }else if(!newNum){
-//            //add str start - str end to arr
-//        }
-//
-//    }
+    while(i < str.length()){
+        if(first) {
+            if (Character.isDigit(str.charAt(i)) || str.charAt(i) == '.' || (!isMinus && str.charAt(i) == '-')) {
+                if (newNum) start = i;
+                isMinus = true;
+                end = i;
+            } else {
+                if (str.charAt(i) == ' ') i++;
+                if (str.charAt(i) != '+') add = false;
+                if (str.charAt(i + 1) == ' ') i++;
+                numOne = Double.parseDouble(str.substring(start, end));
+                first = false;
+                newNum = true;
+                isMinus = false;
+            }
+            i++;
+        }else{ //---------- get second number
 
-    return 0.0;
-}
+            if (Character.isDigit(str.charAt(i)) || str.charAt(i) == '.' || (!isMinus && str.charAt(i) == '-')) {
+                if (newNum) start = i;
+                isMinus = true;
+                end = i;
+                i++;
+            } else {
+                if (str.charAt(i) == ' ') i++;
+                if (str.charAt(i) != '+') add = false;
+                numTwo = Double.parseDouble(str.substring(start, end));
+            }
+        }
+        // want to store result of math to be used as first number second time through.... this should be done recursively
+    }//---------- end of = - while
+
+
+
+    return str;
+}//----------------------------- End of doMath
+
 //================= Helpers ===========================================
     public ArrayList<String> makeList(String str){
         ArrayList<String> list = new ArrayList<>();
@@ -176,3 +239,30 @@ public double doMath(String str){
 //         for(int k = start; k < end; k++){
 //           temp += str.charAt(k);
 //         }
+
+//========================================
+//    StringBuilder sb = new StringBuilder();
+//    1-1    // 0
+//    1 -1   // 0
+//ArrayList<Character> arr = new ArrayList(Collections.singleton(str.toCharArray()));
+//ArrayList<String> arr = new ArrayList<>();
+// 2 /2+3 * 4.75- -6
+
+//            sb.append(str, 0, leftStart - 1);
+//            sb.append(total);
+//            sb.append(str,rightEnd + 1, str.length() -1);
+//            str = sb.toString();
+
+// while str contains * or / get index of each compare index and process
+
+//    for(int i = 1; i < str.length() - 1; i++){
+//        if(Character.isDigit(str.charAt(i))){
+//            if(newNum) start = i;
+//            end = i;
+//            newNum = false;
+//            wasDigit = true;
+//        }else if(!newNum){
+//            //add str start - str end to arr
+//        }
+//
+//    }
