@@ -29,7 +29,10 @@ public class MathEvaluatorTest {
     }
 
     @Test public void testExpression() {
+ //       assertEquals(new MathEvaluator().calculate("2 /2+3 * 4.75"), 15.25,0.01);
+
         assertEquals(new MathEvaluator().calculate("2 /2+3 * 4.75- -6"), 21.25, 0.01);
+       //1+14.25- -6
     }
 
     @Test public void testSimple() {
