@@ -16,35 +16,70 @@ public class MathEvaluator {
 //                }
 //            }
 //            expression = pullParens(expression,open,close);
-
-            expression = pullParens(expression, expression.lastIndexOf("("), expression.indexOf(")"));
+            expression = pullParens(expression);
         }
-        System.out.println("string after pullParens " + expression);
+
+       //  if(expression.contains("(")) expression = pullParens(expression);//, expression.lastIndexOf("("));
+        //}
         while (!isNum(expression)){
             expression = doMath(expression);
         }
         return Double.parseDouble(expression);
     }
 
-    //------
-    public String pullParens(String str, int start, int end) {
-        System.out.println("start  " + start + " end " + end);
-        System.out.println("string going to domath " + str.substring(start + 1, end));
-        String total = doMath(str.substring(start + 1, end));
+    //------ I should be able to do this recursively
+    public String pullParens(String str) {
+//(123.45*(678.90 / (-2.5+ 11.5)-(((80 -(19))) *33.25)) / 20)
+        System.out.println("entered pullparens");
 
-        if(start > 0) {
-            if (str.charAt(start - 1) == '-') {
-                total = String.valueOf(Double.parseDouble(total) * -1);
-                start -= 1;
-            }
+        if(!str.contains("(")){
+            return doMath(str);
         }
+        int counter = 1, i = str.indexOf('('), start = i;
 
-        if (end < str.length()) {
-            str = str.substring(0, start) + total + str.substring(end + 1);
-        } else {
-            str = str.substring(0, start) + total;
+        while(counter > 0){
+            i++;
+            if(str.charAt(i) == '(') counter++;
+            if(str.charAt(i) == ')') counter--;
         }
-        return str;
+        int end = i;
+        String temp = pullParens(str.substring(str.indexOf('(')+1,end));
+        System.out.println("temp " + temp);
+        System.out.println("str " + str );
+        if(start == 0){
+            System.out.println("return 1 " + temp + str.substring(end + 1));
+
+            return temp + str.substring(end + 1);
+        }
+        if(end == str.length() -1){
+            System.out.println("return 2 " + str.substring(0, start - 1) + temp);
+            return str.substring(0, start - 1) + temp;
+        }
+        System.out.println("return 3 " + str.substring(0, start - 1) + temp + str.substring(end + 1));
+        return str.substring(0, start) + temp + str.substring(end + 1);
+
+
+
+
+     //   return str.substring(start) + doMath(str) + str.substring(end);
+
+        //==========================================================
+//        String total = doMath(str.substring(start + 1, end));
+//
+//        if(start > 0) {
+//            if (str.charAt(start - 1) == '-') {
+//                total = String.valueOf(Double.parseDouble(total) * -1);
+//                start -= 1;
+//            }
+//        }
+//
+//        if (end < str.length()) {
+//            str = str.substring(0, start) + total + str.substring(end + 1);
+//        } else {
+//            str = str.substring(0, start) + total;
+//        }
+//        //===============================================
+//        return str;
     }
 
     //================= new helpers process string and then parens
@@ -60,20 +95,18 @@ public class MathEvaluator {
             multi = -1;
             div = -1;
         }
-        System.out.println("before isnum " + str );
         if(isNum(str)) return str;
             //------------------------- addition and subtraction --------------------
             int i = 0, start = 0, end = 0;
             double numOne = 0, numTwo, total;
             boolean isMinus = false, add = true, first = true;
-        System.out.println("string before add " + str);
             while (i < str.length()) {
                 if (first) {
                     if (Character.isDigit(str.charAt(i)) || str.charAt(i) == '.' || (!isMinus && str.charAt(i) == '-')) {
-                        if (newNum) start = i; // 0
+                        if (newNum) start = i;
                         newNum = false;
                         isMinus = true;
-                        end = i; // 0 1 2 3 4
+                        end = i;
 
                     } else {
                         if (str.charAt(i) == ' ') i++;
@@ -82,9 +115,7 @@ public class MathEvaluator {
                         if(start == end){
                             numOne = Character.getNumericValue(str.charAt(end));
                         }else {
-
                             numOne = Double.parseDouble(str.substring(start, end + 1));
-                            System.out.println("*** numOne *** " + numOne );
                         }
                         first = false;
                         newNum = true;
@@ -107,11 +138,7 @@ public class MathEvaluator {
         if(start == end) {
             numTwo = Character.getNumericValue(str.charAt(end));
         }else{
-           // System.out.println(str);
-           // System.out.println("**** " + str.substring(start, end + 1));
             numTwo = Double.parseDouble(str.substring(start, end + 1));
-            System.out.println("*** numTwo *** " + numTwo);
-
         }
             if (add) {
                 total = numOne + numTwo;
@@ -119,34 +146,30 @@ public class MathEvaluator {
                 total = numOne - numTwo;
             }
             if (end == str.length() - 1){
-                System.out.println("return 1 str " + total);
                 return String.valueOf(total);
             }
             str = total + str.substring(end + 1);
-        System.out.println("return 2 str " + str);
-
         return str;
         }
 
     //=============== Multiply and Divide =================
     public String mulDiv(String str, int multi, int div){
-        System.out.println("multi " + multi + " div " + div);
-        System.out.println("entered muldiv multi: ");
+//        System.out.println("entered muldiv multi: ");
          boolean newNum = true;
          double left, right;
 
 //========================== MULTIPLY ==============================
         //==========================================================
 
-        if ((multi < div && multi > -1) || div == -1){ //----------- Process multiplication 1* 1
+        if ((multi < div && multi > -1) || div == -1){
 
-            System.out.println("entered multiply section of muldiv");
+//            System.out.println("entered multiply section of muldiv");
             int i = multi - 1, leftStart = 0, endStart = 0, rightEnd = 0;
-            while (i >= 0) { //-------------------------- Get number to left 12* 123
+            while (i >= 0) { //-------------------------------------------- Get number to left
                 if (str.charAt(i) == ' ' && i == multi - 1) i--;
                 if (Character.isDigit(str.charAt(i)) || str.charAt(i) == '.') {
-                    if (newNum) endStart = i; // 1
-                    leftStart = i;   // 1 0
+                    if (newNum) endStart = i;
+                    leftStart = i;
                     newNum = false;
                 } else if (str.charAt(i) == '-') {
                     leftStart = i;
@@ -163,7 +186,7 @@ public class MathEvaluator {
             i = multi + 1;
 
 //========================================= RIGHT NUMBER ====================================================
-            while (i < str.length()) { //------------------- Get number to right 3 * 4.75
+            while (i < str.length()) { //------------------- Get number to right
                 if (str.charAt(i) == ' ' && i == multi + 1) i++;
                 if (Character.isDigit(str.charAt(i)) || str.charAt(i) == '.') {
                     if (newNum) endStart = i;
@@ -183,33 +206,27 @@ public class MathEvaluator {
             }
             //----------- Do Math and remake string
             double total = left * right;
-            System.out.println("multiply left " + left + " right " + right + " total " + total);
+//            System.out.println("multiply left " + left + " right " + right + " total " + total);
             //-------------------------------
             if(rightEnd < str.length() - 1) {
                 if(leftStart == 0){
                     str = total + str.substring(rightEnd);
-                    System.out.println("1 str " + str);
                 }else {
                     str = str.substring(0, leftStart) + total + str.substring(rightEnd + 1);
-                    System.out.println("2 str " + str);
                 }
             }else{
                 str = str.substring(0, leftStart) + total;
-                System.out.println("3 str " + str);
             }
         } else {
             //=======================================================================
             //=======================================================================
             //-------------- Process division ------------------------ 1 /1  2 /2+3 * 4.75
-            System.out.println("entered div side");
             int i = div - 1, leftStart = 0, endStart = 0, rightEnd = 0;
             while (i >= 0) { //------------------- Get number to left
-                System.out.println("entered first while in div");
                 if (str.charAt(i) == ' ' && i == div - 1) i--;
                 if (Character.isDigit(str.charAt(i)) || str.charAt(i) == '.') {
                     if (newNum) endStart = i;
                     leftStart = i;
-//                    System.out.println("endStart " + endStart + " leftStart " + leftStart);
                     newNum = false;
                 } else if (str.charAt(i) == '-') {
                     leftStart = i;
@@ -219,20 +236,17 @@ public class MathEvaluator {
             }
             if(leftStart == endStart) {
                 left = Character.getNumericValue(str.charAt(endStart));
-                System.out.println("left div 1 " + left);
             }else{
                 left = Double.parseDouble(str.substring(leftStart, endStart));
-                System.out.println("div left 2 " + left);
-
             }
 
             //=========================== RIGHT NUMBER ========================
             //=================================================================
             newNum = true;
             i = div + 1;
-            while (i < str.length()) { //---------- Get number to right 2 /5.0 * 4.33 - -6
+            while (i < str.length()) { //---------------------------- Get number to right
 //                System.out.println("getting right number");
-                if (str.charAt(i) == ' ' && i == multi + 1) i++;
+                if (str.charAt(i) == ' ' && i == div + 1) i++;
                 if (Character.isDigit(str.charAt(i)) || str.charAt(i) == '.') {
                     if (newNum) endStart = i;
                     rightEnd = i;
@@ -245,30 +259,20 @@ public class MathEvaluator {
             }
             if(endStart == rightEnd){
                 right = Character.getNumericValue(str.charAt(rightEnd));
-                System.out.println("div right 1 " + right);
-
             }else {
-                right = Double.parseDouble(str.substring(endStart, rightEnd));
-                System.out.println("div right 2 " + right);
-
+                right = Double.parseDouble(str.substring(endStart, rightEnd)); //<-------------------------- 2 / (2 + 3) * 4.33 - -6
             }
-            //----------- Do math and remake string
+            //----------- Do math and remake string     2 / (2 + 3) * 4.33 - -6
             double total = left / right;
 //=======================================================================   MATH
             if(rightEnd < str.length() - 1) {
                 if(leftStart == 0){
-                    System.out.println("rightend " + rightEnd);
                     str = total + str.substring(rightEnd + 1);
-                    System.out.println("str 1 " + str);
                 }else {
                     str = str.substring(0, leftStart) + total + str.substring(rightEnd + 1);
-                    System.out.println("str 2 " + str);
-
                 }
             }else{
                 str = str.substring(0, leftStart) + total;
-                System.out.println("str 3 " + str);
-
             }
 //            System.out.println("str after div math " + str);
         }
