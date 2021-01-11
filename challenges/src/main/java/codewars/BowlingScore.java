@@ -20,50 +20,57 @@ public class BowlingScore {
                     if(arr.get(i + 2).charAt(0) == 'X'){
                         score += 30;
                     }else{
-                        score += 20 + arr.get(i+2).charAt(0);
+                        score += 20 + Character.getNumericValue(arr.get(i+2).charAt(0));
                     }
-                }else if(arr.get(i+1).contains("/")){
+                }else if(arr.get(i+1).charAt(1) == '/'){
                     score += 20;
                 } else{
-                   score += 10 + arr.get(i+1).charAt(0) + arr.get(i+1).charAt(1);
+                   score += 10 + Character.getNumericValue(arr.get(i+1).charAt(0)) + Character.getNumericValue(arr.get(i+1).charAt(1));
                 }
-            }else if(arr.get(i).contains("/")){
-                if(arr.get(i+1) == "X"){
+            }else if(arr.get(i).charAt(1) == '/'){
+                if(arr.get(i+1).charAt(0) == 'X'){
                     score += 20;
                 }else{
-                    score += 10 + arr.get(i+1).charAt(0);
+                    score += 10 + Character.getNumericValue(arr.get(i+1).charAt(0));
                 }
             }else{
-                score += arr.get(i).charAt(0) + arr.get(i).charAt(1);
+                score += Character.getNumericValue(arr.get(i).charAt(0)) + Character.getNumericValue(arr.get(i).charAt(1));
             }
         }
-//ninth frame
+    //ninth frame
         if(arr.get(8).equals("X")){
             if (arr.get(9).charAt(0) == 'X'){
                 if(arr.get(9).charAt(1) == 'X'){
                     score += 30;
                 }else {
-                    score += 20 + arr.get(9).charAt(1);
+                    score += 20 + Character.getNumericValue(arr.get(9).charAt(1));
                 }
             }else if(arr.get(9).charAt(1) == '/'){
                 score += 20;
             }else{
-                score += 10 + arr.get(9).charAt(0) + arr.get(9).charAt(1);
+                score += 10 + Character.getNumericValue(arr.get(9).charAt(0)) + Character.getNumericValue(arr.get(9).charAt(1));
             }
-        }else if(arr.get(8).contains("/")){
+        }else if(arr.get(8).charAt(1) == '/'){
             if(arr.get(9).charAt(0) == 'X'){
                 score += 20;
             }else{
-                score += 10 + arr.get(9).charAt(0);
+                score += 10 + Character.getNumericValue(arr.get(9).charAt(0));
             }
         }else{
-            score += arr.get(8).charAt(0) + arr.get(8).charAt(1);
+            score += Character.getNumericValue(arr.get(8).charAt(0)) + Character.getNumericValue(arr.get(8).charAt(1));
         }
-//10th frame
-        
-
-
+        //10th frame
+        if (arr.get(9).charAt(1) == '/'){
+            score += 10 + Character.getNumericValue(arr.get(9).charAt(2));
+        }else{
+            for(int i = 0; i < arr.get(9).length(); i++){
+                if(arr.get(9).charAt(i) == 'X'){
+                    score += 10;
+                }else {
+                    score += Character.getNumericValue(arr.get(9).charAt(i));
+                }
+            }
+        }
         return score;
     }
 }
-//total += Integer.parseInt(String.valueOf(arr.get(i+1).charAt(0)));
