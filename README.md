@@ -4,6 +4,7 @@
 # C#
 ## Challenges
 * [Reverse Array](#Reverse-Array)
+* [Array Shift C#](#Array-Shift-C#)
 
 # Java
 ## Data Structures
@@ -43,7 +44,7 @@ This is a program that takes a array of integers and returns an array with the i
 The challenge is to move all values in one array to another in reverse order
 
 ### Approach & Efficiency
-Time: O(logN)  
+Time: O(n)  
 Space: O(n)
 * Swap first value with last value.
 * Move inward to the next two values and swap.
@@ -51,6 +52,27 @@ Space: O(n)
 * Return new array
 
 [whiteboard](whiteboards/reverseArraycc1wb.png)
+
+-------------------------------------------------------
+# Array Shift
+This program takes in an array of int's and a int and creates a new array with the values of the passed in array and inserts the passed in value to the middle index.
+
+### Challenge
+To step through both array's until middle is found then insert the value and step through the rest of the array's with the index values being compare off by one.
+
+### Approach & Efficiency
+Time: O(n)
+Space: O(n)
+* Create new array that is +1 in length then array passed in
+* Create variables to hold the middle of the new array and a variable for stepping through original array
+* Iterate through both arrays.
+* If iterator = middle variable
+   Insert value passed in at this index
+   decrement variable for stepping through original array
+* If not place value at variable for org array into interator index of new array
+* return array
+
+[whiteboard](whiteboards/arrayShiftcc2wb.png)
 
 -------------------------------------------------------
 # Java
