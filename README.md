@@ -1,6 +1,11 @@
 
 # Table of Content
 
+# C#
+## Challenges
+* [Reverse Array](#Reverse-Array)
+
+# Java
 ## Data Structures
 * [Binary Search](#Binary-Search)
 * [Linked List Insertions](#Linked-List-Insertions)
@@ -27,6 +32,28 @@
 * [Get Edge](#Get-Edge)
 * [Quick Sort Blog](challenges/quickSortBLOG.md)
 * [Repeated Word](#Repeated-Word)
+
+------------------------------------------------------
+# C#
+
+# Reverse Array
+This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
+
+### Challenge
+The challenge is to move all values in one array to another in reverse order
+
+### Approach & Efficiency
+Time: O(logN)  
+Space: O(n)
+* Swap first value with last value.
+* Move inward to the next two values and swap.
+* Repeat until the middle of array is reached.
+* Return new array
+
+[whiteboard](whiteboards/reverseArraycc1wb.png)
+
+-------------------------------------------------------
+# Java
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
