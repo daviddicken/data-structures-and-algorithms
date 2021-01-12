@@ -2,9 +2,12 @@ package codewars;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 public class Calculator {
     public static Double evaluate(String expression) {
+        Date date = new Date();
+        System.out.println("Start " + date);
         ArrayList<String> arr = new ArrayList<>(Arrays.asList(expression.split(" ")));
         for(int i = 0; i < arr.size(); i++){
             if(arr.get(i).equals("/")){
