@@ -5,6 +5,7 @@
 ## Challenges
 * [Reverse Array](#Reverse-Array)
 * [Array Shift C#](#Array-Shift-C#)
+* [Binary Search C#](#Binary-Search-C#)
 
 # Java
 ## Data Structures
