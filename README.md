@@ -76,6 +76,29 @@ Space: O(n)
 [whiteboard](whiteboards/arrayShiftcc2wb.png)
 
 -------------------------------------------------------
+# Binary Search C#
+This is a method that takes in a sorted array and a value and uses a binary search to return the index where that value was located in the array. If value was not found return -1
+
+### Challenge
+To do this in a binary search not iteratively.
+
+### Approach & Efficiency
+Time: O(logN)
+Space: O(1)
+
+* Declare a variable equal to 0 (first) and a variable equal to array.length -1 (last)
+* Declare a variable for middle (first + last)/2
+* Write a loop to run until first is greater then last
+   if array[middle] is equal to value return middle
+   else if the value is greater make first equal to mid + 1
+   else make last equal to mid - 1
+   
+   Set middle equal to (first + last)/2
+* If loop exits with out finding value return -1
+
+[whiteboard](whiteboards/binarySearchcc3wb.png)
+
+-------------------------------------------------------
 # Java
 
 # Reverse an Array
