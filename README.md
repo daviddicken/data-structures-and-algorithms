@@ -55,7 +55,7 @@ Space: O(n)
 [whiteboard](whiteboards/reverseArraycc1wb.png)
 
 -------------------------------------------------------
-# Array Shift C\#
+# Array Shift C#
 This program takes in an array of int's and a int and creates a new array with the values of the passed in array and inserts the passed in value to the middle index.
 
 ### Challenge
