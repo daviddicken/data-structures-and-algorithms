@@ -4,8 +4,8 @@
 # C#
 ## Challenges
 * [Reverse Array](#Reverse-Array)
-* [Array Shift C#](#Array-Shift-C#)
-* [Binary Search C#](#Binary-Search-C#)
+* [Array Shift Csharp](#Array-Shift-Csharp)
+* [Binary Search C#](#Binary-Search-Csharp)
 
 # Java
 ## Data Structures
@@ -55,7 +55,7 @@ Space: O(n)
 [whiteboard](whiteboards/reverseArraycc1wb.png)
 
 -------------------------------------------------------
-# Array Shift C#
+# Array Shift Csharp
 This program takes in an array of int's and a int and creates a new array with the values of the passed in array and inserts the passed in value to the middle index.
 
 ### Challenge
@@ -76,7 +76,7 @@ Space: O(n)
 [whiteboard](whiteboards/arrayShiftcc2wb.png)
 
 -------------------------------------------------------
-# Binary Search C#
+# Binary Search Csharp
 This is a method that takes in a sorted array and a value and uses a binary search to return the index where that value was located in the array. If value was not found return -1
 
 ### Challenge
