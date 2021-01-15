@@ -10,16 +10,13 @@ public class BinarySearch {
 
         while(first <= last)
         {
-            if(array[mid] == key)
-            {
+            if(array[mid] == key){
                 return mid;
             }
-            else if(array[mid] < key)
-            {
+            else if(array[mid] < key) {
                 first = mid + 1;
             }
-            else
-            {
+            else {
                 last = mid - 1;
             }
             mid = (first + last)/ 2;
