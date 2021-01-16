@@ -2,6 +2,9 @@
 # Table of Content
 
 # C#
+## Data Structures
+* [Linked List](#Linked-List)
+
 ## Challenges
 * [Reverse Array](#Reverse-Array)
 * [Array Shift C#](#Array-Shift-Csharp)
@@ -38,6 +41,24 @@
 ------------------------------------------------------
 # C#
 
+# Linked List
+A Linked List is a list of node that hold a value and a pointer to the next node in the list. The only thing a Linked list knows about is it's head node.
+
+## Insert
+To insert a node into a linked list we need to pass a value into the Insert function and then create a new node with that value. We will then point the new nodes next to the head node. And finally we reasign the new node as the head node.
+
+## Includes
+To check a linked list if it contains a value we need to step through every node comparing the values until the value is found or the end of the linked list is reached.
+We can do this by putting the head node into a variable and writing a while loop that runs until node is equal to null. Inside the loop we will compare the value passed in to the current nodes value if they match we will return true. If not we make the current node equal to the current nodes next node.
+If the while loop exits then the value was not found and we return false.
+
+## Print
+The print method print human readable representation of the lists values to the screen. We do that a lot like the Includes method except in the while loop we console.write a pretty string with the curent nodes value and when the loop is exited we print out null
+
+## ToString
+ToString is a method used to return a human readable string representation of the values in the list. We do this recursively by creating a class level string variable to hold our string as we step back through the stack. We then make sure that the string is empty in the main toString and we call a overloaded helper toString method that taked in a node, by passing in the head node. In the helper method we check that the node is not null if it is we add "NULL" to the string and return it. If it's not null we add the value of that node to our string and then we call the helper method again passing in the current node next. 
+
+-----------------------------------------------------
 # Reverse Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
 
