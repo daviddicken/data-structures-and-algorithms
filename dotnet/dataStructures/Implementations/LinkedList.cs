@@ -27,6 +27,45 @@ namespace DataStructures
         }
 
         /// <summary>
+        /// This method takes in the head of a linked list and reverses the order of the nodes.
+        /// Usage: list.ReverseList()
+        /// </summary>
+        /// <param name="head"></param>
+        /// Algorithm: grab the head node and head.next and hold them in vars
+        /// point the head.next to null and 
+        public void ReverseList()
+        {
+            if (Head == null)
+            {
+                Console.WriteLine("List is empty");
+            }
+            else if (Head.Next == null)
+            {
+                Console.WriteLine("There is only 1 node in this list");
+            }
+            else
+            {
+                Node<T> n1 = null;
+                Node<T> n2 = Head;
+                Node<T> n3 = Head.Next;
+
+                while(n3.Next != null)
+                {
+                    n2.Next = n1;
+                    n1 = n2;
+                    n2 = n3;
+                    n3 = n2.Next;
+                }
+                n2.Next = n1;
+                n3.Next = n2;
+                Head = n3;
+            }
+           
+
+
+        }
+
+        /// <summary>
         /// Checks to see if a value is found in the linked list returning true/false
         /// Usage: list.In
         /// </summary>
