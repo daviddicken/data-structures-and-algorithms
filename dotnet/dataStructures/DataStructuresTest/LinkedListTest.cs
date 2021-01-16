@@ -40,5 +40,20 @@ namespace DataStructuresTest
             Assert.False(test.includes(10));
             Assert.True(test.includes(1));
         }
+
+        [Fact]
+        public void ToStringTest()
+        {
+            LinkedList<int> list = new LinkedList<int>();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+            list.Insert(5);
+
+            String expected = "5 -> 4 -> 3 -> 2 -> 1 -> NULL";
+            Assert.Equal(expected, list.toString());
+            
+        }
     }
 }
