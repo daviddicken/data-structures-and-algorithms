@@ -37,8 +37,8 @@ namespace DataStructuresTest
             test.Insert(4);
             test.Insert(5);
 
-            Assert.False(test.includes(10));
-            Assert.True(test.includes(1));
+            Assert.False(test.Includes(10));
+            Assert.True(test.Includes(1));
         }
 
         [Fact]

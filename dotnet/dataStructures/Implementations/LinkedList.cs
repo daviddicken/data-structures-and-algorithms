@@ -26,7 +26,13 @@ namespace DataStructures
             Head = node;
         }
 
-        public bool includes(T val)
+        /// <summary>
+        /// Checks to see if a value is found in the linked list returning true/false
+        /// Usage: list.In
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public bool Includes(T val)
         {
             Node<T> cn = Head;
             while (cn != null)
