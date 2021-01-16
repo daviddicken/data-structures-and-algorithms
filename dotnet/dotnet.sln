@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructures", "DataStruc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeChallenges", "CodeChallenges", "{AF992B5F-99C0-4294-89B4-9ACA5315A05B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Leet", "Leet", "{DC67D692-4495-4616-96CF-9CD3FA2AE1BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTwoNumbers", "Leet\AddTwoNumbers\AddTwoNumbers.csproj", "{BE14FEA3-96D8-43D0-B066-81F36579B027}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{49228CFE-317D-4456-AC08-6E5CE73F8FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49228CFE-317D-4456-AC08-6E5CE73F8FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49228CFE-317D-4456-AC08-6E5CE73F8FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{0EFA666D-CB26-4E27-8882-CA0499D1B8EC} = {834191B3-CC50-4776-BB3D-5FD8A7EECA36}
 		{F70D5D79-4254-46C7-B03A-4A082FFCA111} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
 		{49228CFE-317D-4456-AC08-6E5CE73F8FAE} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
+		{BE14FEA3-96D8-43D0-B066-81F36579B027} = {DC67D692-4495-4616-96CF-9CD3FA2AE1BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD48E263-FDF8-439B-B905-2E94939D7DF8}
