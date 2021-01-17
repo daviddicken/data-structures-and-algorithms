@@ -4,6 +4,7 @@
 # C#
 ## Data Structures
 * [Linked List](#Linked-List)
+* [Doubly Linked List](#Doubly-Linked-List)
 
 ## Challenges
 * [Reverse Array](#Reverse-Array)
@@ -41,6 +42,19 @@
 ------------------------------------------------------
 # C#
 
+# Doubly Linked List
+A Doubly linked list is a list of node that hold a value and have a pointer to both the node behind it and the node in front of it.
+
+## Insert
+Insert takes in a value and creates a new node. It then points the new nodes next to the head and the heads last to the new node. After that the new node is named the head of the list.
+
+## InsertTail
+Insert tail p;aces a new node at the end of the list by taking in a value and creating a new node to hold that value. It then points the new nodes last to the tail and the tails next to the new node. Finally it renames the new node the tail of the list.
+
+## toString
+The toString method stepes through the list and creates a human readable string representing the values found in the list.
+
+------------------------------------------------------
 # Linked List
 A Linked List is a list of node that hold a value and a pointer to the next node in the list. The only thing a Linked list knows about is it's head node.
 
