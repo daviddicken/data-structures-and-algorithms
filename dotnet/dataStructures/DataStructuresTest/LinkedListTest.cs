@@ -11,7 +11,9 @@ namespace DataStructuresTest
         {
             int val = 2;
             LinkedList<int> testList = new LinkedList<int>(val);
-
+            DateTime time = DateTime.Now;
+            time.ToString("HH:mm");
+            Console.WriteLine("time " + time);
             Assert.Equal(val, testList.Head.Value);
         }
 
