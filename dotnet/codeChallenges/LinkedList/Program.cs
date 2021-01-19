@@ -6,12 +6,7 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            DateTime time = DateTime.Now;
-           
-            //time.ToString("HH:mm");
-            int hour = time.Hour;
-
-            Console.WriteLine("time " + hour);
+    
         }
     }
 }
