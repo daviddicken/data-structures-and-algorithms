@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementations", "dataStructures\Implementations\Implementations.csproj", "{78E12728-7310-4302-A28D-2477B7348E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresTest", "dataStructures\DataStructuresTest\DataStructuresTest.csproj", "{0EFA666D-CB26-4E27-8882-CA0499D1B8EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallengeTests", "codeChallenges\CodeChallengeTests\CodeChallengeTests.csproj", "{F70D5D79-4254-46C7-B03A-4A082FFCA111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "codeChallenges\LinkedList\LinkedList.csproj", "{49228CFE-317D-4456-AC08-6E5CE73F8FAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructures", "DataStructures", "{834191B3-CC50-4776-BB3D-5FD8A7EECA36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeChallenges", "CodeChallenges", "{AF992B5F-99C0-4294-89B4-9ACA5315A05B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Leet", "Leet", "{DC67D692-4495-4616-96CF-9CD3FA2AE1BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTwoNumbers", "Leet\AddTwoNumbers\AddTwoNumbers.csproj", "{BE14FEA3-96D8-43D0-B066-81F36579B027}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78E12728-7310-4302-A28D-2477B7348E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E12728-7310-4302-A28D-2477B7348E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E12728-7310-4302-A28D-2477B7348E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E12728-7310-4302-A28D-2477B7348E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFA666D-CB26-4E27-8882-CA0499D1B8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFA666D-CB26-4E27-8882-CA0499D1B8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFA666D-CB26-4E27-8882-CA0499D1B8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFA666D-CB26-4E27-8882-CA0499D1B8EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70D5D79-4254-46C7-B03A-4A082FFCA111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70D5D79-4254-46C7-B03A-4A082FFCA111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70D5D79-4254-46C7-B03A-4A082FFCA111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70D5D79-4254-46C7-B03A-4A082FFCA111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49228CFE-317D-4456-AC08-6E5CE73F8FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49228CFE-317D-4456-AC08-6E5CE73F8FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49228CFE-317D-4456-AC08-6E5CE73F8FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49228CFE-317D-4456-AC08-6E5CE73F8FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE14FEA3-96D8-43D0-B066-81F36579B027}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78E12728-7310-4302-A28D-2477B7348E29} = {834191B3-CC50-4776-BB3D-5FD8A7EECA36}
+		{0EFA666D-CB26-4E27-8882-CA0499D1B8EC} = {834191B3-CC50-4776-BB3D-5FD8A7EECA36}
+		{F70D5D79-4254-46C7-B03A-4A082FFCA111} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
+		{49228CFE-317D-4456-AC08-6E5CE73F8FAE} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
+		{BE14FEA3-96D8-43D0-B066-81F36579B027} = {DC67D692-4495-4616-96CF-9CD3FA2AE1BC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD48E263-FDF8-439B-B905-2E94939D7DF8}
+	EndGlobalSection
+EndGlobal

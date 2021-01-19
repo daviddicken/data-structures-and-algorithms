@@ -86,8 +86,9 @@ public class LinkedList {
     public void insertEnd(int value) {
         Node newNode = new Node(value);
 
-        if (this.tail == null) {
-            tail = newNode;
+        if (this.head == null) {
+            //tail = newNode;
+            tail = null;
             head = newNode;
         } else {
             newNode.last = tail;
@@ -99,9 +100,7 @@ public class LinkedList {
     //============== To String =================
     public String toString() {
         // Got great guidance from Jack Nelson on a better way to create the toString method
-        if (this.head == null) {
-            return "NULL";
-        }
+        if (this.head == null) return "NULL";
 
         Node currentNode = this.head;
         String returnString = String.format("{%d} -> ", currentNode.value);
