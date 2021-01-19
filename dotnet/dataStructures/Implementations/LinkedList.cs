@@ -27,6 +27,94 @@ namespace DataStructures
         }
 
         /// <summary>
+        ///  InsertAfter takes in a value to add and a value to search for. It will create a new node with the first value and search through the list for the second value. If it finds the second value it places the new node in the list after the searched value.
+        ///  Usage: list.InsertAfter(newValue, valueToSearch);
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="target"></param>
+        public void InsertAfter(T value, T target)
+        {
+            Node<T> newNode = new Node<T>(value);
+            Node<T> currentNode = Head;
+            bool found = false;
+
+            while (currentNode != null)
+            {
+                if (currentNode.Value.Equals(target))
+                {
+                    newNode.Next = currentNode.Next;
+                    currentNode.Next = newNode;
+                    found = true;
+                    Console.WriteLine($"{target} was found and {value} was added after it.");
+                    break;
+                }
+                currentNode = currentNode.Next;
+            }
+            if (!found) Console.WriteLine($"{target} was not found and {value} was not added to the list.");
+        }
+
+        /// <summary>
+        /// Insert before takes in a value and a value to search for. It creates a new node to hold the first value and searches the list for the second value. If the second value is found it will place the new node in the list in front of the node it was searching for. If the second value is not found a message will be displayed to the user and the node will not be added.
+        /// Usage: list.InsertBefore(newValue, valueToSearch)
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="target"></param>
+        public void InsertBefore(T value, T target)
+        {
+            Node<T> newNode = new Node<T>(value);
+            Node<T> currentNode = Head;
+         
+            if(Head == null)
+            {
+                Console.WriteLine("List was empty, Try using a regular insert");
+            }
+            else 
+            {
+                bool found = false;
+                if (Head.Next == null && Head.Value.Equals(target))
+                {
+                    newNode.Next = Head;
+                    Head = newNode;
+                    found = true;
+                    Console.WriteLine($"{target} was found and the new value was added in front of it.");
+                }
+                while (currentNode.Next != null)
+                {
+                    if(target.Equals(currentNode.Next.Value))
+                    {
+                        newNode.Next = currentNode.Next;
+                        currentNode.Next = newNode;
+                        found = true;
+                        Console.WriteLine($"{target} was found and the new value was added in front of it.");
+                        break;
+                    }
+                    currentNode = currentNode.Next;
+                }
+                if (!found) Console.WriteLine($"Did not find {target}, new value was not added to the list.");
+            }
+        }
+
+        /// <summary>
+        /// Append takes in a value and creates a new node. Then it steps through the linked list until the next node is null. Once it find that next node is null it points the next node to the newly created node.
+        /// Usage: list.Append(value)
+        /// </summary>
+        /// <param name="value"></param>
+        public void Append(T value)
+        {
+            Node<T> newNode = new Node<T>(value);
+            if (Head == null)
+            {
+                Head = newNode;
+            }
+            else
+            {
+                Node<T> curentNode = Head;
+                while (curentNode.Next != null) curentNode = curentNode.Next;
+                curentNode.Next = newNode;
+            }
+        }
+
+        /// <summary>
         /// This method takes in the head of a linked list and reverses the order of the nodes.
         /// Usage: list.ReverseList()
         /// </summary>
@@ -60,9 +148,6 @@ namespace DataStructures
                 n3.Next = n2;
                 Head = n3;
             }
-           
-
-
         }
 
         /// <summary>
