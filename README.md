@@ -49,7 +49,7 @@ A Doubly linked list is a list of node that hold a value and have a pointer to b
 Insert takes in a value and creates a new node. It then points the new nodes next to the head and the heads last to the new node. After that the new node is named the head of the list.
 
 ## InsertTail
-Insert tail p;aces a new node at the end of the list by taking in a value and creating a new node to hold that value. It then points the new nodes last to the tail and the tails next to the new node. Finally it renames the new node the tail of the list.
+Insert tail places a new node at the end of the list by taking in a value and creating a new node to hold that value. It then points the new nodes last to the tail and the tails next to the new node. Finally it renames the new node the tail of the list.
 
 ## toString
 The toString method stepes through the list and creates a human readable string representing the values found in the list.
@@ -58,8 +58,17 @@ The toString method stepes through the list and creates a human readable string 
 # Linked List
 A Linked List is a list of node that hold a value and a pointer to the next node in the list. The only thing a Linked list knows about is it's head node.
 
+## Append
+The Append method takes in a value and creates a new node to hold that value. It then iterates through the linked list until the next node is null. And istead of the next node pointing to null append will now point it to the new node that was created.
+
 ## Insert
 To insert a node into a linked list we need to pass a value into the Insert function and then create a new node with that value. We will then point the new nodes next to the head node. And finally we reasign the new node as the head node.
+
+## InsertBefore
+InsertBefore takes in a value and a search value. It searches the list for the search value and if the search value is found a new node  holding the other value will be created and inserted before the node that holds the search value. The node that was pointing to the node holding the search value will now point to the new node. The new node will now point to the node holding the search value's next. And the node holding the search value will now have a pointer pointing to the next node.
+
+## InsertAfter 
+InsertAfter takes in a value and a search value. It then iterates through the linked list comparing each value to the search value. If the values are equal a new node is created to hold the other value that was passed in. That new node will be inserted into the linked list after the node that holds the value matching the search value. The new nodes next will now point to the node holding the search values's next.
 
 ## Includes
 To check a linked list if it contains a value we need to step through every node comparing the values until the value is found or the end of the linked list is reached.
