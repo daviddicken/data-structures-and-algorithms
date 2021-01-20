@@ -25,6 +25,38 @@ namespace DataStructures
             Node<T> node = new Node<T>(value);
             Head = node;
         }
+        //================= Methods ======================
+
+        /// <summary>
+        /// Kth from the end takes in an integer and returns the value at the node that is that many spots from the end of the list. The end of the list begins counting at 0
+        /// Usage: list.kthFromEnd(int)
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        /// //Method One
+        public T KthFromEnd(int k)
+        { 
+            if (Head == null) throw new Exception("The list is empty");
+            if (k < 0) throw new Exception("Number passed in needs to be greater then -1");
+            
+            Node<T> currentNode = Head;
+            int counter = -1;
+            // 1 -> 2 -> 3 -> 4
+            while(currentNode != null)
+            {
+                counter++;
+                currentNode = currentNode.Next;
+            }
+            if (counter < k) throw new Exception("Your search number is longer then the list");
+            currentNode = Head;
+            int numToGo = counter - k;
+
+            for (int i = 0; i < numToGo; i++)
+            {
+                currentNode = currentNode.Next;
+            }
+            return currentNode.Value;          
+        }
 
         /// <summary>
         ///  InsertAfter takes in a value to add and a value to search for. It will create a new node with the first value and search through the list for the second value. If it finds the second value it places the new node in the list after the searched value.

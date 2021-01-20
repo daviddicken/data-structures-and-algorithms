@@ -135,5 +135,33 @@ namespace DataStructuresTest
             list.InsertAfter(1000, 20);
             Assert.Equal(expected, list.toString());
         }
+
+        [Fact]
+        public void kthFromEndTest()
+        {
+            LinkedList<int> test = new LinkedList<int>();
+            test.Insert(1);
+
+            //Test where list just have 1 node
+            Assert.Equal(1, test.KthFromEnd(0));
+
+            test.Insert(2);
+            test.Insert(3);
+            test.Insert(4);
+            test.Insert(5);
+           
+            //Test where k is equal to a node in mid of list
+            Assert.Equal(3, test.KthFromEnd(2));
+
+            //Test where k is greater then list
+            //http://dontcodetired.com/blog/post/Testing-for-Thrown-Exceptions-in-xUnitnet
+            Assert.Throws<Exception>(() => test.KthFromEnd(10));
+
+            //Test where k is equal to length of list
+            Assert.Equal(5, test.KthFromEnd(4));
+
+            // Test if k is a negative number
+            Assert.Throws<Exception>(() => test.KthFromEnd(-4));
+        }
     }
 }
