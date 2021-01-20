@@ -47,7 +47,6 @@ namespace DataStructures
             
             Node<T> currentNode = Head;
             int counter = -1;
-            // 1 -> 2 -> 3 -> 4
             while(currentNode != null)
             {
                 counter++;
@@ -65,7 +64,7 @@ namespace DataStructures
         }
 
         /// <summary>
-        /// 
+        /// This kth from the end uses two nodes to step through the list. The first node starts iterating through the list and a counter is also incremented each iteration. When the counter is greater then the number passed in the second node starts iterating through the list. When the first node reaches null then the method will return the value that is found at the second node.
         /// </summary>
         /// <param name="k"></param>
         /// <returns></returns>
