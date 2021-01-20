@@ -10,6 +10,7 @@
 * [Reverse Array](#Reverse-Array)
 * [Array Shift C#](#Array-Shift-Csharp)
 * [Binary Search C#](#Binary-Search-Csharp)
+* [kth From End](#kth-From-End)
 
 # Java
 ## Data Structures
@@ -42,6 +43,25 @@
 ------------------------------------------------------
 # C#
 
+# kth From End
+kth from end is a method on the Linked List class it takes in an integer and returns the value of the node found the number of spots from the end of list as the number passed in. The tail begins at 0
+
+### Challenge
+Was to count backwards from the tail but your nodes only no how to travel from front to back in a singly link list.
+
+### Approach & Efficiency
+Time: O(n)  
+Space: O(1)
+* First test edges cases
+* Find the length of the list by creating a counter variable and itterating through list until null is found. Iterating the counter for each node stepped through.
+* Subtract the number passed in from the counter
+* Iterate through the list for the difference 
+* return the nodes value that you are on when done iterating
+
+[whiteboard](whiteboards/kthfromend.pdf)
+
+------------------------------------------------------
+
 # Doubly Linked List
 A Doubly linked list is a list of node that hold a value and have a pointer to both the node behind it and the node in front of it.
 
@@ -61,14 +81,20 @@ A Linked List is a list of node that hold a value and a pointer to the next node
 ## Append
 The Append method takes in a value and creates a new node to hold that value. It then iterates through the linked list until the next node is null. And istead of the next node pointing to null append will now point it to the new node that was created.
 
+[whiteboard](whiteboards/append.png)
+
 ## Insert
 To insert a node into a linked list we need to pass a value into the Insert function and then create a new node with that value. We will then point the new nodes next to the head node. And finally we reasign the new node as the head node.
 
 ## InsertBefore
 InsertBefore takes in a value and a search value. It searches the list for the search value and if the search value is found a new node  holding the other value will be created and inserted before the node that holds the search value. The node that was pointing to the node holding the search value will now point to the new node. The new node will now point to the node holding the search value's next. And the node holding the search value will now have a pointer pointing to the next node.
 
+[whiteboard](whiteboards/insert_before.png)
+
 ## InsertAfter 
 InsertAfter takes in a value and a search value. It then iterates through the linked list comparing each value to the search value. If the values are equal a new node is created to hold the other value that was passed in. That new node will be inserted into the linked list after the node that holds the value matching the search value. The new nodes next will now point to the node holding the search values's next.
+
+[whiteboard](whiteboards/insertafter.pdf)
 
 ## Includes
 To check a linked list if it contains a value we need to step through every node comparing the values until the value is found or the end of the linked list is reached.
