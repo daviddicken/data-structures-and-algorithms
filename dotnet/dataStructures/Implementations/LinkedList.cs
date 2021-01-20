@@ -28,7 +28,13 @@ namespace DataStructures
         //================= Methods ======================
 
         /// <summary>
-        /// Kth from the end takes in an integer and returns the value at the node that is that many spots from the end of the list. The end of the list begins counting at 0
+        /// Kth from the end method one takes in an integer and returns the value at the node that is that many spots from the end of the list. The end of the list begins counting at 0.
+        /// Algorithm: declare a counter and iterate through the list until null is reached. 
+        /// Incrementing the counter for each node passed through.
+        /// Check that number passed in is not greater then counter
+        /// Get the difference between counter and k
+        /// Iterate through the list again the difference times
+        /// return the value found at that node 
         /// Usage: list.kthFromEnd(int)
         /// </summary>
         /// <param name="k"></param>
@@ -41,7 +47,6 @@ namespace DataStructures
             
             Node<T> currentNode = Head;
             int counter = -1;
-            // 1 -> 2 -> 3 -> 4
             while(currentNode != null)
             {
                 counter++;
@@ -56,6 +61,31 @@ namespace DataStructures
                 currentNode = currentNode.Next;
             }
             return currentNode.Value;          
+        }
+
+        /// <summary>
+        /// This kth from the end uses two nodes to step through the list. The first node starts iterating through the list and a counter is also incremented each iteration. When the counter is greater then the number passed in the second node starts iterating through the list. When the first node reaches null then the method will return the value that is found at the second node.
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public T KthFromEnd2(int k)
+        {
+            if (Head == null) throw new Exception("The list is empty");
+            if (k < 0) throw new Exception("Number passed in needs to be greater then -1");
+
+            Node<T> lead = Head;
+            Node<T> follow = Head;
+            int counter = 0;
+
+            while(lead != null)
+            {
+                if (counter > k) follow = follow.Next;
+                counter++;
+                lead = lead.Next;
+            }
+
+            if (k > counter) throw new Exception("Number passed in is greater then length of the list.");
+            return follow.Value;
         }
 
         /// <summary>

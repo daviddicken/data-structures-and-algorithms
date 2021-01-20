@@ -144,6 +144,7 @@ namespace DataStructuresTest
 
             //Test where list just have 1 node
             Assert.Equal(1, test.KthFromEnd(0));
+            Assert.Equal(1, test.KthFromEnd2(0));
 
             test.Insert(2);
             test.Insert(3);
@@ -152,16 +153,21 @@ namespace DataStructuresTest
            
             //Test where k is equal to a node in mid of list
             Assert.Equal(3, test.KthFromEnd(2));
+            Assert.Equal(3, test.KthFromEnd2(2));
 
             //Test where k is greater then list
             //http://dontcodetired.com/blog/post/Testing-for-Thrown-Exceptions-in-xUnitnet
             Assert.Throws<Exception>(() => test.KthFromEnd(10));
+            Assert.Throws<Exception>(() => test.KthFromEnd2(10));
 
             //Test where k is equal to length of list
             Assert.Equal(5, test.KthFromEnd(4));
+            Assert.Equal(5, test.KthFromEnd2(4));
+
 
             // Test if k is a negative number
             Assert.Throws<Exception>(() => test.KthFromEnd(-4));
+            Assert.Throws<Exception>(() => test.KthFromEnd2(-4));
         }
     }
 }
