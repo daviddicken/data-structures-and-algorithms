@@ -20,22 +20,17 @@ namespace LLZip.CodeChallenges
             //odds.Append(5);
             //odds.Append(7);
 
-            Console.WriteLine(odds.toString());
             LLZip(odds, evens);
         }
 
         public static Node<int> LLZip(LinkedList<int> listA, LinkedList<int> listB)
-        {
-            // listA 2 -> listB 1 -> 3
-            // TODO: Check that listA.Head has a next 
+        { 
             if (listA.Head == null) return listB.Head;
             if (listB.Head == null) return listA.Head;
-            Console.WriteLine(listB.toString());
             if(listA.Head.Next == null) 
             {
                 listA.Head.Next = listB.Head.Next;
                 listB.Head.Next = listA.Head;
-                Console.WriteLine("A.next " + listB.toString());
                 return listB.Head;
             }
             LinkedList<int> newList = new LinkedList<int>{ Head = listA.Head};
@@ -46,15 +41,11 @@ namespace LLZip.CodeChallenges
                 if(nodeA == null && nodeB != null)
                 {
                     nodeC.Next = nodeB;
-                    Console.WriteLine("First if " + newList.toString());
-
                     break;
                 }
                 if (nodeB == null && nodeA != null)
                 {
                     nodeC.Next = nodeA;
-                    Console.WriteLine("second if " + newList.toString());
-
                     break;
                 }
 
@@ -65,10 +56,8 @@ namespace LLZip.CodeChallenges
                 nodeC.Next = nodeA;
                 nodeA = nodeA.Next;
                 nodeC = nodeC.Next;
-                Console.WriteLine(newList.toString());
 
             }
-            Console.WriteLine("Final " + newList.toString());
 
             return newList.Head;
 
