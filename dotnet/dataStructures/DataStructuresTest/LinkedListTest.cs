@@ -137,7 +137,7 @@ namespace DataStructuresTest
         }
 
         [Fact]
-        public void kthFromEndTest()
+        public void KthFromEndTest()
         {
             LinkedList<int> test = new LinkedList<int>();
             test.Insert(1);
@@ -169,5 +169,6 @@ namespace DataStructuresTest
             Assert.Throws<Exception>(() => test.KthFromEnd(-4));
             Assert.Throws<Exception>(() => test.KthFromEnd2(-4));
         }
+
     }
 }

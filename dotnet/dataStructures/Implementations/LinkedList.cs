@@ -236,8 +236,7 @@ namespace DataStructures
         /// <param name="value"></param>
         public void Insert(T value)
         {
-            Node<T> node = new Node<T>(value);
-            node.Next = Head;
+            Node<T> node = new Node<T>(value){ Next = Head};
             Head = node;
         }
 
@@ -270,10 +269,8 @@ namespace DataStructures
         }
         public String toString(Node<T> node)
         {
-            if (node == null)
-            {
-              return str += "NULL";
-            }
+            if (node == null) return str += "NULL";
+            
 
             str += node.Value + " -> ";
             return toString(node.Next);
