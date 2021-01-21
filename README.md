@@ -45,6 +45,31 @@
 # C#
 
 # Linked List Zip C#
+Linked List zip takes in two linked list and zips them together with every other node being a node from the oposite list until one list is out of node. When one list is out of node the rest of the node from the list with left over nodes will be placed on the end of the new list. The program will return the head node of the newly created zipped list.
+
+### Challenge
+What to do with uneven list.
+
+### Approach & Efficiency
+Time: O(n)
+Space: O(1)
+
+* Check if listA or listB is null return other list if either is node.
+* Check that listA head has a next
+  If it does not point listA.Head.next to listB.Head.Next
+  And listB.Head.next to litsA.Head return listB.head
+* Declare a new linked list with head = to listA head
+* Declare 3 Nodes: nodeA = listA.head.next, nodeB = listB.Head, nodeC = newList.Head
+* Write a while nadeA && nodeB are not null
+   * Test if one of the nodes is null and attach the other node to our new list's next.
+   * If both nodes are not null 
+   * nodeC.Next = nodeB
+   * nodeB = nodeB.Next
+   * nodeC = nodeC.Next
+   * nodeC.next = nodeA
+   * nodeA = nodeA.next
+   * nodeC = nodeC.Next  
+* When loop is doen return the new list head node
 
 [whiteboard](whiteboards/ZiplistCC8wb.PNG)
 
