@@ -236,8 +236,7 @@ namespace DataStructures
         /// <param name="value"></param>
         public void Insert(T value)
         {
-            Node<T> node = new Node<T>(value);
-            node.Next = Head;
+            Node<T> node = new Node<T>(value){ Next = Head};
             Head = node;
         }
 
