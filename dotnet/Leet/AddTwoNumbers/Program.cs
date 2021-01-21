@@ -25,7 +25,7 @@ namespace AddTwoNumbers
             while(num1 > 0)
             {
                 testList.Insert(num1 % 10);
-                num1 = num1 / 10;
+                num1 /= 10;
             }
             Console.WriteLine(testList.toString());
             testList.ReverseList();

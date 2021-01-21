@@ -269,10 +269,8 @@ namespace DataStructures
         }
         public String toString(Node<T> node)
         {
-            if (node == null)
-            {
-              return str += "NULL";
-            }
+            if (node == null) return str += "NULL";
+            
 
             str += node.Value + " -> ";
             return toString(node.Next);
