@@ -11,6 +11,7 @@
 * [Array Shift C#](#Array-Shift-Csharp)
 * [Binary Search C#](#Binary-Search-Csharp)
 * [kth From End](#kth-From-End)
+* [Linked List Zip C#](#Linked-List-Zip-C#)
 
 # Java
 ## Data Structures
@@ -42,6 +43,10 @@
 
 ------------------------------------------------------
 # C#
+
+# Linked List Zip C#
+
+[whiteboard](whiteboards/ZiplistCC8wb.PNG)
 
 # kth From End
 kth from end is a method on the Linked List class it takes in an integer and returns the value of the node found the number of spots from the end of list as the number passed in. The tail begins at 0
