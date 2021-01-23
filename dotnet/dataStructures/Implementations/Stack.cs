@@ -6,13 +6,12 @@ namespace DataStructures
 {
     public class Stack<T>
     {
-        public Node<T> top;
-
+        public Node<T> Top { get; set; } 
 
         //Constructor
         public Stack()
         {
-            top = null;
+            Top = null;
         }
 
         /// <summary>
@@ -22,8 +21,8 @@ namespace DataStructures
        public void Push(T value)
         {
             Node<T> node = new Node<T>(value);
-            node.Next = top;
-            top = node;
+            node.Next = Top;
+            Top = node;
         }
 
         /// <summary>
@@ -32,7 +31,8 @@ namespace DataStructures
         /// <returns>What ever value type is held in the top node</returns>
         public T Peek()
         {
-            return top.Value;
+            if (Top == null) throw new NullReferenceException("The Stack is empty.");
+            return Top.Value;
         }
         /// <summary>
         /// Pop returns the value found in the top node and removes that node from the stack
@@ -40,21 +40,17 @@ namespace DataStructures
         /// <returns>The value found in the top node</returns>
         public T Pop()
         {
-            T returnVal = top.Value;
-            top = top.Next;
+            if (Top == null) throw new NullReferenceException("The Stack is empty.");
+            T returnVal = Top.Value;
+            Top = Top.Next;
             return returnVal;
         }
 
-/// <summary>
-/// IsEmpty checks if the top node on the stack is null. If it is it returns true otherwise it returns false
-/// </summary>
-/// <returns>boolean</returns>
-        public bool IsEmpty()
-        {
-            if (top == null) return true;
-            return false;
-        }
-
-
+        /// <summary>
+        /// IsEmpty checks if the top node on the stack is null. If it is it returns true otherwise it returns false
+        /// </summary>
+        /// <returns>boolean</returns>
+        public bool IsEmpty() => Top == null;
+        
     }
 }
