@@ -2,6 +2,7 @@ using LLZip;
 using System;
 using Xunit;
 using DataStructures;
+using LLZip.CodeChallenges;
 
 namespace CodeChallengeTests
 {
