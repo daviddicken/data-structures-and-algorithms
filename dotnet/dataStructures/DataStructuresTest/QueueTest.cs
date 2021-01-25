@@ -14,18 +14,18 @@ namespace DataStructuresTest
             Assert.Equal(1, testQ.Front.Value);
         }
 
-        // using multiple asserts to prove that multiple nodes were enQueued
-        [Fact]
-        public void EnQueueManyTest()
+        [Theory]
+        [InlineData(1)]
+
+        public void EnQueueManyTest(int value)
         {
             Queue<int> testQ = new Queue<int>();
             testQ.EnQueue(1);
             testQ.EnQueue(2);
             testQ.EnQueue(3);
-            
-            Assert.Equal(1, testQ.DeQueue());
-            Assert.Equal(2, testQ.DeQueue());
-            Assert.Equal(3, testQ.DeQueue());
+
+            while (value < 3)
+                Assert.Equal(value++, testQ.DeQueue());
         }
 
         [Fact]

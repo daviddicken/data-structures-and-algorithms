@@ -15,19 +15,17 @@ namespace DataStructuresTest
             Assert.Equal(2, testStack.Peek());
         }
 
-        // test that many nodes can be pushed & pop returns value
-        // used multiple asserts because I couldn't think of a better way to show that all
-        // the nodes were pushed with the methods I had available.
-        [Fact]
-        public void PushManyTest()
+        [Theory]
+        [InlineData(4)]
+        public void PushManyTest(int value)
         {
             Stack<int> testStack = new Stack<int>();
             testStack.Push(2);
             testStack.Push(3);
             testStack.Push(4);
-            Assert.Equal(4, testStack.Pop());
-            Assert.Equal(3, testStack.Pop());
-            Assert.Equal(2, testStack.Pop());
+
+            while(value > 1)
+                Assert.Equal(value--, testStack.Pop());
         }
         
         [Fact]
