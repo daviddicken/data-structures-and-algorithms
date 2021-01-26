@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\codeChallenges\LinkedList\LinkedList.csproj" />
     <ProjectReference Include="..\..\dataStructures\Implementations\Implementations.csproj" />
   </ItemGroup>
 

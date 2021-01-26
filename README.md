@@ -12,6 +12,7 @@
 * [Binary Search C#](#Binary-Search-Csharp)
 * [kth From End](#kth-From-End)
 * [Linked List Zip C#](#Linked-List-Zip-C#)
+* [Queue With Stacks](#Queue-With-Stacks)
 
 # Java
 ## Data Structures
@@ -44,6 +45,30 @@
 ------------------------------------------------------
 # C#
 
+# Queue With Stacks
+Queue with stacks implements a Queue but uses stacks under the hood to do the work.
+
+### Challenge
+To achieve first in first out using only stacks.
+
+### Approach & Efficiency
+### EnQueue
+Time: O(n)
+Space: O(1)
+* Create new temp stack
+* Move all nodes from original stack to temp stack (pop)
+* push new value in original stack
+* Move all nodes from temp stack to original stack (pop)
+* return top node of original stack
+
+### DeQueue
+Time: O(1)
+Space: O(1)
+* pop node off of stack and return it.
+
+[whiteboard](whiteboards/codeChallenge11wb.PNG)
+----------------------------------------------------------------------
+
 # Linked List Zip C#
 Linked List zip takes in two linked list and zips them together with every other node being a node from the oposite list until one list is out of node. When one list is out of node the rest of the node from the list with left over nodes will be placed on the end of the new list. The program will return the head node of the newly created zipped list.
 
@@ -72,7 +97,7 @@ Space: O(1)
 * When loop is doen return the new list head node
 
 [whiteboard](whiteboards/ZiplistCC8wb.PNG)
-
+-------------------------------------------------------
 # kth From End
 kth from end is a method on the Linked List class it takes in an integer and returns the value of the node found the number of spots from the end of list as the number passed in. The tail begins at 0
 
@@ -89,7 +114,6 @@ Space: O(1)
 * return the nodes value that you are on when done iterating
 
 [whiteboard](whiteboards/kthfromend.pdf)
-
 ------------------------------------------------------
 
 # Doubly Linked List
@@ -103,7 +127,6 @@ Insert tail places a new node at the end of the list by taking in a value and cr
 
 ## toString
 The toString method stepes through the list and creates a human readable string representing the values found in the list.
-
 ------------------------------------------------------
 # Linked List
 A Linked List is a list of node that hold a value and a pointer to the next node in the list. The only thing a Linked list knows about is it's head node.
