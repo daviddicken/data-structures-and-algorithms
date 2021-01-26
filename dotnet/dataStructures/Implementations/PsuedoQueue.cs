@@ -16,11 +16,7 @@ namespace DataStructures
 
         public Node<T> EnQueue(T value)
         {
-            if (StackA.IsEmpty())
-            {
-                StackA.Push(value);
-                return StackA.Top;
-            }
+      
             Stack<T> temp = new Stack<T>();
 
             while (!StackA.IsEmpty())
