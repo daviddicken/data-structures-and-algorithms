@@ -79,7 +79,7 @@ Space: O(1)
 * If flag is still false return null
 * return found animal variable
 
-[whiteboard](whiteboards/animalShelterCC11wb.PNG)
+[whiteboard](whiteboards/animalShelterCC11wb.png)
 ------------------------------------------------------
 
 # Queue With Stacks
@@ -133,7 +133,7 @@ Space: O(1)
    * nodeC = nodeC.Next  
 * When loop is doen return the new list head node
 
-[whiteboard](whiteboards/ZiplistCC8wb.PNG)
+[whiteboard](whiteboards/ZipListCC8wb.PNG)
 
 -------------------------------------------------------
 # kth From End
