@@ -6,7 +6,7 @@ using LLZip.CodeChallenges;
 
 namespace CodeChallengeTests
 {
-    public class UnitTest1
+    public class LLZipTest
     {
         [Fact]
         public void ZipListTest()
