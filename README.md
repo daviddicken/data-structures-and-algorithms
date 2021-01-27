@@ -13,6 +13,7 @@
 * [kth From End](#kth-From-End)
 * [Linked List Zip C#](#Linked-List-Zip-C#)
 * [Queue With Stacks](#Queue-With-Stacks)
+* [Animal Shelter C#](Animal-Shelter-C#)
 
 # Java
 ## Data Structures
@@ -44,6 +45,42 @@
 
 ------------------------------------------------------
 # C#
+
+# Animal Shelter C#
+Animal Shelter has a Queue (FIFO) of animal objects (Dogs and Cats). To add a animal to the shelter simply call the EnQueue method on the animal shelter and pass in either 
+a dog or cat object.
+To adopt and remove a dog or cat from the shelter call the DeQueue method on the shelter and pass in a string of which type of pet you would like "dog" or "cat".
+Dequeue will iterate from the front of the queue until it finds an animal that nmatches the type you are looking for. Tha animal will be returned. If the shelter is empty or
+the type of animal you are searching for doesn't exist in the shelter null will be returned.
+If you don't have a prefference on which type of animal you would like you can pass in either "", "none", "no", "any" to the DeQueue method and you will recieve the 
+animal that is in the front of the queue.
+
+### Challenge
+The challenge for me was dealing with different types of objects in the Queue.
+
+### Approach & Efficiency
+### EnQueue
+Time: O(1)
+Space:O(1)
+* Check that a dog or cat was passed in.
+* EnQueue to shelters waitingList Queue
+
+### DeQueue
+Time: O (n)
+Space: O(1)
+
+* Check if waitingList Queue is empty
+* Declare a temp queue
+* Declare a boolean flag set to false
+* Iterate through list  checking if the search type matches the current animals type
+* If match is found and flag is false save animal in a variable and set flag to true
+* Else EnQueue current animal to temp queue
+* When waitingList Queue is emptyset waitingList queue to temp queue
+* If flag is still false return null
+* return found animal variable
+
+[whiteboard](whiteboards/animalShelterCC11wb.PNG)
+------------------------------------------------------
 
 # Queue With Stacks
 Queue with stacks implements a Queue but uses stacks under the hood to do the work.
@@ -97,6 +134,7 @@ Space: O(1)
 * When loop is doen return the new list head node
 
 [whiteboard](whiteboards/ZiplistCC8wb.PNG)
+
 -------------------------------------------------------
 # kth From End
 kth from end is a method on the Linked List class it takes in an integer and returns the value of the node found the number of spots from the end of list as the number passed in. The tail begins at 0
@@ -114,8 +152,8 @@ Space: O(1)
 * return the nodes value that you are on when done iterating
 
 [whiteboard](whiteboards/kthfromend.pdf)
-------------------------------------------------------
 
+------------------------------------------------------
 # Doubly Linked List
 A Doubly linked list is a list of node that hold a value and have a pointer to both the node behind it and the node in front of it.
 
@@ -127,6 +165,7 @@ Insert tail places a new node at the end of the list by taking in a value and cr
 
 ## toString
 The toString method stepes through the list and creates a human readable string representing the values found in the list.
+
 ------------------------------------------------------
 # Linked List
 A Linked List is a list of node that hold a value and a pointer to the next node in the list. The only thing a Linked list knows about is it's head node.
