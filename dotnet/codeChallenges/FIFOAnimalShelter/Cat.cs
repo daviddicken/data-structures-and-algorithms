@@ -8,6 +8,7 @@ namespace FIFOAnimalShelter
     {
         public string Name { get; set; }
 
+        public Cat() { }
         public Cat(string name)
         {
             Name = name;
