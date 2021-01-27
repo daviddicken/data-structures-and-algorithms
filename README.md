@@ -79,7 +79,7 @@ Space: O(1)
 * If flag is still false return null
 * return found animal variable
 
-[whiteboard](whiteboards/animalShelterCC11wb.png)
+[whiteboard](whiteboards/animalShelterCC12wb.png)
 ------------------------------------------------------
 
 # Queue With Stacks
