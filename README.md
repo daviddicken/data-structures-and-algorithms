@@ -11,9 +11,9 @@
 * [Array Shift C#](#Array-Shift-Csharp)
 * [Binary Search C#](#Binary-Search-Csharp)
 * [kth From End](#kth-From-End)
-* [Linked List Zip C#](#Linked-List-Zip-C#)
+* [Linked List Zip C#](#Linked-List-Zip-Csharp)
 * [Queue With Stacks](#Queue-With-Stacks)
-* [Animal Shelter C#](#Animal-Shelter-C#)
+* [Animal Shelter C#](#Animal-Shelter-Csharp)
 
 # Java
 ## Data Structures
@@ -46,7 +46,7 @@
 ------------------------------------------------------
 # C#
 
-# Animal Shelter C#
+# Animal Shelter Csharp
 Animal Shelter has a Queue (FIFO) of animal objects (Dogs and Cats). To add a animal to the shelter simply call the EnQueue method on the animal shelter and pass in either 
 a dog or cat object.
 To adopt and remove a dog or cat from the shelter call the DeQueue method on the shelter and pass in a string of which type of pet you would like "dog" or "cat".
@@ -106,7 +106,7 @@ Space: O(1)
 [whiteboard](whiteboards/codeChallenge11wb.PNG)
 ----------------------------------------------------------------------
 
-# Linked List Zip C#
+# Linked List Zip Csharp
 Linked List zip takes in two linked list and zips them together with every other node being a node from the oposite list until one list is out of node. When one list is out of node the rest of the node from the list with left over nodes will be placed on the end of the new list. The program will return the head node of the newly created zipped list.
 
 ### Challenge
