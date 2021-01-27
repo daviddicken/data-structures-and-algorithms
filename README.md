@@ -13,7 +13,7 @@
 * [kth From End](#kth-From-End)
 * [Linked List Zip C#](#Linked-List-Zip-C#)
 * [Queue With Stacks](#Queue-With-Stacks)
-* [Animal Shelter C#](Animal-Shelter-C#)
+* [Animal Shelter C#](#Animal-Shelter-C#)
 
 # Java
 ## Data Structures
