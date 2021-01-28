@@ -20,7 +20,6 @@ namespace FIFOAnimalShelter.CodeChallenges
         /// <param name="pet">Dog or Cat object</param>
         public void EnQueue(Animal pet)
         {
-            Console.WriteLine("Start of enqueu");
             Type t = pet.GetType();
             if(t.Equals(typeof(Cat)) || t.Equals(typeof(Dog)))
             {
