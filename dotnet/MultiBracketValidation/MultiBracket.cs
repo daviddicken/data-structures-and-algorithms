@@ -5,7 +5,11 @@ namespace MultiBracketValidation
 {
     public class MultiBracket
     {
-
+        /// <summary>
+        /// MultiBracketValidation takes in a string and checks to make sure all brackets are balanced pairs. Its test for () {} []
+        /// </summary>
+        /// <param name="input">string</param>
+        /// <returns>Boolean</returns>
         public static bool MultiBracketValidation(string input)
         {
             if (input == "") throw new NullReferenceException("The input string is empty.");
