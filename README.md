@@ -14,6 +14,7 @@
 * [Linked List Zip C#](#Linked-List-Zip-Csharp)
 * [Queue With Stacks](#Queue-With-Stacks)
 * [Animal Shelter C#](#Animal-Shelter-Csharp)
+* [Multi Bracket Validation C#](#Multi-Bracket-Validation-Csharp)
 
 # Java
 ## Data Structures
@@ -46,6 +47,28 @@
 ------------------------------------------------------
 # C#
 
+# Multi Bracket Validation Csharp
+Multi Bracket Validation takes in a string and returns a Boolean representing whether all brackets are balanced. It test for () {} []
+
+### Challenge 
+To track multiple open brackets before a close bracket is found.
+
+### Approach & Efficiency
+Time: O(n)
+Space: O(1)
+
+* Create a new stack to hold open bracket
+* Iterate through each char in the string
+* If char is a open bracket push it on the stack
+* If it is not check to see if it is a closing bracket
+* If it is a closing bracket check to see if top of the stack is it's matching open bracket
+* If it is not or the stack is empty return false.
+* After all chars have been checked check is stack is empty. if it is return true
+* Otherwise return false
+
+[whiteboard](whiteboards/MultiBracketCC13.PNG)
+
+-------------------------------------------------------
 # Animal Shelter Csharp
 Animal Shelter has a Queue (FIFO) of animal objects (Dogs and Cats). To add a animal to the shelter simply call the EnQueue method on the animal shelter and pass in either 
 a dog or cat object.
