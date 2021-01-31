@@ -19,7 +19,10 @@ namespace DataStructures
         public Node(T value)
         {
             Value = value;
+            Next = null;
+            Last = null;
         }
+
 
     }
 }
