@@ -20,9 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\dataStructures\Implementations\Implementations.csproj" />
-    <ProjectReference Include="..\CodeChallengeTests\CodeChallengeTests.csproj" />
-    <ProjectReference Include="..\FIFOAnimalShelter\FIFOAnimalShelter.csproj" />
+    <ProjectReference Include="..\..\Trees\Trees.csproj" />
   </ItemGroup>
 
 </Project>
