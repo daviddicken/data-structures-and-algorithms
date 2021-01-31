@@ -84,42 +84,78 @@ namespace TreesTest
         [Fact]
         public void BSTAddOne()
         {
-        
+            BST tree = new BST();
+            tree.Add(1);
+            Assert.Equal(1, tree.Root.Value);        
         }
         [Fact]
         public void BSTAddTwo()
         {
+            BST tree = new BST();
+            tree.Add(5);
+            tree.Add(1);
+            Assert.Equal(1, tree.Root.LeftChild.Value);
           
         }
         [Fact]
         public void BSTAddThree()
         {
-           
+            BST tree = new BST();
+            tree.Add(5);
+            tree.Add(1);
+            tree.Add(10);
+            Assert.Equal(10, tree.Root.RightChild.Value);
         }
         [Fact]
         public void EmptyBST()
         {
-
+            BST tree = new BST();
+            Assert.Null(tree.Root);
         }
         [Fact]
         public void CreateBSTOneNode()
         {
-
+            BST tree = new BST(1);
+            Assert.Equal(1, tree.Root.Value);
+        }
+       [Fact]
+       public void ContainsTestLow()
+        {
+            BST tree = new BST();
+            tree.Add(10);
+            tree.Add(5);
+            tree.Add(2);
+            tree.Add(15);
+            tree.Add(20);
+            tree.Add(1);
+            tree.Add(19);
+            Assert.True(tree.Contains(1));
         }
         [Fact]
-        public void BSTPreOrder()
+        public void ContainsTestHigh()
         {
-
+            BST tree = new BST();
+            tree.Add(10);
+            tree.Add(5);
+            tree.Add(2);
+            tree.Add(15);
+            tree.Add(20);
+            tree.Add(1);
+            tree.Add(19);
+            Assert.True(tree.Contains(20));
         }
         [Fact]
-        public void BSTInOrder()
+        public void NotContainsTest()
         {
-
-        }
-        [Fact]
-        public void BSTPostOrder()
-        {
-
+            BST tree = new BST();
+            tree.Add(10);
+            tree.Add(5);
+            tree.Add(2);
+            tree.Add(15);
+            tree.Add(20);
+            tree.Add(1);
+            tree.Add(19);
+            Assert.False(tree.Contains(12));
         }
     }
 }
