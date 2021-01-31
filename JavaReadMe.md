@@ -1,4 +1,9 @@
 # Java
+## Projects
+* [Snipe Hunt](#Snipe-Hunt)
+* [HomeSchool Helper](#HomeSchool-Helper)
+
+
 ## Data Structures
 * [Binary Search](#Binary-Search)
 * [Linked List Insertions](#Linked-List-Insertions)
@@ -28,6 +33,7 @@
 
 # Reverse an Array
 This is a program that takes a array of integers and returns an array with the integers reversed (last index first ect).
+[Code](
 
 ### Challenge
 The challenge is to move all values in one array to another in reverse order
