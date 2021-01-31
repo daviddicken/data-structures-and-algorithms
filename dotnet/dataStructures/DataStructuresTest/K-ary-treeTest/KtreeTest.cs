@@ -40,5 +40,52 @@ namespace K_ary_treeTest
             Assert.Equal(3, tree.Root.Kids.Count);
 
         }
+
+        [Fact]
+        public void ContainsTest()
+        {
+            KTree<int> tree = new KTree<int>(3);
+            tree.Add(1);
+            tree.Add(2);
+            tree.Add(3);
+            tree.Add(4);
+            tree.Add(10);
+            tree.Add(22);
+            tree.Add(30);
+            tree.Add(46);
+            tree.Add(100);
+            tree.Add(226);
+            tree.Add(33);
+            tree.Add(44);
+            tree.Add(101);
+            tree.Add(5);
+            tree.Add(0);
+            tree.Add(452);
+
+            Assert.True(tree.Contains(452));
+        }
+        [Fact]
+        public void NotContainsTest()
+        {
+            KTree<int> tree = new KTree<int>(3);
+            tree.Add(1);
+            tree.Add(2);
+            tree.Add(3);
+            tree.Add(4);
+            tree.Add(10);
+            tree.Add(22);
+            tree.Add(30);
+            tree.Add(46);
+            tree.Add(100);
+            tree.Add(226);
+            tree.Add(33);
+            tree.Add(44);
+            tree.Add(101);
+            tree.Add(5);
+            tree.Add(0);
+            tree.Add(452);
+
+            Assert.False(tree.Contains(15));
+        }
     }
 }

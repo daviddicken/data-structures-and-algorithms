@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace k_ary_tree
 {
@@ -18,7 +20,7 @@ namespace k_ary_tree
 
         // Methods
         /// <summary>
-        /// Add method takes in a generic value. It then check if the root 
+        /// Add method takes in a generic value. It then check if the root is null if it is the roots value gets set to the value passed in. If not it will check if the root can still have children if it can a new node is created aadded
         /// </summary>
         /// <param name="value"></param>
         public void Add(T value)
@@ -46,9 +48,36 @@ namespace k_ary_tree
                 }
         }
 
+        /* get current node value
+         * if current node kids.count > 0 
+         * put kids in q
+         * pop kids list off of q 
+         * for each node in list
+         * get value
+         * check if kids count > 0
+         * if so put kids in q
+         */
         public bool Contains(T value)
         {
-            return true;
+            if (Root == null) return false;
+            if (Root.Value.Equals(value)) return true;
+            if(Root.Kids.Count > 0)
+            {
+                Node<T> currentNode = Root;
+                Queue dayCare = new Queue();
+                dayCare.Enqueue(currentNode.Kids);
+                while(dayCare.Count != 0)
+                {
+                    List<Node<T>> children = (List<Node<T>>)dayCare.Dequeue();
+                    foreach(Node<T> node in children)
+                    {
+                        if (node.Value.Equals(value)) return true;
+                        if (node.Kids.Count > 0)
+                            dayCare.Enqueue(node.Kids);
+                    }
+                }
+            }          
+            return false;
         }
     }
 }
