@@ -48,7 +48,7 @@ namespace k_ary_tree
                 }
         }
 
-        /* get current node value
+        /*Algo: get current node value
          * if current node kids.count > 0 
          * put kids in q
          * pop kids list off of q 
@@ -57,6 +57,11 @@ namespace k_ary_tree
          * check if kids count > 0
          * if so put kids in q
          */
+        /// <summary>
+        /// Contains takes in a generic value a searches each node in the k-ary-tree if a match is found ture is returned if not false will be returned.
+        /// </summary>
+        /// <param name="value">Generic value</param>
+        /// <returns>Boolean</returns>
         public bool Contains(T value)
         {
             if (Root == null) return false;
