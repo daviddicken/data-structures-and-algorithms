@@ -5,6 +5,8 @@
 ## Data Structures
 * [Linked List](#Linked-List)
 * [Doubly Linked List](#Doubly-Linked-List)
+* [Binary Tree](#Binary-Tree)
+* [Binary Search Tree](#Binary-Search-Tree)
 
 ## Challenges
 * [Reverse Array](#Reverse-Array)
@@ -47,6 +49,43 @@
 ------------------------------------------------------
 # C#
 
+# Binary Search Tree
+A Binary Search Tree has the same structure as a binary tree. It has a root node and all nodes in the BST can have no more then two children. A node without children is called a leaf. A connection between a parent node and a child node is called a edge. And you can get the height of a BST by counting the number of edges needed to be traveled through to reach the bottom most leaf.
+The difference between a binary tree and a binary search tree is that the nodes are sorted. if the value of a node is less then its parent nodes value it is the left child and if the value of a node greater then it's parent nodes value it is a right child. This allows for O(logN) search times.
+
+## Add
+The Add method takes in a int and calls itself recursively passing in the root and the value. The recursive methods base case is when it finds an empty node. If the node it has is not empty then it will compare the nodes value to the value passed in and point the nodes left or right child to a recursive call passing in the left or right child accordingly. Once a empty node is found a new node is created with the value and it is returned to the last recursive call which will now point one of its children to the new node. The stack will continue to pop off until the root is returned to the original call with the new node as one of its leaves.
+
+## Contains
+Contains takes in a int and searches the BST returning a bool representing whether or not the int was found in the BST.
+It does this by iterating throgh the BST comparing the nodes value to the value passed in and steping to the left or right child respectivly. If the value is found true is returned. If a null node is reached false is returned.
+
+-----------------------------------------------------
+# Binary Tree
+A Binary Tree has a root node this node has a value and can point to two nother nodes a left child and a right child. Every node in a binary tree can only point to at most two other nodes. If a node does not have any children it is called a leaf. The link between a parent node and its child is called a edge. You can tell the height of a tree by counting the number of edges that you would have to travel through to get from the root node to it's lowest leaf.
+
+There are thre ways that you can preform a depth first search on a tree. Meaning you will travel from root to leaf until all leaves have been reached.
+All three traversals are done recursively. And the only difference between them is where you do your work.
+**Pre-Order:**
+* do some work first
+* recursive call on the left child
+* recursive call on the right child
+
+**In-Order:**
+* recursive call on the left child
+* do some work
+* recursive call on the right child
+
+**Post-Order:**
+* recursive call on the left child
+* recursive call on the right child
+* do some work
+
+## AddNode
+The add method takes in a generic value and uses a queue to do a breadth first traversal on the tree. Meaning it will check ever node on a level before moving to the next level down. It does this until it finds a node that doesn't have two children. When it finds a node that does not have two children a new node will be created with the value that was passed in and it will become a child of the node the search is at.
+The add method uses the queue to do the breadth first traversal by checking the node it is on for any children if chidren are found they are enqueued to the queue then a node is dequeued from the queue and checked for children which will be enqueued to the queue. Thhis is done until a node without a child is found. Using the queue allows you to visit every child in a row before moving on to the next level no matter how large the tree gets.
+
+------------------------------------------------------
 # Multi Bracket Validation Csharp
 Multi Bracket Validation takes in a string and returns a Boolean representing whether all brackets are balanced. It test for () {} []
 
