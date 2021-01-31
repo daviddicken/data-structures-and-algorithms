@@ -27,9 +27,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIFOAnimalShelter", "codeCh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalShelterTest", "codeChallenges\AnimalShelterTest\AnimalShelterTest.csproj", "{4EC62C84-A5DD-4FCC-904B-D8362CF0262B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiBracketValidation", "MultiBracketValidation\MultiBracketValidation.csproj", "{6C7F616A-BDE0-4D7D-AE57-0280D9972136}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiBracketValidation", "MultiBracketValidation\MultiBracketValidation.csproj", "{6C7F616A-BDE0-4D7D-AE57-0280D9972136}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiBracketValidatorTest", "codeChallenges\MultiBracketValidatorTest\MultiBracketValidatorTest.csproj", "{F49434AA-0610-45C3-A85C-1116AB685735}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiBracketValidatorTest", "codeChallenges\MultiBracketValidatorTest\MultiBracketValidatorTest.csproj", "{F49434AA-0610-45C3-A85C-1116AB685735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "dataStructures\Trees\Trees.csproj", "{E9DC44B8-A83C-4894-A1FE-A2C77DED21EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{5380F854-6EA2-4077-90D0-E57A55A77275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreesTest", "dataStructures\DataStructuresTest\TreesTest\TreesTest.csproj", "{67F8F3C6-F188-4669-8F43-EE5C4B192C8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +83,14 @@ Global
 		{F49434AA-0610-45C3-A85C-1116AB685735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49434AA-0610-45C3-A85C-1116AB685735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F49434AA-0610-45C3-A85C-1116AB685735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9DC44B8-A83C-4894-A1FE-A2C77DED21EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9DC44B8-A83C-4894-A1FE-A2C77DED21EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9DC44B8-A83C-4894-A1FE-A2C77DED21EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9DC44B8-A83C-4894-A1FE-A2C77DED21EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F8F3C6-F188-4669-8F43-EE5C4B192C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F8F3C6-F188-4669-8F43-EE5C4B192C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F8F3C6-F188-4669-8F43-EE5C4B192C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F8F3C6-F188-4669-8F43-EE5C4B192C8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +106,9 @@ Global
 		{4EC62C84-A5DD-4FCC-904B-D8362CF0262B} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
 		{6C7F616A-BDE0-4D7D-AE57-0280D9972136} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
 		{F49434AA-0610-45C3-A85C-1116AB685735} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
+		{E9DC44B8-A83C-4894-A1FE-A2C77DED21EA} = {834191B3-CC50-4776-BB3D-5FD8A7EECA36}
+		{5380F854-6EA2-4077-90D0-E57A55A77275} = {834191B3-CC50-4776-BB3D-5FD8A7EECA36}
+		{67F8F3C6-F188-4669-8F43-EE5C4B192C8A} = {5380F854-6EA2-4077-90D0-E57A55A77275}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD48E263-FDF8-439B-B905-2E94939D7DF8}
