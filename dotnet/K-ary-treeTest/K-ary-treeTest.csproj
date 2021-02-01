@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\k-ary-tree\k-ary-tree.csproj" />
+    <ProjectReference Include="..\dataStructures\k-ary-tree\k-ary-tree.csproj" />
   </ItemGroup>
 
 </Project>
