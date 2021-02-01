@@ -93,7 +93,7 @@ namespace Trees
                 Queue<Node<T>> nodes = new Queue<Node<T>>();
                 nodes.Enqueue(currnetNode);
 
-                while (nodes.Peek() != null)
+                while (nodes.Count != 0)
                 {
                     currnetNode = nodes.Dequeue();
 
@@ -123,86 +123,3 @@ namespace Trees
     }
 }
 //======================= ZombieLand ==================
-//if (node == null)
-//{
-//    T[] arr = new T[size];
-//    int counter = 0;
-//    foreach (T t in list)
-//    {
-//        arr[counter] = t;
-//        counter++;
-//    }
-//    return arr;
-
-////public ArrayList InOrder()
-////{
-////    ArrayList list = new ArrayList();
-////    return InOrder(Root, list);
-////}
-////private ArrayList InOrder(Node<T> node, ArrayList list)
-////{
-////    if (node == null) return list;
-
-////    InOrder(node.LeftChild, list);
-////    list.Add(node.Value);
-////    InOrder(node.RightChild, list);
-
-////    return list;
-////}
-//---------------------
-//public T[] InOrder()
-//{
-//    T[] arr = new T[size];
-//    int index = 0;
-
-//    return InOrder(Root, arr, index);
-//}
-//private T[] InOrder(Node<T> node, T[] arr, int index)
-//{
-//    if (node == null) return arr;
-
-//    InOrder(node.LeftChild, arr, index);
-//    arr[index] = node.Value;
-//    index++;
-//    InOrder(node.RightChild, arr, index);
-
-//    return arr;
-//}
-
-//public T[] PreOrder()
-//{
-//    T[] arr = new T[size];
-//    int index = 0;
-
-//    return PreOrder(Root, arr, index);
-//}
-//private T[] PreOrder(Node<T> node, T[] arr, int index)
-//{
-//    if (node == null) return arr;
-
-//    arr[index] = node.Value;
-//    index++;
-//    PreOrder(node.LeftChild, arr, index);
-//    PreOrder(node.RightChild, arr, index);
-
-//    return arr;
-//}
-
-//public T[] PostOrder()
-//{
-//    T[] arr = new T[size];
-//    int index = 0;
-
-//    return PostOrder(Root, arr, index);
-//}
-//private T[] PostOrder(Node<T> node, T[] arr, int index)
-//{
-//    if (node == null) return arr;
-
-//    PostOrder(node.LeftChild, arr, index);
-//    PostOrder(node.RightChild, arr, index);
-//    arr[index] = node.Value;
-//    index++;
-
-//    return arr;
-//}
