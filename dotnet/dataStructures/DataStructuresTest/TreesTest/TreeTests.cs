@@ -171,5 +171,13 @@ namespace TreesTest
             tree.addNode(19);
             Assert.Equal(20,tree.FindMaximumValue());
         }
+
+        [Fact]
+        public void MaxException()
+        {
+            Tree<int> tree = new Tree<int>();
+
+            Assert.Throws<NullReferenceException>(() => tree.FindMaximumValue());
+        }
     }
 }

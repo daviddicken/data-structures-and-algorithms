@@ -32,6 +32,12 @@ namespace Trees
             return FindMaximumValue(Root, Root.Value);
 
         }
+        /// <summary>
+        /// FindMaxValue helper takes in a node and the max value then recursivly iterates through the tree to find and return the max value found
+        /// </summary>
+        /// <param name="current">Node - the current node passed in</param>
+        /// <param name="maxValue">Generic T - The maximum value found so far</param>
+        /// <returns>generic value - Maximum value in tree</returns>
         private T FindMaximumValue(Node<T> current, T maxValue)
         {
             if (current != null)
@@ -41,7 +47,6 @@ namespace Trees
                 maxValue = FindMaximumValue(current.LeftChild, maxValue);
                 maxValue = FindMaximumValue(current.RightChild, maxValue);
             }
-
             return maxValue;
         }
 

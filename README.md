@@ -17,6 +17,7 @@
 * [Queue With Stacks](#Queue-With-Stacks)
 * [Animal Shelter C#](#Animal-Shelter-Csharp)
 * [Multi Bracket Validation C#](#Multi-Bracket-Validation-Csharp)
+* [Find Max Value Binary Tree](#Find-Max-Value-Binary-Tree)
 
 # Java
 ## Data Structures
@@ -49,6 +50,27 @@
 ------------------------------------------------------
 # C#
 
+# Find Max Value Binary Tree
+Find max value recursively traverses through a binary tree and retruns the maximum value found in the tree.
+
+### Approach & Efficiency
+Big O  
+Time: O(n)  
+Space: O(1)
+
+* Declare a method that does not take in any parameters and returns a overloaded helper method 
+  passing in the root and the roots value.
+* Declare a overloaded helper method that takes in a node and a generic value.
+* Check if node passed in is empty.
+   * If it is return the generic value that was passed in.
+* Otherwise check if the nodes value is greater then value passed in.
+   * If it is set the value passed in to the value of the node.
+* Recursively call the helper method passing in the nodes left child and value that was passed in
+* Recursively call the helper method passing in the nodes right child and value that was passed in
+
+[whiteboard](whiteboards/FindMaxValueWhiteboard.PNG)
+
+------------------------------------------------------
 # Binary Search Tree
 A Binary Search Tree has the same structure as a binary tree. It has a root node and all nodes in the BST can have no more then two children. A node without children is called a leaf. A connection between a parent node and a child node is called a edge. And you can get the height of a BST by counting the number of edges needed to be traveled through to reach the bottom most leaf.
 The difference between a binary tree and a binary search tree is that the nodes are sorted. if the value of a node is less then its parent nodes value it is the left child and if the value of a node greater then it's parent nodes value it is a right child. This allows for O(logN) search times.
