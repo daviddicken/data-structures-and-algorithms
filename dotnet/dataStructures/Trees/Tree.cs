@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Trees
 {
-    public class Tree<T>
+    public class Tree<T> where T : IComparable
     {
         public Node<T> Root { get; set; }
         public int size { get; set; }
@@ -22,6 +22,30 @@ namespace Trees
         }
 
         // Methods
+        /// <summary>
+        /// Find maximum value returns the maximum value found in a binary tree
+        /// </summary>
+        /// <returns>Generic value</returns>
+        public T FindMaximumValue() 
+        {
+            if (Root == null) throw new NullReferenceException();
+            return FindMaximumValue(Root, Root.Value);
+
+        }
+        private T FindMaximumValue(Node<T> current, T maxValue)
+        {
+            if (current != null)
+            {
+                
+                if (current.Value.CompareTo(maxValue) > 0) maxValue = current.Value;
+                maxValue = FindMaximumValue(current.LeftChild, maxValue);
+                maxValue = FindMaximumValue(current.RightChild, maxValue);
+            }
+
+            return maxValue;
+        }
+
+
         public T[] InOrder()
         {
             List<T> list = new List<T>();
