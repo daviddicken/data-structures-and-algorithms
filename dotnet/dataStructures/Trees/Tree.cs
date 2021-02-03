@@ -102,8 +102,13 @@ namespace Trees
             return list;
         }
 
+        /// <summary>
+        /// BreadthFirst returns a list of the tree node values in Breadth first order.
+        /// </summary>
+        /// <returns>List</returns>
         public List<T> BreadthFirst()
         {
+            if (Root == null) return new List<T>(); 
             Queue queue = new Queue();
             List<T> list = new List<T>();
             Node<T> node = Root;
@@ -130,14 +135,11 @@ namespace Trees
             /// Add node takes in a generic value creates a new tree node and finds the next open spot on the tree to place it.
             /// </summary>
             /// <param name="value">generic value</param>
-            public void addNode(T value)
+        public void addNode(T value)
         {
             Node<T> newNode = new Node<T>(value);
             if(Root == null)
-            {
                 Root = newNode;
-                size = 1;
-            }
             else
             {
                 Node<T> currnetNode = Root;
