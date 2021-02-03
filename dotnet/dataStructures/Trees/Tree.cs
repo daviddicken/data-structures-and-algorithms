@@ -102,20 +102,44 @@ namespace Trees
             return list;
         }
 
-
-        //---------- Add node --------------
         /// <summary>
-        /// Add node takes in a generic value creates a new tree node and finds the next open spot on the tree to place it.
+        /// BreadthFirst returns a list of the tree node values in Breadth first order.
         /// </summary>
-        /// <param name="value">generic value</param>
+        /// <returns>List</returns>
+        public List<T> BreadthFirst()
+        {
+            if (Root == null) return new List<T>(); 
+            Queue queue = new Queue();
+            List<T> list = new List<T>();
+            Node<T> node = Root;
+
+            queue.Enqueue(node);
+
+            while (queue.Count > 0)
+            {
+                node = (Node<T>)queue.Dequeue();
+                list.Add(node.Value);
+                if (node.LeftChild != null)
+                    queue.Enqueue(node.LeftChild);
+
+                if (node.RightChild != null)
+                    queue.Enqueue(node.RightChild);
+
+            }
+            return list;
+
+        }
+            
+            //---------- Add node --------------
+            /// <summary>
+            /// Add node takes in a generic value creates a new tree node and finds the next open spot on the tree to place it.
+            /// </summary>
+            /// <param name="value">generic value</param>
         public void addNode(T value)
         {
             Node<T> newNode = new Node<T>(value);
             if(Root == null)
-            {
                 Root = newNode;
-                size = 1;
-            }
             else
             {
                 Node<T> currnetNode = Root;

@@ -18,6 +18,7 @@
 * [Animal Shelter C#](#Animal-Shelter-Csharp)
 * [Multi Bracket Validation C#](#Multi-Bracket-Validation-Csharp)
 * [Find Max Value Binary Tree](#Find-Max-Value-Binary-Tree)
+* [Binaray Tree Breadth First](*Binary-Tree-Breadth-First)
 
 # Java
 ## Data Structures
@@ -50,6 +51,25 @@
 ------------------------------------------------------
 # C#
 
+# Binary Tree Breadth First
+Breath First traverse a tree breadth first and returns the value of the tree nodes in the order they were visited.
+
+###Approach && Efficiency
+Time / Space
+O(n) / O(1)
+
+* Declare a node and set to root
+* Declare a List and a Queue
+* EnQueue the node to the Queue
+* While the queue is not empty
+   * dequeue a node from the queue
+   * Add the value of the node to the list
+   * Check if the node has a right or left child and enqueue them to the queue
+* return list
+
+[whiteboard](whiteboards/BreadthFirst17wb.PNG)
+
+-------------------------------------------------------------
 # Find Max Value Binary Tree
 Find max value recursively traverses through a binary tree and retruns the maximum value found in the tree.
 

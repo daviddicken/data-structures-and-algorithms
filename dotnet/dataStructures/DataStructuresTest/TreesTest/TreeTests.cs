@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using Trees;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace TreesTest
 {
@@ -178,6 +179,27 @@ namespace TreesTest
             Tree<int> tree = new Tree<int>();
 
             Assert.Throws<NullReferenceException>(() => tree.FindMaximumValue());
+        }
+
+        [Fact]
+        public void BreadthFirstTest()
+        {
+            Tree<int> tree = new Tree<int>();
+            tree.addNode(1);
+            tree.addNode(2);
+            tree.addNode(3);
+            tree.addNode(4);
+            tree.addNode(5);
+            List<int> expected = new List<int>() { 1, 2, 3, 4, 5 };
+            Assert.Equal(expected, tree.BreadthFirst());
+        }
+
+        [Fact]
+        public void BreadthNullTest()
+        {
+            Tree<int> tree = new Tree<int>();
+            List<int> expected = new List<int>();
+            Assert.Equal(expected, tree.BreadthFirst());
         }
     }
 }
