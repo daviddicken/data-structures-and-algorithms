@@ -157,5 +157,27 @@ namespace TreesTest
             tree.Add(19);
             Assert.False(tree.Contains(12));
         }
+        //============= Max value binary tree tests============
+        [Fact]
+        public void MaxValueTest()
+        {
+            Tree<int> tree = new Tree<int>();
+            tree.addNode(10);
+            tree.addNode(5);
+            tree.addNode(2);
+            tree.addNode(15);
+            tree.addNode(20);
+            tree.addNode(1);
+            tree.addNode(19);
+            Assert.Equal(20,tree.FindMaximumValue());
+        }
+
+        [Fact]
+        public void MaxException()
+        {
+            Tree<int> tree = new Tree<int>();
+
+            Assert.Throws<NullReferenceException>(() => tree.FindMaximumValue());
+        }
     }
 }
