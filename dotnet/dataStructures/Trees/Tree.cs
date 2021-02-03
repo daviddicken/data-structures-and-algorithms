@@ -102,13 +102,35 @@ namespace Trees
             return list;
         }
 
+        public List<T> BreadthFirst()
+        {
+            Queue queue = new Queue();
+            List<T> list = new List<T>();
+            Node<T> node = Root;
 
-        //---------- Add node --------------
-        /// <summary>
-        /// Add node takes in a generic value creates a new tree node and finds the next open spot on the tree to place it.
-        /// </summary>
-        /// <param name="value">generic value</param>
-        public void addNode(T value)
+            queue.Enqueue(node);
+
+            while (queue.Count > 0)
+            {
+                node = (Node<T>)queue.Dequeue();
+                list.Add(node.Value);
+                if (node.LeftChild != null)
+                    queue.Enqueue(node.LeftChild);
+
+                if (node.RightChild != null)
+                    queue.Enqueue(node.RightChild);
+
+            }
+            return list;
+
+        }
+            
+            //---------- Add node --------------
+            /// <summary>
+            /// Add node takes in a generic value creates a new tree node and finds the next open spot on the tree to place it.
+            /// </summary>
+            /// <param name="value">generic value</param>
+            public void addNode(T value)
         {
             Node<T> newNode = new Node<T>(value);
             if(Root == null)
