@@ -9,6 +9,7 @@ namespace k_ary_tree
         public Node<T> Root { get; set; }
         public int KidsAllowed { get; set; } // Children allowed per node
 
+
         public KTree(int kidsAllowed) 
         { KidsAllowed = kidsAllowed; }
         
@@ -83,6 +84,11 @@ namespace k_ary_tree
                 }
             }          
             return false;
+        }
+
+        public KTree<string> FizzBuzz()
+        {
+
         }
     }
 }
