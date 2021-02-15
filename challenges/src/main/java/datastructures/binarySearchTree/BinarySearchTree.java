@@ -34,6 +34,7 @@ class BinarySearchTree {
         if(root == null){
             throw new Exception("This tree is empty"); // if tree empty throw exception
         }
+        //TODO: Use a while loop to traverse through BST and find value. MORE EFFICIENT!!
         return inOrder(root).contains(value); // call in order to get an array list of tree. Then check if array contains
     }                                         // search value
 

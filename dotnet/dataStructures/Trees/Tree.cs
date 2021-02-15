@@ -119,6 +119,7 @@ namespace Trees
             {
                 node = (Node<T>)queue.Dequeue();
                 list.Add(node.Value);
+
                 if (node.LeftChild != null)
                     queue.Enqueue(node.LeftChild);
 
