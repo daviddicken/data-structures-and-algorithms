@@ -65,12 +65,12 @@ Space O(1)
 [Insert Sort Blog](https://www.linkedin.com/pulse/insert-sort-david-dicken/?trackingId=b5dfv2fdTAMcV3MYYnXKuw%3D%3D)
 
 ### Whiteboard
-[Step 1](whiteboards/Step1.PNG)  
-[Step 2](whiteboards/Step2.PNG)  
-[Step 3](whiteboards/Step3.PNG)  
-[Step 4](whiteboards/Step4.PNG)  
-[Step 5](whiteboards/Step5.PNG)  
-[Step 6](whiteboards/Step6.PNG)
+![](whiteboards/Step1.PNG)  
+![](whiteboards/Step2.PNG)  
+![](whiteboards/Step3.PNG)  
+![](whiteboards/Step4.PNG)  
+![](whiteboards/Step5.PNG)  
+![](whiteboards/Step6.PNG)
 
 ----------------------------------------------------------------
 # Binary Tree Breadth First
