@@ -1,4 +1,4 @@
-﻿# Merge Sort
+﻿# Merge Sort BLOG
 
 Merge Sort is a sorting algorithm that takes in an unsorted array of integers and splits it in half 
 into two new arrays. It continues to do this recursivly until the array has been split into many 
