@@ -20,6 +20,7 @@
 * [Find Max Value Binary Tree](#Find-Max-Value-Binary-Tree)
 * [Binaray Tree Breadth First](*Binary-Tree-Breadth-First)
 * [Insert Sort C#](*Insert-Sort-Csharp)
+* [Merge Sort C#](*Merge-Sort-Csharp)
 
 # Java
 ## Data Structures
@@ -51,6 +52,18 @@
 
 ------------------------------------------------------
 # C#
+
+-----------------------------------------------------------------
+# Merge Sort
+Merge Sort is a sorting algorithm that takes in an unsorted array of integers and splits it in half into two new arrays. It continues to do this recursivly until the array has been split into many arrays holding only one integer. It then begins pass the pieces into a helper method that starts merging them back together putting the smaller values to the left of a return array. It does this until all pieces have been merged back into the return array leaving a sorted array.
+
+### Efficiency & Approach
+Time O(n*log n)
+Space O(n)
+
+### Blog
+![](dotnet/MergeSort/BLOG.md)
+
 -----------------------------------------------------------------
 # Insert Sort
 The insert sort method takes in a unsorted array of ints and iterates through the array moving all the smaller values to left and returns the array sorted low to high.
