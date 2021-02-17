@@ -41,11 +41,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "k-ary-tree", "dataStructure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "K-ary-treeTest", "K-ary-treeTest\K-ary-treeTest.csproj", "{2B612565-A4DE-47BE-A8DB-F1B1B42A2B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertSort", "codeChallenges\InsertSort\InsertSort.csproj", "{534ED841-63F1-4DA9-AAD6-98B9900B0DFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsertSort", "codeChallenges\InsertSort\InsertSort.csproj", "{534ED841-63F1-4DA9-AAD6-98B9900B0DFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AC4C99E8-70F5-4DFC-82AA-263A06D9880D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertSortTest", "codeChallenges\InsertSortTest\InsertSortTest.csproj", "{9A87510A-8E7C-4CD0-906C-67D7AAE7DACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsertSortTest", "codeChallenges\InsertSortTest\InsertSortTest.csproj", "{9A87510A-8E7C-4CD0-906C-67D7AAE7DACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSort", "MergeSort\MergeSort.csproj", "{69C98CD4-7652-4CA7-A6B1-B350ED4686B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSortTest", "MergeSortTest\MergeSortTest.csproj", "{CAF65691-DCAF-4EC8-9CFA-6C35D182CA32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +121,14 @@ Global
 		{9A87510A-8E7C-4CD0-906C-67D7AAE7DACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A87510A-8E7C-4CD0-906C-67D7AAE7DACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A87510A-8E7C-4CD0-906C-67D7AAE7DACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C98CD4-7652-4CA7-A6B1-B350ED4686B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C98CD4-7652-4CA7-A6B1-B350ED4686B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C98CD4-7652-4CA7-A6B1-B350ED4686B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C98CD4-7652-4CA7-A6B1-B350ED4686B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF65691-DCAF-4EC8-9CFA-6C35D182CA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF65691-DCAF-4EC8-9CFA-6C35D182CA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF65691-DCAF-4EC8-9CFA-6C35D182CA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF65691-DCAF-4EC8-9CFA-6C35D182CA32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +152,8 @@ Global
 		{534ED841-63F1-4DA9-AAD6-98B9900B0DFC} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
 		{AC4C99E8-70F5-4DFC-82AA-263A06D9880D} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
 		{9A87510A-8E7C-4CD0-906C-67D7AAE7DACE} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
+		{69C98CD4-7652-4CA7-A6B1-B350ED4686B6} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
+		{CAF65691-DCAF-4EC8-9CFA-6C35D182CA32} = {AC4C99E8-70F5-4DFC-82AA-263A06D9880D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD48E263-FDF8-439B-B905-2E94939D7DF8}

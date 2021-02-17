@@ -12,7 +12,7 @@ public class MergeSortTest {
 
         int[] empty = {};
         int[] test1 = {8,4,23,42,16,15};
-        int[] expected1 = {4,8,15,16,23,42};
+        int[] expected1 = {4, 8,15,16,23,42};
         int[] test2 = {20, 18,12,8,5,-2};
         int[] expected2 = {-2,5,8,12,18,20};
         int[] test3 = {5,12,7,5,5,7};
