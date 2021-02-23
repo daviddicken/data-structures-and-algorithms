@@ -22,6 +22,7 @@
 * [Insert Sort C#](#Insert-Sort-Csharp)
 * [Merge Sort](#Merge-Sort)
 * [Quick Sort](#Quick-Sort)
+* [Repeated Word C#](#Repeated-Word-Csharp)
 
 # Java
 ## Data Structures
@@ -54,7 +55,27 @@
 ------------------------------------------------------
 # C#
 
------------------------------------------------------------------
+------------------------------------------------------
+
+# Repeated Word Csharp
+Write a method that takes in a string of words and returns the first word that is repeated.
+
+### Efficiency and Approach
+Time O(N) Space O(N)
+
+* Remove puntuations from string.
+* Normalize all letters to lowercase.
+* Split words in string into an array of words/strings.
+* Create a hashset.
+* Iterate through array of words.
+* Check if hashset contains word.
+* If it does return the word.
+* If not add word to the hashset.
+* Return message if no duplicates were found.
+
+![](repeated-word.png)
+------------------------------------------------------
+
 # __Quick Sort__
 Quick Sort is a sorting algorithm that takes an unsorted List and chooses a pivot point.
 It then partitions(sorts) the list into 2 parts where the values smaller than the pivot value are moved before it (left partition),
@@ -104,7 +125,7 @@ Space O(1)
 # Binary Tree Breadth First
 Breath First traverse a tree breadth first and returns the value of the tree nodes in the order they were visited.
 
-###Approach && Efficiency
+### Approach && Efficiency
 Time / Space
 O(n) / O(1)
 
