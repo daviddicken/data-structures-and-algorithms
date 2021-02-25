@@ -8,7 +8,7 @@ namespace XUnitTestProject1
   public class LeftJoinTest
   {
     [Fact]
-    public void Test1()
+    public void HappyPath()
     {
       HashMap synonym = new HashMap(20);
       synonym.Add("fond", "enamored");
@@ -24,18 +24,28 @@ namespace XUnitTestProject1
       antonym.Add("guide", "follow");
       antonym.Add("flow", "jam");
 
-      string [] 
-
       string[][] test = Program.LeftJoin(synonym, antonym);
-
+      string[][] expected = new string[5][];
+      expected[0] = new string[] { "wrath", "anger", "delight" };
+      expected[1] = new string[] { "diligent", "employed", "idle" };
+      expected[2] = new string[] { "outfit", "garb", "NULL" };
+      expected[3] = new string[] { "guide", "usher", "follow" };
+      expected[4] = new string[] { "fond", "enamored", "averse" };
+      
+      int counter = 0;
+      
       foreach (string[] strArr in test)
       {
         if (strArr != null)
         {
-
-          Console.WriteLine(strArr[0] + " " + strArr[1] + " " + strArr[2]);
+          for(int i = 0; i < strArr.Length; i++)
+          {
+            Assert.Equal(strArr[i], expected[counter][i]);
+          }
+          counter++;
         }
       }
     }
+
   }
 }
