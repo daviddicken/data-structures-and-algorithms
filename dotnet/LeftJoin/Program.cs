@@ -24,11 +24,11 @@ namespace LeftJoin
 
       string[][] test = LeftJoin(synonym, antonym);
 
-      foreach(string [] strArr in test)
+      foreach (string [] strArr in test)
       { 
         if(strArr != null)
         {
-           Console.WriteLine( strArr[0] + " " + strArr[1] + " " + strArr[2]);
+           
         }
       }
     }
