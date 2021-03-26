@@ -65,7 +65,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeftJoin", "LeftJoin\LeftJo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeftJoinTest", "XUnitTestProject1\LeftJoinTest.csproj", "{570E1E4C-ABFB-4CF0-801F-9900F1CEEA7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTest", "GraphTest\GraphTest.csproj", "{DF4E1708-92E0-46DA-B11B-E48C49FFB4BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphTest", "GraphTest\GraphTest.csproj", "{DF4E1708-92E0-46DA-B11B-E48C49FFB4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvantageShuffle", "AdvantageShuffle\AdvantageShuffle.csproj", "{6B7AA83B-CE3A-4B63-BEC7-C3BC3EC02B6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,6 +179,10 @@ Global
 		{DF4E1708-92E0-46DA-B11B-E48C49FFB4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF4E1708-92E0-46DA-B11B-E48C49FFB4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF4E1708-92E0-46DA-B11B-E48C49FFB4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B7AA83B-CE3A-4B63-BEC7-C3BC3EC02B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B7AA83B-CE3A-4B63-BEC7-C3BC3EC02B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B7AA83B-CE3A-4B63-BEC7-C3BC3EC02B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B7AA83B-CE3A-4B63-BEC7-C3BC3EC02B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -209,6 +215,7 @@ Global
 		{AA312B33-E50B-40B7-8281-166635014114} = {AF992B5F-99C0-4294-89B4-9ACA5315A05B}
 		{570E1E4C-ABFB-4CF0-801F-9900F1CEEA7F} = {AC4C99E8-70F5-4DFC-82AA-263A06D9880D}
 		{DF4E1708-92E0-46DA-B11B-E48C49FFB4BB} = {5380F854-6EA2-4077-90D0-E57A55A77275}
+		{6B7AA83B-CE3A-4B63-BEC7-C3BC3EC02B6F} = {DC67D692-4495-4616-96CF-9CD3FA2AE1BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD48E263-FDF8-439B-B905-2E94939D7DF8}
