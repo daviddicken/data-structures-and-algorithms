@@ -1,5 +1,6 @@
 ﻿using System;
 using DataStructures;
+using Implementations;
 
 namespace LLZip.CodeChallenges
 {

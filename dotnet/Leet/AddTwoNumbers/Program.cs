@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections;
 using DataStructures;
-using LinkedList;
+
 
 namespace AddTwoNumbers
 
@@ -37,8 +38,8 @@ namespace AddTwoNumbers
         {
             if (head == null) return str;
             getNumStr(head.Next);
-            return str += head.Value.ToString();
 
-        }
+            return str += head.Value.ToString();
     }
+  }
 }
